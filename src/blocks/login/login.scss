@@ -89,10 +89,10 @@
 
 // stylelint-disable
 .iti {
-  --iti-path-flags-1x: url("../{{img}}/flags.webp");
-  --iti-path-flags-2x: url("../{{img}}/flags@2x.webp");
-  --iti-path-globe-1x: url("../{{img}}/av-globe.webp");
-  --iti-path-globe-2x: url("../{{img}}/av-globe@2x.webp");
+  --iti-path-flags-1x: url("{{img}}/flags.webp");
+  --iti-path-flags-2x: url("{{img}}/flags@2x.webp");
+  --iti-path-globe-1x: url("{{img}}/av-globe.webp");
+  --iti-path-globe-2x: url("{{img}}/av-globe@2x.webp");
 }
 
 .iti__selected-country {
@@ -127,7 +127,7 @@
 .iti__arrow {
   width: 14px;
   height: 14px;
-  background: url("../{{icon}}icon__arrow--down-view") center no-repeat;
+  background: url("{{icon}}icon__arrow--down-view") center no-repeat;
   background-size: 100% 100%;
   border: none;
 
@@ -156,7 +156,7 @@
 .iti__search-input {
   height: 48px;
   padding: 14px 12px 10px 36px;
-  background: url("../{{icon}}icon__search-view") left 12px top 14px no-repeat;
+  background: url("{{icon}}icon__search-view") left 12px top 14px no-repeat;
   background-size: 18px 18px;
   border-bottom: 1px solid var(--divider);
   outline: none;

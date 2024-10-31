@@ -8,7 +8,7 @@
 
   height: 44px;
   padding: 12px 21px 8px 11px;
-  background: url("../{{icon}}icon__arrow--down-view") right 11px top 11px no-repeat, var(--back-primary);
+  background: url("{{icon}}icon__arrow--down-view") right 11px top 11px no-repeat, var(--back-primary);
   background-size: 24px 24px;
   border: 1px solid var(--divider);
   border-radius: 25px;
@@ -19,7 +19,7 @@
   @media screen and (min-width: breakpoints.$screen-tl) {
     height: 50px;
     padding: 15px 21px 11px 11px;
-    background: url("../{{icon}}icon__arrow--down-view") right 11px top 14px no-repeat, var(--back-primary);
+    background: url("{{icon}}icon__arrow--down-view") right 11px top 14px no-repeat, var(--back-primary);
     background-size: 24px 24px;
   }
 

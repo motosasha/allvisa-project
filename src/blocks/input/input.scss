@@ -34,12 +34,12 @@
   }
 
   &[type="date"] {
-    background: url("../{{icon}}icon__calendar-view") right 11px top 9px no-repeat, var(--back-primary);
+    background: url("{{icon}}icon__calendar-view") right 11px top 9px no-repeat, var(--back-primary);
     background-size: 24px 24px;
     -moz-appearance: textfield;
 
     @media screen and (min-width: breakpoints.$screen-tl) {
-      background: url("../{{icon}}icon__calendar-view") right 11px top 13px no-repeat, var(--back-primary);
+      background: url("{{icon}}icon__calendar-view") right 11px top 13px no-repeat, var(--back-primary);
       background-size: 24px 24px;
     }
 
