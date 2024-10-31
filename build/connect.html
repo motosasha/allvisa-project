@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="google" content="notranslate">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" sizes="32x32" href="./img/favicon/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg">
+    <link rel="apple-touch-icon" href="./img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+    <meta name="theme-color" content="#000000">
+    <title>Связь с менеджером</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <link rel="stylesheet" href="./css/style.css"><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");const navigatorErrorMessage="Could not find `userAgent` or `userAgentData` window.navigator properties to set `os`, `browser` and `version`",removeExcessMozillaAndVersion=/^mozilla\/\d\.\d\W/,browserPattern=/(\w+)\/(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)/g,engineAndVersionPattern=/^(ver|cri|gec)/,brandList=["chrome","opera","safari","edge","firefox"],unknown="Unknown";let userAgentData=window.navigator.userAgentData,userAgent=window.navigator.userAgent;const mobiles={ios:/iphone/,ipados:/ipad|macintosh/,android:/android/},desktops={windows:/win/,osx:/macintosh/,linux:/linux/},detectPlatform=(e,n)=>{if(userAgent="string"==typeof e?e:userAgent,userAgentData="string"==typeof n?n:userAgentData,userAgent){const e=userAgent.toLowerCase().replace(removeExcessMozillaAndVersion,""),n=Object.keys(mobiles).find(n=>mobiles[n].test(e)&&window.navigator.maxTouchPoints>=1),t=Object.keys(desktops).find(n=>desktops[n].test(e)),o=n||t,r=e.match(browserPattern),s=/version\/(\d+(\.\d+)*)/,a=e.match(s),i=Array.isArray(a)?a[1]:null,d=r&&(r.length>2&&!engineAndVersionPattern.test(r[1])?1:0),l=r&&r[r.length-1-(d||0)].split("/");return{os:o,browser:l&&l[0],version:i||l&&l[1]}}if(userAgentData){const e=userAgentData.platform.toLowerCase();let n;for(const e of userAgentData.brands){const t=e.brand.toLowerCase(),o=brandList.find(e=>{if(t.includes(e))return e});if(o){n={browser:o,version:e.version};break}}return{os:e,...n||{browser:unknown,version:unknown}}}return console.error(navigatorErrorMessage),{os:navigator.platform||unknown,browser:unknown,version:unknown}};let platform=detectPlatform();document.documentElement.classList.add(platform.os,platform.browser);let vh=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",vh+"px"),window.addEventListener("resize",()=>{let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",e+"px")});</script>
+  </head>
+  <body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
+    <div class="project-nav"><!-- delete this block if production-->
+      <style>
+        :root {
+          --elem-shift-width: 240px;
+
+          --chrome-100: hsl(0 0% 96%);
+          --chrome-200: hsl(0 0% 90%);
+          --chrome-300: hsl(0 0% 83%);
+          --chrome-400: hsl(0 0% 64%);
+          --chrome-500: hsl(0 0% 45%);
+          --chrome-600: hsl(0 0% 32%);
+          --chrome-700: hsl(0 0% 25%);
+          --chrome-800: hsl(0 0% 15%);
+          --chrome-900: hsl(0 0% 9%);
+
+          --sky-200: hsl(201 94% 86%);
+          --sky-400: hsl(198 93% 60%);
+          --sky-600: hsl(200 98% 39%);
+          --sky-700: hsl(201 96% 32%);
+
+          @media (prefers-color-scheme: light) {
+            & {
+              --main-bg-color: var(--chrome-100);
+              --main-border-color: var(--chrome-200);
+
+              --section-title-color: var(--chrome-400);
+              --section-title-border-color: var(--sky-400);
+              --section-title-border-top-color: var(--chrome-200);
+
+              --link-title-color: var(--sky-700);
+              --link-description-color: var(--chrome-500);
+              --link-description-color-hover: var(--chrome-700);
+              --link-bg-hover: var(--chrome-200);
+
+              --button-bg-color: var(--sky-200);
+              --button-title-color: var(--sky-700);
+
+              --icon-stroke-color: var(--link-description-color);
+              --icon-stroke-color-hover: var(--chrome-700);
+            }
+          }
+
+          @media (prefers-color-scheme: dark) {
+            & {
+              --main-bg-color: var(--chrome-900);
+              --main-border-color: var(--chrome-800);
+
+              --section-title-color: var(--chrome-600);
+              --section-title-border-color: var(--sky-700);
+              --section-title-border-top-color: var(--chrome-800);
+
+              --link-title-color: var(--sky-400);
+              --link-description-color: var(--chrome-500);
+              --link-description-color-hover: var(--chrome-300);
+              --link-bg-hover: var(--chrome-800);
+
+              --button-bg-color: var(--sky-600);
+              --button-title-color: var(--sky-200);
+
+              --icon-stroke-color: var(--link-description-color);
+              --icon-stroke-color-hover: var(--chrome-100);
+            }
+          }
+        }
+
+        .project-nav {
+          position: fixed;
+          top: 50%;
+          left: 0;
+          z-index: 999999;
+          width: 0;
+          transform: translateY(-50%);
+        }
+
+        .project-nav__nav {
+          width: var(--elem-shift-width);
+          overflow: hidden;
+          overflow-y: auto;
+          max-height: 75vh;
+          height: 100%;
+          border: 1px solid var(--main-border-color);
+          border-left: none;
+          border-radius: 0 8px 8px 0;
+          transform: translateX(calc(var(--elem-shift-width) * -1));
+          transition: transform 0.2s;
+        }
+
+        .project-nav__list {
+          margin: 0;
+          padding: 4px;
+          background-color: var(--main-bg-color);
+        }
+
+        .project-nav__list-title {
+          padding: 15px 0 8px 12px;
+          font-size: 10px;
+          line-height: 1.6;
+          text-transform: uppercase;
+          color: var(--section-title-color);
+        }
+
+        .project-nav__list-title::after {
+          display: block;
+          margin: 8px -4px 0;
+          width: 100%;
+          height: 1px;
+          background-color: var(--section-title-border-color);
+          content: "";
+        }
+
+        .project-nav__list-item {
+          display: grid;
+          grid-template-columns: auto 48px;
+          gap: 4px;
+          list-style: none;
+        }
+
+        .project-nav__list-item::before {
+          content: none;
+        }
+
+        .project-nav__list-item+.project-nav__list-title {
+          margin-top: 8px;
+          padding: 19px 0 8px 12px;
+          border-top: 1px solid var(--section-title-border-top-color);
+        }
+
+        .project-nav__link {
+          display: grid;
+          gap: 6px;
+          padding: 8px 12px;
+          background-color: transparent;
+          border-radius: 4px;
+          text-decoration: none;
+          transition: background-color 0.2s;
+        }
+
+        .project-nav__link:hover {
+          background-color: var(--link-bg-hover);
+        }
+
+        .project-nav__link+.project-nav__link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 16px;
+        }
+
+        .project-nav__link svg {
+          display: block;
+          color: var(--icon-stroke-color);
+          transition: color 0.2s;
+        }
+
+        .project-nav__link:hover svg {
+          color: var(--icon-stroke-color-hover);
+        }
+
+        .project-nav__title {
+          font-size: 14px;
+          line-height: 1.14286;
+          color: var(--link-title-color);
+        }
+
+        .project-nav__descr {
+          font-size: 10px;
+          line-height: 1.2;
+          color: var(--link-description-color);
+          transition: color 0.2s;
+        }
+
+        .project-nav__link:hover .project-nav__descr {
+          color: var(--link-description-color-hover);
+        }
+
+        .project-nav__trigger {
+          position: fixed;
+          bottom: 9px;
+          z-index: 999999;
+          padding: 10px 8px;
+          font-size: 16px;
+          text-align: left;
+          text-transform: uppercase;
+          color: var(--button-title-color);
+          background-color: var(--button-bg-color);
+          border: none;
+          border-radius: 0 8px 8px 0;
+          outline: none;
+          transition: all .3s;
+          opacity: 0.2;
+        }
+
+        .project-nav__trigger:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+
+        .project-nav[data-state="project-nav-open"] .project-nav__nav {
+          transform: translateX(0);
+        }
+
+        .project-nav[data-state="project-nav-open"] .project-nav__trigger {
+          transform: translateX(var(--elem-shift-width));
+          opacity: 1;
+        }
+      </style>
+      <nav class="project-nav__nav" role="nav">
+        <ul class="project-nav__list">
+          <li class="project-nav__list-title">Страницы проекта</li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="index.html">
+              <div class="project-nav__title">Main page</div>
+              <div class="project-nav__descr">главная страница</div>
+            </a><a class="project-nav__link" href="index.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="new.html">
+              <div class="project-nav__title">New request</div>
+              <div class="project-nav__descr">Новая заявка</div>
+            </a><a class="project-nav__link" href="new.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="services.html">
+              <div class="project-nav__title">Services page</div>
+              <div class="project-nav__descr">страница услуги</div>
+            </a><a class="project-nav__link" href="services.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="my-data.html">
+              <div class="project-nav__title">My data page</div>
+              <div class="project-nav__descr">Мои данные</div>
+            </a><a class="project-nav__link" href="my-data.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="payment.html">
+              <div class="project-nav__title">Payment page</div>
+              <div class="project-nav__descr">оплата</div>
+            </a><a class="project-nav__link" href="payment.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="loyalty.html">
+              <div class="project-nav__title">Loyalty page</div>
+              <div class="project-nav__descr">Программа лояльности</div>
+            </a><a class="project-nav__link" href="loyalty.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="connect.html">
+              <div class="project-nav__title">Connect page</div>
+              <div class="project-nav__descr">связь с менеджером</div>
+            </a><a class="project-nav__link" href="connect.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="login.html">
+              <div class="project-nav__title">Login page</div>
+              <div class="project-nav__descr">Вход в личный кабинет</div>
+            </a><a class="project-nav__link" href="login.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+        </ul>
+      </nav><button class="project-nav__trigger" title="Pages list">📄</button><script>const projectNav = document.querySelector(".project-nav");
+const projectNavButton = projectNav.querySelector(".project-nav__trigger");
+
+document.body.addEventListener("click", (e) => {
+  if (e.target === projectNavButton) {
+    projectNav.dataset.state === "project-nav-open"
+            ? (projectNav.dataset.state = "")
+            : (projectNav.dataset.state = "project-nav-open");
+  } else if (!projectNav.contains(e.target) && projectNav.dataset.state === "project-nav-open") {
+    projectNav.dataset.state = "";
+  }
+})
+</script><!-- delete this block if production-->
+    </div>
+    <div class="page">
+      <div class="page__header">
+        <div class="header">
+          <div class="header__inner"><a class="header__logo"><img class="header__img" src="./img/logo__allvisa--color.png" alt="AllVisa" /></a><button class="header__burger" data-burger="data-burger"><img class="header__icon" src="./img/icon__burger.svg" alt="Меню" /></button></div>
+        </div>
+      </div>
+      <div class="page__main">
+        <div class="page__side">
+          <nav class="nav">
+            <div class="nav__scroll">
+              <div class="nav__inner">
+                <div class="nav__header">
+                  <div class="nav__logo"><img class="nav__img" src="./img/logo__allvisa--white.png" alt="AllVisa" /></div><button class="nav__close" data-burger="data-burger"><svg class="nav__cross">
+                      <use href="./img/svgSprite.svg?v=1730413261915#icon__close"></use>
+                    </svg></button>
+                </div>
+                <div class="nav__main">
+                  <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="index.html"><svg class="nav__icon">
+                          <use href="./img/svgSprite.svg?v=1730413261915#icon__home"></use>
+                        </svg><span class="nav__title">Главная</span></a></li>
+                    <li class="nav__item"><a class="nav__link" href="new.html"><svg class="nav__icon">
+                          <use href="./img/svgSprite.svg?v=1730413261915#icon__new"></use>
+                        </svg><span class="nav__title">Новая заявка</span></a></li>
+                    <li class="nav__item"><a class="nav__link" href="services.html"><svg class="nav__icon">
+                          <use href="./img/svgSprite.svg?v=1730413261915#icon__services"></use>
+                        </svg><span class="nav__title">Услуги</span></a></li>
+                    <li class="nav__item"><a class="nav__link" href="my-data.html"><svg class="nav__icon">
+                          <use href="./img/svgSprite.svg?v=1730413261915#icon__user"></use>
+                        </svg><span class="nav__title">Мои данные</span></a></li>
+                    <li class="nav__item"><a class="nav__link" href="payment.html"><svg class="nav__icon">
+                          <use href="./img/svgSprite.svg?v=1730413261915#icon__payment"></use>
+                        </svg><span class="nav__title">Оплата</span></a></li>
+                    <li class="nav__item"><a class="nav__link" href="loyalty.html"><svg class="nav__icon">
+                          <use href="./img/svgSprite.svg?v=1730413261915#icon__loyalty"></use>
+                        </svg><span class="nav__title">Программа лояльности</span></a></li>
+                    <li class="nav__item"><a class="nav__link" href="connect.html"><svg class="nav__icon">
+                          <use href="./img/svgSprite.svg?v=1730413261915#icon__phone"></use>
+                        </svg><span class="nav__title">Связь с менеджером</span></a></li>
+                  </ul>
+                </div>
+                <div class="nav__footer"><button class="nav__link"><svg class="nav__icon">
+                      <use href="./img/svgSprite.svg?v=1730413261915#icon__logout"></use>
+                    </svg><span class="nav__title">Выход</span></button><a class="nav__doc" href="#">Условия использования Политика конфиденциальности</a><a class="nav__doc" href="#">О приложении</a></div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="page__content">
+          <div class="content">
+            <div class="content__header">
+              <h1 class="content__title">Связь с менеджером</h1>
+              <h2 class="content__subtitle">Форма обратной связи</h2>
+              <p class="content__descr">Оставьте заявку и менеджер свяжется с вами в ближайшее время</p>
+            </div>
+            <form class="form" id="formFeedBack" action="https://jsonplaceholder.typicode.com/posts">
+              <div class="form__inner form__inner--side">
+                <div class="form__section">
+                  <div class="form__row form__row--two"><label class="form__field">
+                      <div class="form__label">Ваше имя</div><input class="input" type="text" name="name" required>
+                    </label><label class="form__field">
+                      <div class="form__label">Ваш e-mail</div><input class="input" type="email" name="email" placeholder="example@mail.ru" required>
+                    </label></div>
+                  <div class="form__row form__row--two"><label class="form__field">
+                      <div class="form__label">Ваш телефон</div><input class="input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" data-phone-field required>
+                    </label><label class="form__field">
+                      <div class="form__label">Комментарий</div><textarea class="textarea"></textarea>
+                    </label></div>
+                </div>
+                <div class="form__side">
+                  <div class="form__side-item">
+                    <div class="form__label">Горячая линия</div><a class="form__link" href="tel:88004444140">8 (800) 444-41-40</a>
+                  </div>
+                  <div class="form__side-item">
+                    <div class="form__label">E-mail</div><a class="form__link" href="mailto:info@allvisa.center">info@allvisa.center</a>
+                  </div>
+                  <div class="form__side-socials"><a class="form__link" href="#"><svg>
+                        <use href="./img/svgSprite.svg?v=1730413261915#icon__social--tg"></use>
+                      </svg></a><a class="form__link" href="#"><svg>
+                        <use href="./img/svgSprite.svg?v=1730413261915#icon__social--wa"></use>
+                      </svg></a></div>
+                </div>
+                <div class="form__footer"><button class="button button--primary" type="submit">Отправить</button></div>
+              </div>
+            </form>
+          </div>
+        </div><img class="page__ring page__ring--left" src="./img/img__ring.svg" alt=""><img class="page__ring page__ring--right" src="./img/img__ring.svg" alt="">
+      </div>
+    </div><script src="./js/bundle.js"></script>
+  </body>
+</html>

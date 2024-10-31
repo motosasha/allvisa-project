@@ -1,0 +1,27 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.content-cols {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 16px;
+
+  &--two {
+    @media screen and (min-width: breakpoints.$screen-ti) {
+    	grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &--three {
+    @media screen and (min-width: breakpoints.$screen-d) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__col {
+    &--full {
+      grid-column: 1 / -1;
+    }
+  }
+}

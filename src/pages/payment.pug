@@ -1,0 +1,36 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Оплата"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .content
+    .content__header
+      h1.content__title Оплата
+    form#formPayment.form(action="https://jsonplaceholder.typicode.com/posts")
+      .form__inner
+        .form__section
+          h2.form__title Введите ваши данные для оплаты
+          .form__row.form__row--three
+            label.form__field
+              .form__label Ваше имя
+              input.input(type="text", name="name", required)
+            label.form__field
+              .form__label Ваш телефон
+              input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+            label.form__field
+              .form__label Ваш e-mail
+              input.input(type="email", name="email", placeholder="example@mail.ru", required)
+          .form__row.form__row--three
+            label.form__field
+              .form__label Сумма для оплаты
+              input.input(type="text", name="sum", data-number, required)
+            label.form__field
+              .form__label Комментарий
+              textarea.textarea
+        .form__footer
+          button.button.button--primary(type="submit") Отправить

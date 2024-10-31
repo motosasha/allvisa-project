@@ -1,0 +1,123 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.page {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  min-height: calc(var(--vh, 1vh) * 100);
+
+  &__header {
+    flex: 0 0 auto;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      display: none;
+    }
+  }
+
+  &__main {
+    flex: 1 0 auto;
+    padding: 0 var(--container-padding);
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      display: grid;
+      grid-template-columns: 280px repeat(9, 1fr);
+      gap: 32px;
+      padding: 32px var(--container-padding);
+    }
+  }
+
+  &__login {
+    flex: 1 0 auto;
+    min-height: 100dvh;
+    padding: 24px var(--container-padding) 40px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      padding: 32px var(--container-padding) 48px;
+    }
+  }
+
+  &__side {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100dvh;
+    transform: translateX(100%);
+    transition: transform .2s ease;
+
+    [data-state="open-nav"] & {
+      transform: translateX(0);
+    }
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      inset: 32px auto 32px var(--container-padding);
+      height: calc(100dvh - 64px);
+      transform: none;
+    }
+  }
+
+  &__content {
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__ring {
+    position: fixed;
+    z-index: -1;
+    aspect-ratio: 1 / 1;
+    pointer-events: none;
+
+    &--left {
+      bottom: -67px;
+      left: -91px;
+      width: 281px;
+
+      @media screen and (min-width: breakpoints.$screen-tl) {
+        top: 46px;
+        left: -185px;
+        width: 293px;
+      }
+
+      #{$block-name}--login & {
+        top: 99px;
+        left: -84px;
+        width: 130px;
+
+        @media screen and (min-width: breakpoints.$screen-tl) {
+          top: 46px;
+          left: -185px;
+          width: 293px;
+        }
+      }
+    }
+
+    &--right {
+      top: 131px;
+      right: -88px;
+      width: 155px;
+
+      @media screen and (min-width: breakpoints.$screen-tl) {
+        top: auto;
+        right: -123px;
+        bottom: -106px;
+        width: 377px;
+      }
+
+      #{$block-name}--login & {
+        top: auto;
+        right: -98px;
+        bottom: -97px;
+        width: 281px;
+
+        @media screen and (min-width: breakpoints.$screen-tl) {
+          right: -123px;
+          bottom: -106px;
+          width: 377px;
+        }
+      }
+    }
+  }
+}

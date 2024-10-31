@@ -1,0 +1,43 @@
+@use "src/scss/breakpoints";
+
+@mixin body($weight: 400) {
+  font-weight: $weight;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+@mixin title($weight: 600) {
+  font-weight: $weight;
+  font-size: 32px;
+  line-height: 1.1875;
+}
+
+@mixin title-s($weight: 600) {
+  font-weight: $weight;
+  font-size: 21px;
+  line-height: 1.2858;
+}
+
+@mixin text-m($weight: 400) {
+  font-weight: $weight;
+  font-size: 18px;
+  line-height: 1.3334;
+}
+
+@mixin text-s($weight: 400) {
+  font-weight: $weight;
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+@mixin text-xs($weight: 400) {
+  font-weight: $weight;
+  font-size: 14px;
+  line-height: 1.4286;
+}
+
+@mixin input {
+  @include text-s;
+
+  @content;
+}

@@ -1,0 +1,140 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/image-cent";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/reset-list";
+@use "src/scss/mixins/text-styles";
+
+.card {
+  $block-name: &; // #{$block-name}__element
+
+  @include reset-link.reset-link;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 12px 24px 0 rgb(0 0 0 / 8%);
+
+  &--iconed {
+    display: grid;
+    grid-template-columns: 36px auto;
+    height: 100%;
+  }
+
+  &--info {
+    gap: 8px;
+  }
+
+  &--login {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      padding: 24px;
+    }
+  }
+
+  &__title {
+    @include text-styles.text-s(600);
+
+    margin: 0;
+
+    #{$block-name}--info & {
+      @include text-styles.text-xs;
+
+      color: var(--front-secondary);
+    }
+  }
+
+  &__descr {
+    @include text-styles.text-xs;
+
+    margin-top: 16px;
+
+    #{$block-name}--info & {
+      @include text-styles.text-s(600);
+
+      margin-top: 0;
+      color: inherit;
+    }
+  }
+
+  &__icon {
+    align-self: start;
+    padding: 6px;
+    background: rgb(48 87 137 / 15%);
+    border-radius: 8px;
+    aspect-ratio: 1 / 1;
+
+    svg {
+      @include image-cent.image-cent;
+
+      color: var(--front-accent);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+
+    #{$block-name}__title {
+      @include text-styles.text-s(700);
+
+      margin: 0 0 8px;
+    }
+
+    #{$block-name}__descr {
+      margin: 0 0 14px;
+      color: var(--front-secondary);
+    }
+  }
+
+  &__more {
+    @include text-styles.text-xs;
+    @include reset-link.reset-link;
+
+    margin-top: auto;
+    color: var(--front-accent);
+  }
+
+  &__list {
+    @include reset-list.reset-list;
+
+    display: grid;
+    gap: 12px;
+    counter-reset: list;
+  }
+
+  &__list-item {
+    @include text-styles.text-xs;
+
+    display: flex;
+    gap: 12px;
+    color: var(--front-secondary);
+    counter-increment: list;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+    	align-items: center;
+    }
+
+    &::before {
+      @include text-styles.text-m;
+
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      padding: 4px 2px 0;
+      color: var(--front-accent);
+      background: rgb(48 87 137 / 15%);
+      border-radius: 8px;
+      content: counter(list);
+    }
+  }
+}

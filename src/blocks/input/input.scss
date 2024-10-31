@@ -1,0 +1,63 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.input {
+  $block-name: &; // #{$block-name}__element
+
+  @include text-styles.input {
+    min-height: 44px;
+    padding: 12px 21px 8px 11px;
+    background-color: var(--back-primary);
+    border: 1px solid var(--divider);
+    border-radius: 25px;
+    outline: 0 solid var(--outline-color);
+    transition: border 0.25s ease-out, outline 0.25s ease-out;
+    appearance: none;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      min-height: 50px;
+      padding: 15px 21px 11px 11px;
+    }
+  };
+
+  &--has-value,
+  &:focus {
+    border-color: var(--front-accent);
+  }
+
+  &::placeholder {
+    color: var(--front-secondary);
+  }
+
+  &--invalid {
+    border-color: var(--border-error);
+  }
+
+  &[type="date"] {
+    background: url("../{{icon}}icon__calendar-view") right 11px top 9px no-repeat, var(--back-primary);
+    background-size: 24px 24px;
+    -moz-appearance: textfield;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      background: url("../{{icon}}icon__calendar-view") right 11px top 13px no-repeat, var(--back-primary);
+      background-size: 24px 24px;
+    }
+
+    // stylelint-disable
+    .firefox & {
+      background: var(--back-primary);
+    }
+    // stylelint-enable
+  }
+
+  &[type="date"]::-webkit-inner-spin-button,
+  &[type="date"]::-webkit-calendar-picker-indicator {
+    width: 20px;
+    height: 20px;
+    outline: 1px solid red;
+    outline-offset: -2px;
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+

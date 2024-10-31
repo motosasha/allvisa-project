@@ -1,0 +1,41 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/image-cent";
+@use "src/scss/mixins/reset-button";
+@use "src/scss/mixins/text-styles";
+
+.header {
+  $block-name: &; // #{$block-name}__element
+
+  border-bottom: 1px solid var(--border-primary);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 16px;
+  }
+
+  &__logo {
+    display: block;
+    width: 126px;
+    height: 46px;
+    aspect-ratio: 126 / 46;
+  }
+
+  &__img {
+    @include image-cent.image-cent
+  }
+
+  &__burger {
+    @include reset-button.reset-button;
+
+    width: 44px;
+    height: 44px;
+  }
+
+  &__icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

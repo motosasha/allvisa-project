@@ -1,0 +1,49 @@
+{
+  "section": [
+    {
+      "title": "Страницы проекта",
+      "pages": [
+        {
+          "title": "Main page",
+          "description": "главная страница",
+          "href": "index"
+        },
+        {
+          "title": "New request",
+          "description": "Новая заявка",
+          "href": "new"
+        },
+        {
+          "title": "Services page",
+          "description": "страница услуги",
+          "href": "services"
+        },
+        {
+          "title": "My data page",
+          "description": "Мои данные",
+          "href": "my-data"
+        },
+        {
+          "title": "Payment page",
+          "description": "оплата",
+          "href": "payment"
+        },
+        {
+          "title": "Loyalty page",
+          "description": "Программа лояльности",
+          "href": "loyalty"
+        },
+        {
+          "title": "Connect page",
+          "description": "связь с менеджером",
+          "href": "connect"
+        },
+        {
+          "title": "Login page",
+          "description": "Вход в личный кабинет",
+          "href": "login"
+        }
+      ]
+    }
+  ]
+}

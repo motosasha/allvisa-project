@@ -1,0 +1,142 @@
+@use "src/scss/breakpoints";
+@use "src/scss/functions/iterations";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/text-styles";
+
+.form {
+  $block-name: &; // #{$block-name}__element
+
+  grid-column: 1 / -1;
+  padding-top: 16px;
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    padding-top: 32px;
+  }
+
+  &__inner {
+    display: grid;
+    gap: 24px;
+
+    &--side {
+      @media screen and (min-width: breakpoints.$screen-d) {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 24px 32px;
+
+        #{$block-name}__section {
+          grid-column: 1 / 10;
+        }
+
+        #{$block-name}__side {
+          grid-column: 11 / 13;
+        }
+
+        #{$block-name}__footer {
+          grid-column: 1 / -1;
+        }
+      }
+    }
+  }
+
+  &__row {
+    display: grid;
+    gap: 16px;
+
+    &--two {
+      @media screen and (min-width: breakpoints.$screen-ti) {
+      	grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    &--three {
+      @media screen and (min-width: breakpoints.$screen-ti) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    &--four {
+      @media screen and (min-width: breakpoints.$screen-ti) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+
+  &__footer {
+    display: grid;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+    	display: flex;
+    }
+  }
+
+  &__section {
+    display: grid;
+    gap: 16px;
+  }
+
+  &__title {
+    @include text-styles.text-s(600);
+
+    margin: 0;
+  }
+
+  &__field {
+    display: grid;
+    gap: 8px;
+    align-content: start;
+    align-items: start;
+  }
+
+  &__label {
+    @include text-styles.text-xs;
+
+    color: var(--front-secondary);
+  }
+
+  &__field-error {
+    color: var(--front-error);
+  }
+
+  &__side {
+    display: none;
+    align-content: start;
+    align-items: start;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: grid;
+      gap: 16px;
+    }
+  }
+
+  &__side-item {
+    gap: 8px;
+  }
+
+  &__side-socials {
+    display: flex;
+    gap: 14px;
+  }
+
+  &__link {
+    @include text-styles.text-s(600);
+    @include reset-link.reset-link;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--front-accent);
+      }
+    }
+
+    svg {
+      width: 44px;
+      height: 44px;
+    }
+  }
+}

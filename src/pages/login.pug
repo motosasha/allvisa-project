@@ -1,0 +1,26 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    isLoginPage = true
+    pageTitle = "Вход в личный кабинет"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .login
+    .login__logo
+      img.login__img(src= path.img + "logo__allvisa--color.png", alt="AllVisa")
+    .login__inner
+      h1.login__title Вход в личный кабинет
+      .card.card--login
+        form#formLogin.form(action="https://jsonplaceholder.typicode.com/posts")
+          label.form__field.form__field--login-phone
+            .form__label Номер телефона
+            input.input(type="tel", name="loginPhone", id="phone", required)
+          label.form__field
+            .form__label Пароль
+            input.input(type="password", name="password", required)
+          button.button.button--primary(type="submit") Войти
+        a.login__link(href="#") Напомнить пароль

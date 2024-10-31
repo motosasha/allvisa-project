@@ -1,0 +1,52 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Новая заявка"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .content
+    .content__header
+      h1.content__title Новая заявка
+      p.content__descr В данном разделе Вы можете отправить новую заявку.
+    form#formNewRequest.form(action="https://jsonplaceholder.typicode.com/posts")
+      .form__inner
+        .form__section
+          .form__row.form__row--four
+            label.form__field
+              .form__label Телефон
+              input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+            label.form__field
+              .form__label Имя
+              input.input(type="text", name="name", required)
+            label.form__field
+              .form__label Фамилия
+              input.input(type="text", name="lastname", required)
+            label.form__field
+              .form__label E-mail
+              input.input(type="email", name="email", placeholder="example@mail.ru", required)
+          .form__row.form__row--four
+            label.form__field
+              .form__label Вид услуг
+              +select([["Выберите услугу", ""], ["Первая", "first"], ["Вторая", "second"]], "", "type")
+            label.form__field
+              .form__label Гражданство
+              input.input(type="text", name="citizenship", required)
+            label.form__field
+              .form__label Страна поездки
+              +select([["Выберите страну", ""], ["Россия", "Russia"], ["США", "USA"]], "", "country")
+            label.form__field
+              .form__label Количество человек
+              input.input(type="text", name="amount", data-number, required)
+          .form__row.form__row--two
+            label.form__field
+              .form__label Дата начала поездки
+              input.input(type="date", name="dateStart", required)
+            label.form__field
+              .form__label Дата окончания поездки
+              input.input(type="date", name="dateEnd", required)
+        .form__footer
+          button.button.button--primary(type="submit") Отправить заявку

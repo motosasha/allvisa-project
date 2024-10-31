@@ -1,0 +1,59 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.content {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0 32px;
+  padding-bottom: 32px;
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    padding-bottom: 0;
+  }
+
+  &__header {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 8px;
+    max-width: 336px;
+
+    @media screen and (min-width: breakpoints.$screen-ti) {
+    	grid-column: 1 / 5;
+    }
+  }
+
+  &__title {
+    @include text-styles.title;
+
+    margin: 0;
+  }
+
+  &__subtitle {
+    @include text-styles.text-s(600);
+
+    margin: 0;
+  }
+
+  &__descr {
+    @include text-styles.text-xs;
+
+    margin: 0;
+    color: var(--front-secondary);
+  }
+
+  &__cols {
+    grid-column: 1 / -1;
+    margin-top: 16px;
+
+    @media screen and (min-width: breakpoints.$screen-ti) {
+      margin-top: 32px;
+    }
+  }
+
+  &__tabs {
+    grid-column: 1 / -1;
+    margin-top: 16px;
+  }
+}

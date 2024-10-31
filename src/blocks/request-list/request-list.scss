@@ -1,0 +1,56 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/reset-list";
+@use "src/scss/mixins/text-styles";
+
+.request-list {
+  $block-name: &; // #{$block-name}__element
+
+  @include reset-list.reset-list;
+
+  display: grid;
+  gap: 16px;
+
+  &__item {
+    padding: 10px;
+    background: rgb(48 87 137 / 6%);
+    border-radius: 8px;
+  }
+
+  &__line {
+    @include text-styles.text-xs;
+  }
+
+  &__title {
+    @include text-styles.text-xs(600);
+
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--divider);
+  }
+
+  &__person {
+    display: grid;
+    grid-template-columns: 40px auto;
+    gap: 2px 8px;
+    margin-top: 8px;
+  }
+
+  &__img {
+    grid-row: 1 / 3;
+    width: 40px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__name {
+    grid-column: 2;
+  }
+
+  &__link {
+    @include reset-link.reset-link;
+
+    grid-column: 2;
+    color: var(--front-accent);
+  }
+}

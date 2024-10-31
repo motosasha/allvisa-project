@@ -1,0 +1,44 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Программа лояльности"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .content
+    .content__header
+      h1.content__title Программа лояльности
+    .content__cols.content-cols.content-cols--three
+      .content-cols__col
+        .card.card--info
+          h2.card__title Ваш статус
+          .card__descr Без статуса
+      .content-cols__col
+        .card.card--info
+          h2.card__title Ваш бонусный счёт
+          .card__descr 425 баллов
+      .content-cols__col
+        .card.card--info
+          h2.card__title Использовано
+          .card__descr 24 бонусов
+      .content-cols__col.content-cols__col--full
+        .card
+          h2.card__title Информация
+          ol.card__list
+            li.card__list-item.
+              При первом заключенном договоре Вы получаете статус
+              «Любитель» и 500 бонусов на счет. И 3% скидка
+              при повторных обращениях.
+            li.card__list-item.
+              При втором заключенном договоре Вы получаете статус «Знаток»
+              и скидку 4%.
+            li.card__list-item Третий договор — 5% скидка.
+            li.card__list-item.
+              Четвертый договор и  далее 10% скидка и  статус
+              «Профессионал».
+            li.card__list-item.
+              Вы можете как копить бонусы так и оплачивать ими,
+              но не более 50% от договора.

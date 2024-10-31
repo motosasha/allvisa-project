@@ -1,0 +1,58 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Allvisa"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .content
+    .content__header
+      h1.content__title Allvisa
+      p.content__descr Добро пожаловать в личный кабинет!
+
+    .content__cols.content-cols.content-cols--three
+      .content-cols__col
+        .card
+          h2.card__title Документы на оформление
+          .card__descr Документов не найдено
+      .content-cols__col
+        .card
+          h2.card__title Услуга оказана
+          .card__descr Оказанных услуг не найдено
+      .content-cols__col
+        .card
+          h2.card__title История заявок
+          .card__descr Заявок не найдено
+
+    .content__cols.content-cols.content-cols--three
+      .content-cols__col
+        .card
+          h2.card__title Документы на оформление
+          .card__descr Документов не найдено
+      .content-cols__col
+        .card
+          h2.card__title Услуга оказана
+          .card__descr Оказанных услуг не найдено
+      .content-cols__col
+        .card
+          h2.card__title История заявок
+          ul.request-list
+            li.request-list__item
+              .request-list__line Заявка № 301647
+              .request-list__line Без направления от 22.08.2024
+              .request-list__title Менеджер
+              .request-list__person
+                img.request-list__img(src= path.assets + "img__avatar--02.jpg", alt="Татьяна Алябьева")
+                .request-list__name Татьяна Алябьева
+                a.request-list__link(href="mailto:alyabeva@allvisa.center") alyabeva@allvisa.center
+            li.request-list__item
+              .request-list__line Заявка № 288257
+              .request-list__line Виза от 22.08.2024
+              .request-list__title Менеджер
+              .request-list__person
+                img.request-list__img(src= path.assets + "img__avatar--01.jpg", alt="Алина Проскурнина")
+                .request-list__name Алина Проскурнина
+                a.request-list__link(href="mailto:proskurina@allvisa.center") proskurina@allvisa.center

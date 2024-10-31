@@ -1,0 +1,48 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Связь с менеджером"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .content
+    .content__header
+      h1.content__title Связь с менеджером
+      h2.content__subtitle Форма обратной связи
+      p.content__descr Оставьте заявку и менеджер свяжется с вами в ближайшее время
+    form#formFeedBack.form(action="https://jsonplaceholder.typicode.com/posts")
+      .form__inner.form__inner--side
+        .form__section
+          .form__row.form__row--two
+            label.form__field
+              .form__label Ваше имя
+              input.input(type="text", name="name", required)
+            label.form__field
+              .form__label Ваш e-mail
+              input.input(type="email", name="email", placeholder="example@mail.ru", required)
+          .form__row.form__row--two
+            label.form__field
+              .form__label Ваш телефон
+              input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+            label.form__field
+              .form__label Комментарий
+              textarea.textarea
+        .form__side
+          .form__side-item
+            .form__label Горячая линия
+            a.form__link(href="tel:88004444140") 8 (800) 444-41-40
+          .form__side-item
+            .form__label E-mail
+            a.form__link(href="mailto:info@allvisa.center") info@allvisa.center
+          .form__side-socials
+            a.form__link(href="#")
+              svg
+                use(href= path.icon + "icon__social--tg")
+            a.form__link(href="#")
+              svg
+                use(href= path.icon + "icon__social--wa")
+        .form__footer
+          button.button.button--primary(type="submit") Отправить

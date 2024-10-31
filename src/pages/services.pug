@@ -1,0 +1,25 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Услуги"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .content
+    .content__header
+      h1.content__title Услуги
+
+    .content__cols.content-cols.content-cols--two
+      each card in json.services
+        .content-cols__col
+          .card.card--iconed
+            .card__icon
+              svg
+                use(href= path.icon + "icon__" + card.icon)
+            .card__inner
+              h2.card__title!= card.title
+              .card__descr!= card.description
+              a.card__more(href= card.href) Подробнее

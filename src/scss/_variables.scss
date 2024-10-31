@@ -1,0 +1,75 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+@use "sass:color";
+
+:root {
+  // color primitives
+  --color-black: hsl(0deg 0% 0%);
+  --color-white: hsl(0deg 0% 100%);
+
+  --white: hsl(0deg 0% 100%);
+  --grey: hsl(0, 0%, 44%);
+  --grey-light: hsl(0 0% 76%);
+  --black: hsl(0deg 0% 9%);
+  --divider: hsl(0deg 0% 83%);
+  --blue: hsl(214deg 48% 36%);
+  --green: hsl(98deg 57% 44%);
+  --green-dark: hsl(98deg 57% 40%);
+
+  --blue-600: hsl(221deg 83% 53%);
+  --purple-600: hsl(271deg 81% 56%);
+  --red-600: hsl(0deg 72% 51%);
+  --orange-600: hsl(21deg 90% 48%);
+
+  // fonts
+  --font-sans:
+    TTCommons, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
+    "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  // base
+  --body-bg: var(--back-primary);
+  --body-color: var(--front-primary);
+  --font-base: var(--font-sans);
+  --font-size-root: 100%;
+  --font-size-base: 1rem;
+  --font-weight-base: 400;
+  --line-height-base: 1.25;
+
+  // transitions
+  --transition-fast: 0.125s ease;
+  --transition-default: 0.25s ease;
+  --transition-slow: 0.5s ease;
+  --transition-slowest: 1s ease;
+
+  // appearance
+  --front-primary: var(--black);
+  --front-secondary: var(--grey);
+  --front-tertiary: var(--grey-light);
+  --front-invert: var(--white);
+  --front-error: var(--red-600);
+  --front-accent: var(--blue);
+  --back-primary: var(--white);
+  --back-secondary: var(--grey-light);
+  --border-error: var(--red-600);
+  --outline-color: var(--blue);
+
+  --green-gradient: linear-gradient(172deg, #24348b 0%, #2f7d58 50%, #5eb12e 100%);
+
+  /* Shadow-modal */
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.08);
+
+  // z-index
+  --lib-z-index-default: 1;
+  --lib-z-index-noscript: 99;
+
+  // layout
+  --container-padding: 16px;
+  --container-max-width: 992px;
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    --container-padding: 32px;
+  }
+}

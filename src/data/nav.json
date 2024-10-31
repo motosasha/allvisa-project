@@ -1,0 +1,37 @@
+[
+	{
+		"title": "Главная",
+		"icon": "home",
+		"href": "index.html"
+	},
+	{
+		"title": "Новая заявка",
+		"icon": "new",
+		"href": "new.html"
+	},
+	{
+		"title": "Услуги",
+		"icon": "services",
+		"href": "services.html"
+	},
+	{
+		"title": "Мои данные",
+		"icon": "user",
+		"href": "my-data.html"
+	},
+	{
+		"title": "Оплата",
+		"icon": "payment",
+		"href": "payment.html"
+	},
+	{
+		"title": "Программа лояльности",
+		"icon": "loyalty",
+		"href": "loyalty.html"
+	},
+	{
+		"title": "Связь с менеджером",
+		"icon": "phone",
+		"href": "connect.html"
+	}
+]

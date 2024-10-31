@@ -1,0 +1,45 @@
+//- Все примеси в этом файле должны начинаться c имени блока (nav)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin nav(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +nav("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " nav--" + modsList[i].trim();
+      }
+    }
+
+  nav.nav(class=allMods)&attributes(attributes)
+    .nav__scroll
+      .nav__inner
+        .nav__header
+          .nav__logo
+            img.nav__img(src= path.img + "logo__allvisa--white.png", alt="AllVisa")
+          button.nav__close(data-burger)
+            svg.nav__cross
+              use(href= path.icon + "icon__close")
+        .nav__main
+          ul.nav__list
+            each item in json.nav
+              li.nav__item
+                a.nav__link(href= item.href)
+                  svg.nav__icon
+                    use(href= path.icon + "icon__" + item.icon)
+                  span.nav__title!= item.title
+        .nav__footer
+          button.nav__link
+            svg.nav__icon
+              use(href= path.icon + "icon__logout")
+            span.nav__title Выход
+          a.nav__doc(href="#") Условия использования Политика конфиденциальности
+          a.nav__doc(href="#") О приложении

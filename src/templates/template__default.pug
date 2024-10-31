@@ -1,0 +1,53 @@
+//- Basic page template
+
+include mixins.pug
+
+-
+  var isMainPage = false,
+      isLoginPage = false,
+      isFontsPreload = false,
+      isOpenGraph = false,
+      pageTitle = "title",
+      metaDescription = "description",
+      metaKeywords = "keywords",
+      json = locals,
+      path = pugPaths,
+      isProjectNav = includeProjectNav,
+      isProjectLibrary = buildLibrary
+
+block variables
+
+doctype html
+html(class="no-js", lang="ru")
+  include ./template__default-head.pug
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+
+    if isProjectNav
+      include ../service/project-nav.pug
+
+    .page(class= isLoginPage? "page--login": "")
+      if isLoginPage
+        .page__login
+          block content
+            .content-filler content-filler
+          img.page__ring.page__ring--left(src= path.img + "img__ring.svg", alt="")
+          img.page__ring.page__ring--right(src= path.img + "img__ring.svg", alt="")
+      else
+        .page__header
+          +header
+        .page__main
+          .page__side
+            +nav
+          .page__content
+            block content
+              .content-filler content-filler
+          img.page__ring.page__ring--left(src= path.img + "img__ring.svg", alt="")
+          img.page__ring.page__ring--right(src= path.img + "img__ring.svg", alt="")
+
+    block templates
+
+    script(src= path.js + "bundle.js")
+
+    block scripts

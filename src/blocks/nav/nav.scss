@@ -1,0 +1,145 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/image-cent";
+@use "src/scss/mixins/reset-button";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/reset-list";
+@use "src/scss/mixins/text-styles";
+
+.nav {
+  $block-name: &; // #{$block-name}__element
+
+  height: 100%;
+  color: var(--front-invert);
+  background: var(--green-gradient);
+  border-radius: 20px 0 0 20px;
+  box-shadow: 0 12px 24px 0 rgb(0 0 0 / 8%);
+
+  @media screen and (min-width: breakpoints.$screen-tl) {
+    border-radius: 20px;
+  }
+
+  &__scroll {
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    padding: 0 16px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      height: 100%;
+      min-height: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-left: 8px;
+  }
+
+  &__main {
+    margin: 24px 0 32px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      margin: 32px 0;
+    }
+  }
+
+  &__footer {
+    display: grid;
+    margin-top: auto;
+    padding-bottom: 24px;
+  }
+
+  &__logo {
+    width: 116px;
+    height: 42px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      width: 156px;
+      height: 57px;
+    }
+  }
+
+  &__img {
+    @include image-cent.image-cent
+  }
+
+  &__close {
+    @include reset-button.reset-button;
+
+    width: 44px;
+    height: 44px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      display: none;
+    }
+  }
+
+  &__cross {
+    @include image-cent.image-cent
+  }
+
+  &__list {
+    @include reset-list.reset-list;
+
+    display: grid;
+    gap: 12px;
+  }
+
+  &__link {
+    @include reset-button.reset-button;
+    @include reset-link.reset-link;
+    @include text-styles.text-s;
+
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 8px;
+    color: inherit;
+    line-height: 1.25;
+    background-color: transparent;
+    border-radius: 8px;
+    transition: background-color 0.25s;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgb(255 255 255 / 15%);
+      }
+    }
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+  }
+
+  &__title {
+    padding-top: 4px;
+  }
+
+  &__doc {
+    padding: 0 8px;
+    color: inherit;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    #{$block-name}__link + & {
+      margin-top: 14px;
+    }
+  }
+}
