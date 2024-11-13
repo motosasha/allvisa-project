@@ -42,6 +42,7 @@
     position: fixed;
     top: 0;
     right: 0;
+    z-index: var(--z-index-default);
     width: 280px;
     height: 100dvh;
     transform: translateX(100%);

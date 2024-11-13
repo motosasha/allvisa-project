@@ -1,14 +1,15 @@
 @use "../../scss/breakpoints";
 @use "../../scss/mixins/text-styles";
+@use "node_modules/slim-select/dist/slimselect.css";
 
 .select {
   $block-name: &; // #{$block-name}__element
 
   @include text-styles.input;
 
-  height: 44px;
+  min-height: 44px;
+  max-height: 356px;
   padding: 12px 21px 8px 11px;
-  background: url("{{icon}}icon__arrow--down-view") right 11px top 11px no-repeat, var(--back-primary);
   background-size: 24px 24px;
   border: 1px solid var(--divider);
   border-radius: 25px;
@@ -17,9 +18,8 @@
   appearance: none;
 
   @media screen and (min-width: breakpoints.$screen-tl) {
-    height: 50px;
+    min-height: 50px;
     padding: 15px 21px 11px 11px;
-    background: url("{{icon}}icon__arrow--down-view") right 11px top 14px no-repeat, var(--back-primary);
     background-size: 24px 24px;
   }
 
@@ -28,12 +28,48 @@
     border-color: var(--front-accent);
   }
 
-  &::placeholder {
-    color: var(--front-secondary);
-  }
-
   &--invalid {
     border-color: var(--border-error);
+  }
+
+  &.ss-main {
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.ss-open-below {
+      border-radius: 25px;
+      box-shadow: none;
+    }
+
+    .ss-arrow {
+      margin: auto 0;
+    }
+  }
+
+  &.ss-content {
+    margin: 5px 0 !important;
+    padding: 8px;
+    background: var(--back-primary);
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 12%);
+
+    & .ss-list .ss-option {
+      padding: 8px 8px 4px;
+      border-radius: 8px;
+
+      &.ss-highlighted,
+      &:hover,
+      &:not(.ss-disabled).ss-selected {
+        color: var(--front-primary);
+        background-color: rgb(0 0 0 / 5%);
+      }
+    }
+  }
+
+  &::placeholder {
+    color: var(--front-secondary);
   }
 
   &[disabled] {
@@ -41,17 +77,11 @@
     background-color: var(--back-secondary);
     border-color: var(--divider);
     cursor: not-allowed;
-
-    &::placeholder {
-      //color: var(--front-tertiary);
-    }
   }
 
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
-    //border: 1px solid var(--border-button);
-    //-webkit-text-fill-color: var(--back-primary);
     -webkit-box-shadow: none;
   }
 }

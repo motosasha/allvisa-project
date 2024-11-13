@@ -12,41 +12,565 @@ block content
     .content__header
       h1.content__title Новая заявка
       p.content__descr В данном разделе Вы можете отправить новую заявку.
-    form#formNewRequest.form(action="https://jsonplaceholder.typicode.com/posts")
-      .form__inner
-        .form__section
-          .form__row.form__row--four
-            label.form__field
-              .form__label Телефон
-              input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
-            label.form__field
-              .form__label Имя
-              input.input(type="text", name="name", required)
-            label.form__field
-              .form__label Фамилия
-              input.input(type="text", name="lastname", required)
-            label.form__field
-              .form__label E-mail
-              input.input(type="email", name="email", placeholder="example@mail.ru", required)
-          .form__row.form__row--four
-            label.form__field
-              .form__label Вид услуг
-              +select([["Выберите услугу", ""], ["Первая", "first"], ["Вторая", "second"]], "", "type")
-            label.form__field
-              .form__label Гражданство
-              input.input(type="text", name="citizenship", required)
-            label.form__field
-              .form__label Страна поездки
-              +select([["Выберите страну", ""], ["Россия", "Russia"], ["США", "USA"]], "", "country")
-            label.form__field
-              .form__label Количество человек
-              input.input(type="text", name="amount", data-number, required)
-          .form__row.form__row--two
-            label.form__field
-              .form__label Дата начала поездки
-              input.input(type="date", name="dateStart", required)
-            label.form__field
-              .form__label Дата окончания поездки
-              input.input(type="date", name="dateEnd", required)
-        .form__footer
-          button.button.button--primary(type="submit") Отправить заявку
+    #formSet.form-set.form
+      label.form__field
+        .form__label Вид услуг
+        +select([
+                ["Виза", "visa"],
+                ["Карта АТЭС", "ates"],
+                ["Рабочее приглашение", "work"],
+                ["Гражданство", "citizenship"],
+                ["Загранпаспорт", "intPassport"],
+                ["Приглашение для иностранцев", "invite"],
+                ["Бизнесавиация", "avia"],
+                ["Бизнес приглашение", "business"],
+                ["Медицинское приглашение", "medical"],
+                ["Другая услуга", "others"],
+        ], "", "type", "service")
+
+      .form-set__inner
+        .form-set__pane.form-set__pane--active(data-form="visa")
+          form#formVisa(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Виза")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Тип визы
+                    +select([
+                            ["Выберите тип", ""],
+                            ["Туристическая", "Туристическая"],
+                            ["Деловая", "Деловая"],
+                            ["Медицинская", "Медицинская"],
+                            ["Студенческая", "Студенческая"],
+                            ["По приглашению", "По приглашению"]
+                    ], "", "visaType")
+                  label.form__field
+                    .form__label Страна поездки
+                    +select([
+                            ["Выберите страну", ""],
+                            ["Австралия", "Австралия"],
+                            ["Австрия", "Австрия"],
+                            ["Бельгия", "Бельгия"],
+                            ["Болгария", "Болгария"],
+                            ["Великобритания", "Великобритания"],
+                            ["Венгрия", "Венгрия"],
+                            ["Вьетнам", "Вьетнам"],
+                            ["Германия", "Германия"],
+                            ["Греция", "Греция"],
+                            ["Дания", "Дания"],
+                            ["Индия", "Индия"],
+                            ["Индонезия", "Индонезия"],
+                            ["Ирландия", "Ирландия"],
+                            ["Исландия", "Исландия"],
+                            ["Испания", "Испания"],
+                            ["Италия", "Италия"],
+                            ["Канада", "Канада"],
+                            ["Кипр", "Кипр"],
+                            ["Китай", "Китай"],
+                            ["Латвия", "Латвия"],
+                            ["Литва", "Литва"],
+                            ["Мальта", "Мальта"],
+                            ["Мексика", "Мексика"],
+                            ["Нидерланды", "Нидерланды"],
+                            ["Новая Зеландия", "Новая Зеландия"],
+                            ["Норвегия", "Норвегия"],
+                            ["ОАЭ", "ОАЭ"],
+                            ["Польша", "Польша"],
+                            ["Португалия", "Португалия"],
+                            ["Румыния", "Румыния"],
+                            ["Сингапур", "Сингапур"],
+                            ["Словакия", "Словакия"],
+                            ["Словения", "Словения"],
+                            ["США", "США"],
+                            ["Тайланд", "Тайланд"],
+                            ["Франция", "Франция"],
+                            ["Финляндия", "Финляндия"],
+                            ["Хорватия", "Хорватия"],
+                            ["Чехия", "Чехия"],
+                            ["Швейцария", "Швейцария"],
+                            ["Швеция", "Швеция"],
+                            ["Шри-Ланка", "Шри-Ланка"],
+                            ["Эстония", "Эстония"],
+                            ["Южная Корея", "Южная Корея"],
+                            ["Япония", "Япония"],
+                    ], "", "country")
+                  label.form__field
+                    .form__label Количество человек
+                    input.input(type="text", name="amount", data-number, required)
+                  label.form__field
+                    .form__label Гражданство
+                    input.input(type="text", name="citizenship", required)
+                .form__row.form__row--two
+                  label.form__field
+                    .form__label Дата начала поездки
+                    input.input(type="date", name="dateStart", required)
+                  label.form__field
+                    .form__label Дата окончания поездки
+                    input.input(type="date", name="dateEnd", required)
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку
+        .form-set__pane(data-form="ates")
+          form#formAtes(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Карта АТЭС")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                .form__row.form__row--two
+                  label.form__field
+                    .form__label Количество человек
+                    input.input(type="text", name="amount", data-number, required)
+                  label.form__field
+                    .form__label Гражданство
+                    input.input(type="text", name="citizenship", required)
+                .form__row.form__row--two
+                  label.form__field
+                    .form__label Дата начала поездки
+                    input.input(type="date", name="dateStart", required)
+                  label.form__field
+                    .form__label Дата окончания поездки
+                    input.input(type="date", name="dateEnd", required)
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку
+        .form-set__pane(data-form="work")
+          form#formWork(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Рабочее приглашение")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                .form__row.form__row--three
+                  label.form__field
+                    .form__label Страна поездки
+                    +select([
+                      ["Выберите страну", ""],
+                      ["Польша", "Польша"],
+                    ], "", "country")
+                  label.form__field
+                    .form__label Количество человек
+                    input.input(type="text", name="amount", data-number, required)
+                  label.form__field
+                    .form__label Гражданство
+                    input.input(type="text", name="citizenship", required)
+                .form__row.form__row--two
+                  label.form__field
+                    .form__label Дата начала поездки
+                    input.input(type="date", name="dateStart", required)
+                  label.form__field
+                    .form__label Дата окончания поездки
+                    input.input(type="date", name="dateEnd", required)
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку
+        .form-set__pane(data-form="citizenship")
+          form#formCitizenship(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Гражданство")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                .form__row.form__row--three
+                  label.form__field
+                    .form__label Страна гражданства
+                    +select([
+                      ["Выберите страну", ""],
+                      ["Венгрия", "Венгрия"],
+                      ["Испания", "Испания"],
+                      ["Италия", "Италия"],
+                      ["Канада", "Канада"],
+                      ["Латвия", "Латвия"],
+                      ["ОАЭ", "ОАЭ"],
+                      ["Португалия", "Португалия"],
+                      ["Румыния", "Румыния"],
+                      ["Словения", "Словения"],
+                      ["США", "США"],
+                    ], "", "citizenshipCountry")
+                  label.form__field
+                    .form__label Программа
+                    +select([
+                      ["Выберите программу", ""],
+                      ["Натурализация", "Натурализация"],
+                      ["Репатриация", "Репатриация"],
+                    ], "", "program")
+                  label.form__field
+                    .form__label Судимость
+                    +select([
+                      ["Выберите значение", ""],
+                      ["Нет судимости", "Нет судимости"],
+                      ["Есть судимость", "Есть судимость"],
+                    ], "", "criminalRecord")
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку
+        .form-set__pane(data-form="intPassport")
+          form#formIntPassport(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Загранпаспорт")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                .form__row.form__row--three
+                  label.form__field
+                    .form__label Возраст
+                    +select([
+                      ["Выберите значение", ""],
+                      ["до 14 лет", "до 14 лет"],
+                      ["14-18", "14-18"],
+                      ["18+", "18+"],
+                    ], "", "age")
+                  label.form__field
+                    .form__label Военный билет
+                    +select([
+                      ["Выберите значение", ""],
+                      ["Нет", "Нет"],
+                      ["Есть", "Есть"],
+                    ], "", "militaryId")
+                  label.form__field
+                    .form__label Задолженность
+                    +select([
+                      ["Выберите значение", ""],
+                      ["Нет", "Нет"],
+                      ["Задолженности ФССМ", "Задолженности ФССМ"],
+                      ["Алименты", "Алименты"],
+                    ], "", "debt")
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку
+        .form-set__pane(data-form="invite")
+          form#formInvite(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Приглашение для иностранцев")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                .form__row.form__row--three
+                  label.form__field
+                    .form__label Тип приглашения
+                    +select([
+                      ["Выберите значение", ""],
+                      ["Туристическое", "Туристическое"],
+                      ["Трудовое", "Трудовое"],
+                      ["Деловое", "Деловое"],
+                      ["Медицинское", "Медицинское"],
+                    ], "", "inviteType")
+                  label.form__field
+                    .form__label Сроки пребывания
+                    +select([
+                      ["Выберите значение", ""],
+                      ["до 30 дней", "до 30 дней"],
+                      ["от 30 до 90 дней", "от 30 до 90 дней"],
+                      ["от 180 до 365 дней", "от 180 до 365 дней"],
+                    ], "", "stayDuration")
+                  label.form__field
+                    .form__label Страна приглашаемого
+                    input.input(type="text", name="inviteeCountry", placeholder="Бразилия", required)
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку
+        .form-set__pane(data-form="avia")
+          form#formAvia(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Бизнесавиация")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                .form__row.form__row--three
+                  label.form__field
+                    .form__label Тип услуги
+                    +select([
+                      ["Выберите значение", ""],
+                      ["Джет шеринг", "Джет шеринг"],
+                      ["Аренда самолёта", "Аренда самолёта"],
+                      ["Групповые чартеры", "Групповые чартеры"],
+                      ["Продажа ВС", "Продажа ВС"],
+                    ], "", "serviceType")
+                  label.form__field
+                    .form__label Количество пассажиров
+                    input.input(type="text", name="passengersNumber", data-number, required)
+                  label.form__field
+                    .form__label К какой дате
+                    input.input(type="date", name="whatDate", required)
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку
+        .form-set__pane(data-form="business")
+          form#formBusiness(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Бизнес приглашение")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Тип приглашения
+                    +select([
+                      ["Выберите тип", ""],
+                      ["Туристическое", "Туристическое"],
+                      ["Деловое", "Деловое"],
+                      ["Медицинское", "Медицинское"],
+                      ["Студенческое", "Студенческое"]
+                    ], "", "inviteType")
+                  label.form__field
+                    .form__label Страна поездки
+                    +select([
+                      ["Выберите страну", ""],
+                      ["Австралия", "Австралия"],
+                      ["Австрия", "Австрия"],
+                      ["Бельгия", "Бельгия"],
+                      ["Болгария", "Болгария"],
+                      ["Великобритания", "Великобритания"],
+                      ["Венгрия", "Венгрия"],
+                      ["Вьетнам", "Вьетнам"],
+                      ["Германия", "Германия"],
+                      ["Греция", "Греция"],
+                      ["Дания", "Дания"],
+                      ["Индия", "Индия"],
+                      ["Индонезия", "Индонезия"],
+                      ["Ирландия", "Ирландия"],
+                      ["Исландия", "Исландия"],
+                      ["Испания", "Испания"],
+                      ["Италия", "Италия"],
+                      ["Канада", "Канада"],
+                      ["Кипр", "Кипр"],
+                      ["Китай", "Китай"],
+                      ["Латвия", "Латвия"],
+                      ["Литва", "Литва"],
+                      ["Мальта", "Мальта"],
+                      ["Мексика", "Мексика"],
+                      ["Нидерланды", "Нидерланды"],
+                      ["Новая Зеландия", "Новая Зеландия"],
+                      ["Норвегия", "Норвегия"],
+                      ["ОАЭ", "ОАЭ"],
+                      ["Польша", "Польша"],
+                      ["Португалия", "Португалия"],
+                      ["Румыния", "Румыния"],
+                      ["Сингапур", "Сингапур"],
+                      ["Словакия", "Словакия"],
+                      ["Словения", "Словения"],
+                      ["США", "США"],
+                      ["Тайланд", "Тайланд"],
+                      ["Франция", "Франция"],
+                      ["Финляндия", "Финляндия"],
+                      ["Хорватия", "Хорватия"],
+                      ["Чехия", "Чехия"],
+                      ["Швейцария", "Швейцария"],
+                      ["Швеция", "Швеция"],
+                      ["Шри-Ланка", "Шри-Ланка"],
+                      ["Эстония", "Эстония"],
+                      ["Южная Корея", "Южная Корея"],
+                      ["Япония", "Япония"],
+                    ], "", "country")
+                  label.form__field
+                    .form__label Количество человек
+                    input.input(type="text", name="amount", data-number, required)
+                  label.form__field
+                    .form__label Гражданство
+                    input.input(type="text", name="citizenship", required)
+                .form__row.form__row--two
+                  label.form__field
+                    .form__label Дата начала поездки
+                    input.input(type="date", name="dateStart", required)
+                  label.form__field
+                    .form__label Дата окончания поездки
+                    input.input(type="date", name="dateEnd", required)
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку
+        .form-set__pane(data-form="medical")
+          form#formMedical(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Медицинское приглашение")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Тип приглашения
+                    +select([
+                      ["Выберите тип", ""],
+                      ["Туристическое", "Туристическое"],
+                      ["Деловое", "Деловое"],
+                      ["Медицинское", "Медицинское"],
+                      ["Студенческое", "Студенческое"]
+                    ], "", "inviteType")
+                  label.form__field
+                    .form__label Страна поездки
+                    +select([
+                      ["Выберите страну", ""],
+                      ["Австралия", "Австралия"],
+                      ["Австрия", "Австрия"],
+                      ["Бельгия", "Бельгия"],
+                      ["Болгария", "Болгария"],
+                      ["Великобритания", "Великобритания"],
+                      ["Венгрия", "Венгрия"],
+                      ["Вьетнам", "Вьетнам"],
+                      ["Германия", "Германия"],
+                      ["Греция", "Греция"],
+                      ["Дания", "Дания"],
+                      ["Индия", "Индия"],
+                      ["Индонезия", "Индонезия"],
+                      ["Ирландия", "Ирландия"],
+                      ["Исландия", "Исландия"],
+                      ["Испания", "Испания"],
+                      ["Италия", "Италия"],
+                      ["Канада", "Канада"],
+                      ["Кипр", "Кипр"],
+                      ["Китай", "Китай"],
+                      ["Латвия", "Латвия"],
+                      ["Литва", "Литва"],
+                      ["Мальта", "Мальта"],
+                      ["Мексика", "Мексика"],
+                      ["Нидерланды", "Нидерланды"],
+                      ["Новая Зеландия", "Новая Зеландия"],
+                      ["Норвегия", "Норвегия"],
+                      ["ОАЭ", "ОАЭ"],
+                      ["Польша", "Польша"],
+                      ["Португалия", "Португалия"],
+                      ["Румыния", "Румыния"],
+                      ["Сингапур", "Сингапур"],
+                      ["Словакия", "Словакия"],
+                      ["Словения", "Словения"],
+                      ["США", "США"],
+                      ["Тайланд", "Тайланд"],
+                      ["Франция", "Франция"],
+                      ["Финляндия", "Финляндия"],
+                      ["Хорватия", "Хорватия"],
+                      ["Чехия", "Чехия"],
+                      ["Швейцария", "Швейцария"],
+                      ["Швеция", "Швеция"],
+                      ["Шри-Ланка", "Шри-Ланка"],
+                      ["Эстония", "Эстония"],
+                      ["Южная Корея", "Южная Корея"],
+                      ["Япония", "Япония"],
+                    ], "", "country")
+                  label.form__field
+                    .form__label Количество человек
+                    input.input(type="text", name="amount", data-number, required)
+                  label.form__field
+                    .form__label Гражданство
+                    input.input(type="text", name="citizenship", required)
+                .form__row.form__row--two
+                  label.form__field
+                    .form__label Дата начала поездки
+                    input.input(type="date", name="dateStart", required)
+                  label.form__field
+                    .form__label Дата окончания поездки
+                    input.input(type="date", name="dateEnd", required)
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку
+        .form-set__pane(data-form="others")
+          form#formOthers(action="https://jsonplaceholder.typicode.com/posts")
+            input(type="hidden", name="type", value="Другая услуга")
+            .form__inner
+              .form__section
+                .form__row.form__row--four
+                  label.form__field
+                    .form__label Телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                  label.form__field
+                    .form__label Имя
+                    input.input(type="text", name="name", required)
+                  label.form__field
+                    .form__label Фамилия
+                    input.input(type="text", name="lastname", required)
+                  label.form__field
+                    .form__label E-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+              .form__footer
+                button.button.button--primary(type="submit") Отправить заявку

@@ -40,6 +40,6 @@ block content
                 use(href= path.icon + "icon__doc")
               span Важный документ.xlsx
 
-        form.form.transaction__form#formAddFile.form(action="https://jsonplaceholder.typicode.com/posts")
+        form#formAddFile.form.transaction__form.form(action="https://jsonplaceholder.typicode.com/posts")
           +input-file("", "doc", "doc")
           button.button.button--primary Загрузить

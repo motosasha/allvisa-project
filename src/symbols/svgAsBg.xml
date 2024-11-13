@@ -1,8 +1,6 @@
 <svg>
   <view id="icon__calendar-view" viewBox="0 0 24 24" />
   <use href="#icon__calendar" width="24" height="24" x="0" y="0" />
-  <view id="icon__arrow--down-view" viewBox="0 24 24 24"/>
-  <use href="#icon__arrow--down" width="24" height="24" x="0" y="24" />
-  <view id="icon__search-view" viewBox="0 48 24 24"/>
-  <use href="#icon__search" width="24" height="24" x="0" y="48" />
+  <view id="icon__search-view" viewBox="0 24 24 24"/>
+  <use href="#icon__search" width="24" height="24" x="0" y="24" />
 </svg>
