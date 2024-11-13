@@ -52,6 +52,7 @@ $is-cursor-pointer-needed: false; // don't make it true, please!
     min-width: var(--button-min-width);
     padding: var(--button-padding);
     line-height: var(--button-line-height);
+    text-align: center;
     text-decoration: none;
     border: var(--button-border-width) var(--button-border-style) var(--button-border-color);
     border-radius: var(--button-border-radius);

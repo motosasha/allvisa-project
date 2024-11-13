@@ -9,8 +9,13 @@
           "href": "index"
         },
         {
+          "title": "Transaction page",
+          "description": "страница сделки",
+          "href": "transaction"
+        },
+        {
           "title": "New request",
-          "description": "Новая заявка",
+          "description": "новая заявка",
           "href": "new"
         },
         {
@@ -20,7 +25,7 @@
         },
         {
           "title": "My data page",
-          "description": "Мои данные",
+          "description": "мои данные",
           "href": "my-data"
         },
         {
@@ -30,7 +35,7 @@
         },
         {
           "title": "Loyalty page",
-          "description": "Программа лояльности",
+          "description": "программа лояльности",
           "href": "loyalty"
         },
         {
@@ -40,7 +45,7 @@
         },
         {
           "title": "Login page",
-          "description": "Вход в личный кабинет",
+          "description": "вход в личный кабинет",
           "href": "login"
         }
       ]

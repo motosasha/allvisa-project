@@ -1,0 +1,73 @@
+@use "../../scss/mixins/text-styles";
+
+.input-file {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 42px;
+
+  &__input {
+    position: absolute;
+    inset: 0;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+
+    &::file-selector-button {
+      cursor: pointer;
+    }
+  }
+
+  &__fake-input {
+    @include text-styles.text-xs;
+
+    display: flex;
+    justify-content: center;
+    height: 42px;
+    padding: 11px;
+    color: var(--front-green);
+    background: var(--back-primary);
+    border: 1px dashed var(--border-green);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border 0.25s ease-out, outline 0.25s ease-out;
+
+    #{$block-name}__input--has-value + &,
+    &:focus {
+      outline: none;
+    }
+
+    #{$block-name}__input--invalid + & {
+      color: var(--front-error);
+      border-color: var(--border-error);
+    }
+
+    #{$block-name}__input[disabled] + & {
+      color: var(--front-tertiary);
+      border-color: var(--border-button-disabled);
+      cursor: not-allowed;
+    }
+  }
+
+  &__error {
+    padding-top: 4px;
+    color: var(--front-error);
+    text-align: center;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__title {
+    max-width: 280px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+    user-select: none;
+  }
+}

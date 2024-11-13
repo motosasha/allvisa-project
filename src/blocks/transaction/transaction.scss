@@ -1,0 +1,54 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.transaction {
+  $block-name: &; // #{$block-name}__element
+
+  max-width: 390px;
+
+  &__table {
+    @include text-styles.text-xs;
+
+    th, td {
+      padding-right: 40px;
+    }
+
+    th {
+      color: var(--front-secondary);
+      font-weight: 400;
+      text-align: left;
+    }
+  }
+
+  &__files {
+    margin-top: 32px;
+  }
+
+  &__title {
+    @include text-styles.text-m;
+
+    margin: 0;
+  }
+
+  &__descr {
+    @include text-styles.text-xs;
+
+    margin: 0;
+    color: var(--front-secondary);
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+    	br {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    margin: 14px 0;
+  }
+
+  &__form {
+    display: grid;
+    gap: 32px;
+  }
+}

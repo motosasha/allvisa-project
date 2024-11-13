@@ -27,7 +27,19 @@
   &__title {
     @include text-styles.title;
 
+    display: flex;
+    gap: 8px;
+    align-items: center;
     margin: 0;
+
+    a {
+      color: var(--front-primary);
+    }
+  }
+
+  &__back {
+    width: 21px;
+    height: 24px;
   }
 
   &__subtitle {

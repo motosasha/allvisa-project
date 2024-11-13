@@ -1,0 +1,29 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/text-styles";
+
+.doc-list {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+
+  &__item {
+    @include reset-link.reset-link;
+    @include text-styles.text-xs;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    span {
+      padding-top: 1px;
+    }
+  }
+
+  &__icon {
+    width: 21px;
+    height: 21px;
+  }
+}

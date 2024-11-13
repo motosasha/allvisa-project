@@ -12,6 +12,7 @@ ready(function () {
   const formMyData = document.querySelector("#formMyData");
   const formPayment = document.querySelector("#formPayment");
   const formFeedBack = document.querySelector("#formFeedBack");
+  const formAddFile = document.querySelector("#formAddFile");
 
   if (formNewRequest) {
     const actionUrl = formNewRequest.getAttribute("action");
@@ -402,6 +403,63 @@ ready(function () {
       ])
       .onSuccess(() => {
         const formData = new FormData(formFeedBack);
+        const plainFormData = Object.fromEntries(formData.entries());
+        fetch(actionUrl, formSendConfig(plainFormData)).then((response) => {
+          if (response.ok) {
+            alert("success");
+          } else {
+            alert("error");
+          }
+        });
+      });
+  }
+
+  if (formAddFile) {
+    const actionUrl = formAddFile.getAttribute("action");
+    const formAddFileValidate = new JustValidate(formAddFile, validationFormConfig);
+
+    formAddFileValidate
+      .addField(
+        "[name='doc']",
+        [
+          {
+            rule: "minFilesCount",
+            value: 1,
+            errorMessage: "Нужно выбрать файл",
+          },
+          {
+            rule: "maxFilesCount",
+            value: 3,
+            errorMessage: "Обязательное поле",
+          },
+          {
+            rule: "files",
+            value: {
+              files: {
+                extensions: ["xls", "xlsx", "doc", "docx", "png", "jpg", "jpeg", "pdf"],
+                maxSize: 5_000_000,
+                minSize: 1_000,
+                types: [
+                  "application/vnd.ms-excel",
+                  "application/msword",
+                  "application/pdf",
+                  "image/jpeg",
+                  "image/jpg",
+                  "image/png",
+                ],
+              },
+            },
+            errorMessage: `Файл должен быть документом (xls, xlsx, doc, docx, pdf) или изображением (png, jpg, jpeg),
+              максимальный размер файла 5mb`,
+          },
+        ],
+        {
+          errorFieldCssClass: "input-file__input--invalid",
+          errorLabelCssClass: "input-file__error",
+        },
+      )
+      .onSuccess(() => {
+        const formData = new FormData(formAddFile);
         const plainFormData = Object.fromEntries(formData.entries());
         fetch(actionUrl, formSendConfig(plainFormData)).then((response) => {
           if (response.ok) {

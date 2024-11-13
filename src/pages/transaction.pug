@@ -1,0 +1,45 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Сделка № 301647"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .content
+    .content__header
+      h1.content__title
+        a(href="/")
+          svg.content__back
+            use(href= path.icon + "icon__arrow--back")
+        | Сделка № 301647
+
+    .content__cols
+      .transaction
+        table.transaction__table
+          tr
+            th Вид услуги
+            th Статус
+          tr
+            td Виза
+            td Договор подписан
+
+        .transaction__files
+          h2.transaction__title Файлы
+          p.transaction__descr Список загруженных документов.<br>Нажмите на файл, чтобы скачать.
+
+          .doc-list.transaction__list
+            a.doc-list__item(href="doc.pdf", download)
+              svg.doc-list__icon
+                use(href= path.icon + "icon__doc")
+              span Важный документ.xlsx
+            a.doc-list__item(href="doc.pdf", download)
+              svg.doc-list__icon
+                use(href= path.icon + "icon__doc")
+              span Важный документ.xlsx
+
+        form.form.transaction__form#formAddFile.form(action="https://jsonplaceholder.typicode.com/posts")
+          +input-file("", "doc", "doc")
+          button.button.button--primary Загрузить

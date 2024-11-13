@@ -16,7 +16,7 @@ block content
     .content__cols.content-cols.content-cols--three
       .content-cols__col
         .card
-          h2.card__title Документы на оформление
+          h2.card__title Сделка на оформлении
           .card__descr Документов не найдено
       .content-cols__col
         .card
@@ -30,8 +30,22 @@ block content
     .content__cols.content-cols.content-cols--three
       .content-cols__col
         .card
-          h2.card__title Документы на оформление
-          .card__descr Документов не найдено
+          h2.card__title Сделка на оформлении
+          ul.request-list
+            li.request-list__item
+              a.request-list__link(href="transaction.html") Сделка № 301647
+              .request-list__type Виза
+              .request-list__line.request-list__line--light от 04.09.2024
+              .request-list__line.request-list__line--light США
+              .request-list__status Договор подписан
+              .request-list__sum Сумма
+                div #[span 0.00] руб.
+              .request-list__title Менеджер
+              .request-list__person
+                img.request-list__img(src= path.assets + "img__avatar--02.jpg", alt="Татьяна Алябьева")
+                .request-list__name Татьяна Алябьева
+                a.request-list__email(href="mailto:alyabeva@allvisa.center") alyabeva@allvisa.center
+              a.button.button--primary.request-list__button(href="#", target="_blank") Скачать и загрузить документы
       .content-cols__col
         .card
           h2.card__title Услуга оказана
@@ -47,7 +61,7 @@ block content
               .request-list__person
                 img.request-list__img(src= path.assets + "img__avatar--02.jpg", alt="Татьяна Алябьева")
                 .request-list__name Татьяна Алябьева
-                a.request-list__link(href="mailto:alyabeva@allvisa.center") alyabeva@allvisa.center
+                a.request-list__email(href="mailto:alyabeva@allvisa.center") alyabeva@allvisa.center
             li.request-list__item
               .request-list__line Заявка № 288257
               .request-list__line Виза от 22.08.2024
@@ -55,4 +69,4 @@ block content
               .request-list__person
                 img.request-list__img(src= path.assets + "img__avatar--01.jpg", alt="Алина Проскурнина")
                 .request-list__name Алина Проскурнина
-                a.request-list__link(href="mailto:proskurina@allvisa.center") proskurina@allvisa.center
+                a.request-list__email(href="mailto:proskurina@allvisa.center") proskurina@allvisa.center

@@ -19,6 +19,10 @@
 
   &__line {
     @include text-styles.text-xs;
+
+    &--light {
+      color: var(--front-secondary);
+    }
   }
 
   &__title {
@@ -48,9 +52,61 @@
   }
 
   &__link {
+    @include reset-link.reset-link(underline);
+
+    color: inherit;
+  }
+
+  &__email {
     @include reset-link.reset-link;
 
     grid-column: 2;
     color: var(--front-accent);
+  }
+
+  &__type {
+    @include text-styles.text-s(700);
+
+    margin: 4px 0;
+  }
+
+  &__status {
+    @include text-styles.text-xs;
+
+    position: relative;
+    margin: 8px 0;
+    padding-left: 14px;
+    color: var(--front-green);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      width: 6px;
+      height: 6px;
+      background-color: var(--back-green);
+      border-radius: 50%;
+      transform: translateY(-50%);
+      content: "";
+    }
+  }
+
+  &__sum {
+    @include text-styles.text-xs;
+
+    color: var(--front-secondary);
+
+    div {
+      color: var(--front-primary);
+      font-weight: 700;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 16px 20px 12px;
   }
 }

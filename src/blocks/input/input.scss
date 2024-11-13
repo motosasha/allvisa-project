@@ -54,8 +54,6 @@
   &[type="date"]::-webkit-calendar-picker-indicator {
     width: 20px;
     height: 20px;
-    outline: 1px solid red;
-    outline-offset: -2px;
     transform: translateX(10px);
     opacity: 0;
   }
