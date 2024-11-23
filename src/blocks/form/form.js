@@ -1158,8 +1158,6 @@ ready(function () {
       });
   }
 
-  //
-
   if (formMyData) {
     const actionUrl = formMyData.getAttribute("action");
     const formMyDataValidate = new JustValidate(formMyData, validationFormConfig);

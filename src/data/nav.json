@@ -2,36 +2,36 @@
 	{
 		"title": "Главная",
 		"icon": "home",
-		"href": "index.html"
+		"href": "lk-main.html"
 	},
 	{
 		"title": "Новая заявка",
 		"icon": "new",
-		"href": "new.html"
+		"href": "lk-new.html"
 	},
 	{
 		"title": "Услуги",
 		"icon": "services",
-		"href": "services.html"
+		"href": "lk-services.html"
 	},
 	{
 		"title": "Мои данные",
 		"icon": "user",
-		"href": "my-data.html"
+		"href": "lk-my-data.html"
 	},
 	{
 		"title": "Оплата",
 		"icon": "payment",
-		"href": "payment.html"
+		"href": "lk-payment.html"
 	},
 	{
 		"title": "Программа лояльности",
 		"icon": "loyalty",
-		"href": "loyalty.html"
+		"href": "lk-loyalty.html"
 	},
 	{
 		"title": "Связь с менеджером",
 		"icon": "phone",
-		"href": "connect.html"
+		"href": "lk-connect.html"
 	}
 ]

@@ -1,52 +1,56 @@
 {
   "section": [
     {
-      "title": "Страницы проекта",
+      "title": "Открытая часть",
+      "pages": []
+    },
+    {
+      "title": "Закрытая часть (Личный кабинет)",
       "pages": [
         {
-          "title": "Main page",
-          "description": "главная страница",
-          "href": "index"
+          "title": "LK: Login page",
+          "description": "ЛК: вход в личный кабинет",
+          "href": "lk-login"
         },
         {
-          "title": "Transaction page",
-          "description": "страница сделки",
-          "href": "transaction"
+          "title": "LK: Main page",
+          "description": "ЛК: главная страница",
+          "href": "lk-main"
         },
         {
-          "title": "New request",
-          "description": "новая заявка",
-          "href": "new"
+          "title": "LK: Transaction page",
+          "description": "ЛК: страница сделки",
+          "href": "lk-transaction"
         },
         {
-          "title": "Services page",
-          "description": "страница услуги",
-          "href": "services"
+          "title": "LK: New request",
+          "description": "ЛК: новая заявка",
+          "href": "lk-new"
         },
         {
-          "title": "My data page",
-          "description": "мои данные",
-          "href": "my-data"
+          "title": "LK: Services page",
+          "description": "ЛК: страница услуги",
+          "href": "lk-services"
         },
         {
-          "title": "Payment page",
-          "description": "оплата",
-          "href": "payment"
+          "title": "LK: My data page",
+          "description": "ЛК: мои данные",
+          "href": "lk-my-data"
         },
         {
-          "title": "Loyalty page",
-          "description": "программа лояльности",
-          "href": "loyalty"
+          "title": "LK: Payment page",
+          "description": "ЛК: оплата",
+          "href": "lk-payment"
         },
         {
-          "title": "Connect page",
-          "description": "связь с менеджером",
-          "href": "connect"
+          "title": "LK: Loyalty page",
+          "description": "ЛК: программа лояльности",
+          "href": "lk-loyalty"
         },
         {
-          "title": "Login page",
-          "description": "вход в личный кабинет",
-          "href": "login"
+          "title": "LK: Connect page",
+          "description": "ЛК: связь с менеджером",
+          "href": "lk-connect"
         }
       ]
     }
