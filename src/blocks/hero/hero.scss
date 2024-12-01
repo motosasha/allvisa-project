@@ -1,0 +1,14 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.hero {
+  $block-name: &; // #{$block-name}__element
+
+  height: 300px;
+  padding-top: 105px;
+  background-color: black;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    padding-top: 175px;
+  }
+}

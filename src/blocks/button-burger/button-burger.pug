@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (icon-burger)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin button-burger(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +button-burger("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " icon-burger--" + modsList[i].trim();
+      }
+    }
+
+  button.button-burger(class=allMods)&attributes(attributes)
+    span.button-burger__line-tl
+    span.button-burger__line-tr
+    span.button-burger__line-cl
+    span.button-burger__line-cr
+    span.button-burger__line-bl
+    span.button-burger__line-br

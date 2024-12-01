@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" href="./img/favicon/apple-touch-icon.png">
     <link rel="manifest" href="./img/favicon/site.webmanifest">
     <meta name="theme-color" content="#000000">
-    <title>Allvisa</title>
+    <title>Allvisa | Главная страница</title>
     <meta name="description" content="description">
     <meta name="keywords" content="keywords">
     <link rel="stylesheet" href="./css/style.css"><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");const navigatorErrorMessage="Could not find `userAgent` or `userAgentData` window.navigator properties to set `os`, `browser` and `version`",removeExcessMozillaAndVersion=/^mozilla\/\d\.\d\W/,browserPattern=/(\w+)\/(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)/g,engineAndVersionPattern=/^(ver|cri|gec)/,brandList=["chrome","opera","safari","edge","firefox"],unknown="Unknown";let userAgentData=window.navigator.userAgentData,userAgent=window.navigator.userAgent;const mobiles={ios:/iphone/,ipados:/ipad|macintosh/,android:/android/},desktops={windows:/win/,osx:/macintosh/,linux:/linux/},detectPlatform=(e,n)=>{if(userAgent="string"==typeof e?e:userAgent,userAgentData="string"==typeof n?n:userAgentData,userAgent){const e=userAgent.toLowerCase().replace(removeExcessMozillaAndVersion,""),n=Object.keys(mobiles).find(n=>mobiles[n].test(e)&&window.navigator.maxTouchPoints>=1),t=Object.keys(desktops).find(n=>desktops[n].test(e)),o=n||t,r=e.match(browserPattern),s=/version\/(\d+(\.\d+)*)/,a=e.match(s),i=Array.isArray(a)?a[1]:null,d=r&&(r.length>2&&!engineAndVersionPattern.test(r[1])?1:0),l=r&&r[r.length-1-(d||0)].split("/");return{os:o,browser:l&&l[0],version:i||l&&l[1]}}if(userAgentData){const e=userAgentData.platform.toLowerCase();let n;for(const e of userAgentData.brands){const t=e.brand.toLowerCase(),o=brandList.find(e=>{if(t.includes(e))return e});if(o){n={browser:o,version:e.version};break}}return{os:e,...n||{browser:unknown,version:unknown}}}return console.error(navigatorErrorMessage),{os:navigator.platform||unknown,browser:unknown,version:unknown}};let platform=detectPlatform();document.documentElement.classList.add(platform.os,platform.browser);let vh=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",vh+"px"),window.addEventListener("resize",()=>{let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",e+"px")});</script>
@@ -231,6 +231,14 @@
       <nav class="project-nav__nav" role="nav">
         <ul class="project-nav__list">
           <li class="project-nav__list-title">Открытая часть</li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="index.html">
+              <div class="project-nav__title">Main page</div>
+              <div class="project-nav__descr">главная страница</div>
+            </a><a class="project-nav__link" href="index.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
           <li class="project-nav__list-title">Закрытая часть (Личный кабинет)</li>
           <li class="project-nav__list-item"><a class="project-nav__link" href="lk-login.html">
               <div class="project-nav__title">LK: Login page</div>
@@ -322,10 +330,90 @@ document.body.addEventListener("click", (e) => {
     <div class="layout">
       <div class="layout__header">
         <div class="header">
-          <div class="header__inner"><a class="header__logo"><img class="header__img" src="./img/logo__allvisa--color.png" alt="AllVisa" /></a><button class="header__burger" data-burger="data-burger"><img class="header__icon" src="./img/icon__burger.svg" alt="Меню" /></button></div>
+          <div class="container">
+            <div class="header__inner">
+              <div class="header__top">
+                <div class="header__logo"><img class="header__img" src="./img/logo__allvisa--white.png" alt="AllVisa" /></div>
+                <div class="header__center">
+                  <nav class="header__nav">
+                    <ul class="header__nav-list">
+                      <li class="header__nav-item"><a class="header__link" href="#">О компании</a></li>
+                      <li class="header__nav-item"><a class="header__link" href="#">Блог</a></li>
+                      <li class="header__nav-item"><a class="header__link" href="#">Вакансии</a></li>
+                      <li class="header__nav-item"><a class="header__link" href="#">Контакты</a></li>
+                    </ul>
+                  </nav>
+                  <form class="header__search" id="mainSearch" action="https://jsonplaceholder.typicode.com/posts"><input class="header__search-input" type="search" placeholder="Я ищу..." /><button class="header__search-button"><svg class="header__search-icon">
+                        <use href="./img/svgSprite.svg?v=1733073109378#icon__search"></use>
+                      </svg></button></form>
+                </div>
+                <div class="header__actions"><button class="header__button header__button--search"><svg class="header__icon">
+                      <use href="./img/svgSprite.svg?v=1733073109378#icon__search"></use>
+                    </svg><span class="header__button-title">Поиск</span></button><a class="header__button header__button--payment" href="#"><svg class="header__icon">
+                      <use href="./img/svgSprite.svg?v=1733073109378#icon__wallet"></use>
+                    </svg><span class="header__button-title">Оплата услуг</span></a><a class="header__button" href="#"><svg class="header__icon">
+                      <use href="./img/svgSprite.svg?v=1733073109378#icon__user--alt"></use>
+                    </svg><span class="header__button-title">Личный кабинет</span></a></div><button class="button-burger header__burger" data-burger="data-burger"><span class="button-burger__line-tl"></span><span class="button-burger__line-tr"></span><span class="button-burger__line-cl"></span><span class="button-burger__line-cr"></span><span class="button-burger__line-bl"></span><span class="button-burger__line-br"></span></button>
+              </div>
+              <div class="header__bottom">
+                <div class="header__socials"><a class="header__social" href="#"><svg class="header__social-icon">
+                      <use href="./img/svgSprite.svg?v=1733073109378#icon__social--tg"></use>
+                    </svg></a><a class="header__social" href="#"><svg class="header__social-icon">
+                      <use href="./img/svgSprite.svg?v=1733073109378#icon__social--vk"></use>
+                    </svg></a><a class="header__social" href="#"><svg class="header__social-icon">
+                      <use href="./img/svgSprite.svg?v=1733073109378#icon__social--wa"></use>
+                    </svg></a></div>
+                <ul class="header__links">
+                  <li class="header__links-item"><a class="header__link" href="#">Оформление виз</a></li>
+                  <li class="header__links-item"><a class="header__link" href="#">Эмиграционные услуги</a></li>
+                  <li class="header__links-item"><a class="header__link" href="#">Туристические услуги</a></li>
+                  <li class="header__links-item"><a class="header__link" href="#">Услуги для Юр. Лиц</a></li>
+                  <li class="header__links-item"><button class="header__link" data-burger="data-burger">Все услуги</button></li>
+                </ul>
+                <div class="header__call"><a class="header__phone" href="tel:88004444140">8 (800) 444-41-40</a><button class="header__callback" data-callback="data-callback">обратный звонок</button></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="layout__main"></div>
+      <div class="layout__nav">
+        <div class="side-nav">
+          <div class="side-nav__close" data-burger="data-burger"><svg class="side-nav__icon">
+              <use href="./img/svgSprite.svg?v=1733073109378#icon__close"></use>
+            </svg></div>
+          <div class="side-nav__inner">
+            <div class="side-nav__links">
+              <div class="side-nav__section">
+                <div class="side-nav__title">Визовый центр</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">Оформление виз</a><a class="side-nav__link" href="#">Шенгенская виза</a><a class="side-nav__link" href="#">Карта АТЭС</a><a class="side-nav__link" href="#">Срочный загранпаспорт</a><a class="side-nav__link" href="#">Рабочая виза в Польшу</a><a class="side-nav__link" href="#">Приглашение для иностранцев в РФ</a><a class="side-nav__link" href="#">Грин карта</a></div>
+              </div>
+              <div class="side-nav__section">
+                <div class="side-nav__title">Эмиграционные услуги</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">РВП и ВНЖ в Россию</a><a class="side-nav__link" href="#">ВНЖ Словении</a><a class="side-nav__link" href="#">Вид на жительство в ОАЭ</a><a class="side-nav__link" href="#">Оформление гражданства</a></div>
+              </div>
+              <div class="side-nav__section">
+                <div class="side-nav__title">Все услуги</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">Аренда бизнес-джетов</a><a class="side-nav__link" href="#">Доставка документов</a><a class="side-nav__link" href="#"> Перевод документов на иностранный язык</a><a class="side-nav__link" href="#">Аренда автомобилей</a></div>
+              </div>
+              <div class="side-nav__section">
+                <div class="side-nav__title">Основные разделы</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">О компании</a><a class="side-nav__link" href="#">Блог</a><a class="side-nav__link" href="#">Отзывы</a><a class="side-nav__link" href="#">Вопрос-ответ</a><a class="side-nav__link" href="#">Кейсы</a><a class="side-nav__link" href="#">Cотрудничество</a><a class="side-nav__link" href="#">Контакты</a></div>
+              </div>
+            </div>
+            <div class="side-nav__call"><a class="side-nav__phone" href="tel:88004444140">8 (800) 444-41-40</a><button class="side-nav__callback" data-callback="data-callback">обратный звонок</button></div>
+            <div class="side-nav__socials"><a class="side-nav__social" href="#"><svg class="side-nav__icon">
+                  <use href="./img/svgSprite.svg?v=1733073109378#icon__social--tg"></use>
+                </svg></a><a class="side-nav__social" href="#"><svg class="side-nav__icon">
+                  <use href="./img/svgSprite.svg?v=1733073109378#icon__social--vk"></use>
+                </svg></a><a class="side-nav__social" href="#"><svg class="side-nav__icon">
+                  <use href="./img/svgSprite.svg?v=1733073109378#icon__social--wa"></use>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="layout__main">
+        <div class="hero">hero</div>
+      </div>
       <div class="layout__footer">footer</div>
     </div><script src="./js/bundle.js"></script>
   </body>

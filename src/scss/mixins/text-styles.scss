@@ -24,6 +24,12 @@
   line-height: 1.3334;
 }
 
+@mixin text-m-lh1($weight: 400) {
+  font-weight: $weight;
+  font-size: 18px;
+  line-height: 1;
+}
+
 @mixin text-s($weight: 400) {
   font-weight: $weight;
   font-size: 16px;

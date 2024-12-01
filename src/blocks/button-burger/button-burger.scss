@@ -1,0 +1,134 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/reset-button";
+@use "../../scss/mixins/focus";
+
+.button-burger {
+  $block-name: &; // #{$block-name}__element
+
+  @include reset-button.reset-button;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (hover: hover) {
+    &:hover {
+      outline-width: 3px;
+    }
+
+    &:hover &__line-tl {
+      transform: translate(-50%, -7px);
+    }
+
+    &:hover &__line-tr {
+      transform: translate(50%, -7px);
+    }
+
+    [data-state="open-nav"] &:hover &__line-tl {
+      transform: translate(-50%, 0) rotate(45deg);
+    }
+
+    [data-state="open-nav"] &:hover &__line-tr {
+      transform: translate(50%, 0) rotate(-45deg) ;
+    }
+
+    &:hover &__line-bl {
+      transform: translate(-50%, 7px);
+    }
+
+    &:hover &__line-br {
+      transform: translate(50%, 7px);
+    }
+
+    [data-state="open-nav"] &:hover &__line-bl {
+      transform: translate(-50%, 0) rotate(-45deg) ;
+    }
+
+    [data-state="open-nav"] &:hover &__line-br {
+      transform: translate(50%, 0) rotate(45deg) ;
+    }
+  }
+
+  &__line-tr,
+  &__line-tl,
+  &__line-cr,
+  &__line-cl,
+  &__line-br,
+  &__line-bl {
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 2px;
+    background-color: var(--front-invert);
+    transform: rotate(0deg);
+    opacity: 1;
+    transition: var(--transition-default);
+  }
+
+  &__line-tl,
+  &__line-cl,
+  &__line-bl {
+    border-radius: 1px 0 0 1px;
+  }
+
+  &__line-tr,
+  &__line-cr,
+  &__line-br {
+    border-radius: 0 1px 1px 0;
+  }
+
+  &__line-tl {
+    transform: translate(-50%, -6px);
+    transform-origin: right center;
+  }
+
+  &__line-tr {
+    transform: translate(50%, -6px);
+    transform-origin: left center;
+  }
+
+  &__line-cl {
+    transform: translate(-50%, 0);
+  }
+
+  &__line-cr {
+    transform: translate(50%, 0);
+  }
+
+  &__line-bl {
+    transform: translate(-50%, 6px);
+    transform-origin: right center;
+  }
+
+  &__line-br {
+    transform: translate(50%, 6px);
+    transform-origin: left center;
+  }
+
+  [data-state="open-nav"] &__line-tl {
+    transform: translate(-50%, 0) rotate(45deg);
+  }
+
+  [data-state="open-nav"] &__line-tr {
+    transform: translate(50%, 0) rotate(-45deg) ;
+  }
+
+  [data-state="open-nav"] &__line-cl {
+    transform: translate(-100%, 0);
+    opacity: 0;
+  }
+
+  [data-state="open-nav"] &__line-cr {
+    transform: translate(100%, 0);
+    opacity: 0;
+  }
+
+  [data-state="open-nav"] &__line-bl {
+    transform: translate(-50%, 0) rotate(-45deg) ;
+  }
+
+  [data-state="open-nav"] &__line-br {
+    transform: translate(50%, 0) rotate(45deg) ;
+  }
+}

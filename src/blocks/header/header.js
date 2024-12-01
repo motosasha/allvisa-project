@@ -4,9 +4,11 @@ import { openNav } from "../../js/common/openNav.js";
 ready(function () {
   const headerHost = document.querySelector(".header");
   if (headerHost) {
-    const headerBurger = headerHost.querySelector("[data-burger]");
-    headerBurger.addEventListener("click", () => {
-      openNav(document.body, "open-nav");
+    const burgerTriggers = document.querySelectorAll("[data-burger]");
+    burgerTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        openNav(document.body, "open-nav");
+      });
     });
   }
 });

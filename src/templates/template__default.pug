@@ -4,15 +4,15 @@ include mixins.pug
 
 -
   var isMainPage = false,
-          isFontsPreload = false,
-          isOpenGraph = false,
-          pageTitle = "title",
-          metaDescription = "description",
-          metaKeywords = "keywords",
-          json = locals,
-          path = pugPaths,
-          isProjectNav = includeProjectNav,
-          isProjectLibrary = buildLibrary
+      isFontsPreload = false,
+      isOpenGraph = false,
+      pageTitle = "title",
+      metaDescription = "description",
+      metaKeywords = "keywords",
+      json = locals,
+      path = pugPaths,
+      isProjectNav = includeProjectNav,
+      isProjectLibrary = buildLibrary
 
 block variables
 
@@ -29,6 +29,8 @@ html(class="no-js", lang="ru")
     .layout
       .layout__header
         +header
+      .layout__nav
+        +side-nav
       .layout__main
         block content
           .content-filler content-filler

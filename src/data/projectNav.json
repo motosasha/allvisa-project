@@ -2,7 +2,13 @@
   "section": [
     {
       "title": "Открытая часть",
-      "pages": []
+      "pages": [
+        {
+          "title": "Main page",
+          "description": "главная страница",
+          "href": "index"
+        }
+      ]
     },
     {
       "title": "Закрытая часть (Личный кабинет)",

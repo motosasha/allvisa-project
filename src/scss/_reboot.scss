@@ -28,6 +28,11 @@ body {
   font-family: var(--font-base);
   line-height: var(--line-height-base);
   background-color: var(--body-bg);
+
+  &[data-state="open-nav"] {
+    padding-right: var(--css-scroll-size);
+    overflow: hidden;
+  }
 }
 
 svg {

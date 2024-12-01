@@ -1,0 +1,159 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-button";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/scroll";
+@use "src/scss/mixins/text-styles";
+
+.side-nav {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  height: 100dvh;
+  padding-top: 127px;
+  color: var(--front-invert);
+  background-image: var(--green-gradient-vertical);
+  background-position: 25% 0;
+  background-size: 150% 100%;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    height: auto;
+    padding: 0;
+    background-size: cover;
+  }
+
+  &__inner {
+    @include scroll.scroll-vertical;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 var(--container-padding) 50px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 44px 28px 28px;
+    }
+  }
+
+  &__links {
+    display: grid;
+    gap: 30px;
+    margin-bottom: auto;
+  }
+
+  &__section {
+    display: grid;
+    gap: 12px;
+  }
+
+  &__title {
+    @include text-styles.text-m(600);
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__link {
+    @include text-styles.text-xs;
+    @include reset-link.reset-link;
+
+    padding: 3px 7px 1px;
+    border: 1px solid var(--white-o50);
+    border-radius: 24px;
+    transition: background-color var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--back-white-o10);
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: none;
+    }
+  }
+
+  &__social {
+    width: 40px;
+    height: 40px;
+    color: var(--front-invert);
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__call {
+    display: grid;
+    gap: 4px;
+    justify-items: center;
+    margin: 75px 0 50px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    @include reset-link.reset-link;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__callback {
+    @include reset-button.reset-button;
+
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 24px;
+    right: 20px;
+    z-index: var(--z-index-default);
+    display: none;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    cursor: pointer;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	display: block;
+    }
+  }
+}

@@ -1,41 +1,342 @@
 @use "src/scss/breakpoints";
 @use "src/scss/mixins/image-cent";
 @use "src/scss/mixins/reset-button";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/reset-list";
 @use "src/scss/mixins/text-styles";
 
 .header {
   $block-name: &; // #{$block-name}__element
 
-  border-bottom: 1px solid var(--border-primary);
+  color: var(--front-invert);
 
-  &__inner {
+  [data-state="open-nav"] & {
+    padding-right: var(--css-scroll-size);
+  }
+
+  &--lk {
+    border-bottom: 1px solid var(--border-primary);
+  }
+
+  &--lk &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 24px 16px;
   }
 
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0 19px;
+    border-bottom: 1px solid var(--border-white-semitransparent);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 32px 0 19px;
+    }
+  }
+
   &__logo {
     display: block;
-    width: 126px;
-    height: 46px;
-    aspect-ratio: 126 / 46;
+    width: 186px;
+    height: 68px;
+    aspect-ratio: 186 / 68;
+
+    &[href] {
+      transition: opacity var(--transition-default);
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    #{$block-name}--lk & {
+      display: block;
+      width: 126px;
+      height: 46px;
+      aspect-ratio: 126 / 46;
+    }
   }
 
   &__img {
     @include image-cent.image-cent
   }
 
-  &__burger {
+  &__center {
+    display: none;
+    gap: 20px;
+    align-items: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	display: flex;
+    }
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: clamp(1.25rem, -18.75rem + 25vw, 3.75rem);
+    margin: 0;
+    padding: 14px 24px 8px;
+    background-color: var(--white-o10);
+    border-radius: 24px;
+  }
+
+  &__link {
+    @include reset-button.reset-button;
+    @include reset-link.reset-link;
+    @include text-styles.text-m-lh1(500);
+
+    color: var(--front-invert);
+    cursor: pointer;
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__search {
+    position: absolute;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      position: relative;
+      width: clamp(13.4375rem, -17.0625rem + 38.125vw, 17.25rem);
+    }
+  }
+
+  &__search-input {
+    @include text-styles.text-m-lh1;
+
+    display: block;
+    width: 100%;
+    height: 42px;
+    padding: 14px 48px 10px 12px;
+    background-color: var(--white-o10);
+    border: none;
+    border-radius: 24px;
+    outline: none;
+    appearance: none;
+
+    &--has-value,
+    &:focus {
+      border-color: var(--front-accent);
+    }
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    &::placeholder {
+      @include text-styles.text-m-lh1;
+
+      color: var(--front-secondary);
+      opacity: 1;
+    }
+  }
+
+  &__search-button {
     @include reset-button.reset-button;
 
-    width: 44px;
-    height: 44px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    padding: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--back-white-o10);
+      }
+    }
+  }
+
+  &__search-icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 14px;
+    margin: 0 14px 0 auto;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 11px;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    @include reset-link.reset-link;
+    @include reset-button.reset-button;
+    @include text-styles.text-m-lh1(500);
+
+    padding: 8px;
+    color: var(--front-primary);
+    background-color: var(--back-primary);
+    border-radius: 50%;
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 18px 12px 12px;
+      border-radius: 24px;
+    }
+
+    &--payment {
+      display: none;
+    }
+
+    &--search {
+      color: var(--front-invert);
+      background-color: var(--back-white-o10);
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        display: none;
+      }
+    }
+  }
+
+  &__button-title {
+    display: none;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	display: block;
+    }
   }
 
   &__icon {
     display: block;
+    width: 24px;
+    height: 24px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      width: 16px;
+      height: 16px;
+    }
+
+    #{$block-name}--lk & {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__burger {
+    width: 40px;
+    height: 40px;
+    margin-right: -5px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: none;
+    }
+
+    #{$block-name}--lk & {
+      @include reset-button.reset-button;
+
+      width: 44px;
+      height: 44px;
+      margin: 0;
+    }
+  }
+
+  &__bottom {
+    display: none;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	display: flex;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+  }
+
+  &__social {
+    width: 40px;
+    height: 40px;
+    color: var(--front-invert);
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &__social-icon {
     width: 100%;
     height: 100%;
+  }
+
+  &__links {
+    @include reset-list.reset-list;
+
+    display: flex;
+    gap: clamp(1.25rem, -18.75rem + 25vw, 3.75rem);
+    align-items: center;
+    margin: 0;
+  }
+
+  &__call {
+    display: grid;
+    gap: 4px;
+    justify-items: end;
+  }
+
+  &__phone {
+    @include reset-link.reset-link;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__callback {
+    @include reset-button.reset-button;
+
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
 }
