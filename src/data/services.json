@@ -47,7 +47,6 @@
     "href": "#",
     "icon": "mail"
   },
-
   {
     "title": "Страхование",
     "description": "Все виды страхование на одном сайте",
@@ -97,7 +96,7 @@
     "icon": "right"
   },
   {
-    "title": "Крин карта США",
+    "title": "Грин-карта США",
     "description": "Помощь в оформлении и получении Green Card США",
     "href": "#",
     "icon": "phone-user"
