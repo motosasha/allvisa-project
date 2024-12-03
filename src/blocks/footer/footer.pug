@@ -1,0 +1,76 @@
+//- Все примеси в этом файле должны начинаться c имени блока (footer)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin footer(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +footer("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " footer--" + modsList[i].trim();
+      }
+    }
+
+  .footer(class=allMods)&attributes(attributes)
+    .container
+      .footer__inner
+        .footer__top
+          if isMainPage
+            .footer__logo
+              img.footer__img(src= path.img + "logo__allvisa--white.svg", alt="AllVisa")
+          else
+            a.footer__logo(href="/")
+              img.footer__img(src= path.img + "logo__allvisa--white.svg", alt="AllVisa")
+          .footer__socials
+            a.footer__social(href="#")
+              .footer__social-inner
+                svg.footer__icon
+                  use(href= path.icon + "icon__social--tg-2")
+            a.footer__social(href="#")
+              .footer__social-inner
+                svg.footer__icon
+                  use(href= path.icon + "icon__social--yt")
+            a.footer__social(href="#")
+              .footer__social-inner
+                svg.footer__icon
+                  use(href= path.icon + "icon__social--vk-2")
+        .footer__main
+          .footer__rating
+            .rating
+              .rating__top
+                .rating__num
+                  span 4,9
+                .rating__inner
+                  .rating__stars
+                    each val in [1, 2, 3, 4, 5]
+                      svg.rating__star
+                        use(href= path.icon + "icon__star")
+                  .rating__descr 286 отзывов, 327 оценки
+              .rating__row
+                img(src= path.img + "img__yandex-map.png", alt="Yandex Map")
+                img(src= path.img + "img__2gis.png", alt="2Gis")
+          .footer__nav
+            each section in json.footerNav
+              .footer__section
+                .footer__title!= section.title
+                .footer__row
+                  each link in section.list
+                    a.footer__link(href= link.href)!= link.title
+        .footer__bottom
+          .footer__line.footer__line--strong ООО «ГК Бизнес Обеспечение»
+          .footer__lines
+            .footer__line ИНН 7709995951
+            .footer__line ОГРН 1177746337922
+            .footer__line КПП 770901001
+            .footer__line © 2017–2024 г. Визовый центр ALLVISA
+          .footer__docs
+            a.footer__doc(href="#") Политика конфиденциальности
+            a.footer__doc(href="#") Услуги для юр. лиц

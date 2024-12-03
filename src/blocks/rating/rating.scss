@@ -1,0 +1,59 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.rating {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 24px;
+
+  &__top {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__num {
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 32px;
+    // stylelint-disable
+    text-edge: cap;
+    leading-trim: both;
+    // stylelint-enable
+
+    span {
+      display: block;
+      transform: translateY(8px);
+    }
+  }
+
+  &__inner {
+    display: grid;
+    gap: 7px;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__star {
+    width: 12px;
+    height: 12px;
+  }
+
+  &__descr {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  &__row {
+    display: flex;
+    gap: 15px;
+
+    img {
+      width: auto;
+      height: 24px;
+    }
+  }
+}
