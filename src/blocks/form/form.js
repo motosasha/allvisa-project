@@ -23,6 +23,7 @@ ready(function () {
   const formBusiness = document.querySelector("#formBusiness");
   const formMedical = document.querySelector("#formMedical");
   const formOthers = document.querySelector("#formOthers");
+  const formCallback = document.querySelector("#formCallback");
 
   if (formVisa) {
     const actionUrl = formVisa.getAttribute("action");
@@ -1485,6 +1486,77 @@ ready(function () {
         fetch(actionUrl, formSendConfig(plainFormData)).then((response) => {
           if (response.ok) {
             alert("success");
+          } else {
+            alert("error");
+          }
+        });
+      });
+  }
+
+  if (formCallback) {
+    const actionUrl = formCallback.getAttribute("action");
+    const formCallbackValidate = new JustValidate(formCallback, validationFormConfig);
+
+    formCallbackValidate
+      .addField("input[name='phone']", [
+        {
+          rule: "required",
+          errorMessage: "Обязательное поле",
+        },
+        {
+          rule: "customRegexp",
+          value: /^(\+7)[\s-]\(([0-9]{3})\)[\s-]([0-9]{3})[\s-]([0-9]{2})[\s-]([0-9]{2})/gi,
+          errorMessage: "Неверное значение",
+        },
+      ])
+      .addField("input[name='name']", [
+        {
+          rule: "required",
+          errorMessage: "Обязательное поле",
+        },
+        {
+          rule: "minLength",
+          value: 2,
+          errorMessage: "Значение слишком короткое",
+        },
+        {
+          rule: "maxLength",
+          value: 50,
+          errorMessage: "Значение слишком длинное",
+        },
+      ])
+      .addField("input[name='email']", [
+        {
+          rule: "required",
+          errorMessage: "Обязательное поле",
+        },
+        {
+          rule: "email",
+          errorMessage: "Неверное значение",
+        },
+      ])
+      .addField("input[name='city']", [
+        {
+          rule: "required",
+          errorMessage: "Обязательное поле",
+        },
+        {
+          rule: "minLength",
+          value: 2,
+          errorMessage: "Значение слишком короткое",
+        },
+        {
+          rule: "maxLength",
+          value: 50,
+          errorMessage: "Значение слишком длинное",
+        },
+      ])
+      .onSuccess(() => {
+        const formData = new FormData(formCallback);
+        const plainFormData = Object.fromEntries(formData.entries());
+        fetch(actionUrl, formSendConfig(plainFormData)).then((response) => {
+          if (response.ok) {
+            location.replace("/thanks/");
           } else {
             alert("error");
           }

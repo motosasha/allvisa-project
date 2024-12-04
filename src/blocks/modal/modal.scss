@@ -1,0 +1,68 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    // stylelint-disable
+    .form__row--two {
+      gap: 30px 20px;
+    }
+
+    .form__section {
+      gap: 32px;
+    }
+
+    .form__label {
+      font-size: 24px;
+    }
+
+    .input {
+      padding: 10px 16px 6px;
+      font-size: 28px;
+    }
+    // stylelint-enable
+  }
+
+  &__window {
+    position: relative;
+    background-color: var(--back-primary);
+    border-radius: 24px;
+
+    &--callback {
+      display: grid;
+      //gap: 32px;
+      width: calc(100% - 32px);
+      max-width: 1166px;
+      padding: 20px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        padding: 40px;
+      }
+    }
+
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      justify-self: center;
+      max-width: 526px;
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    margin-top: 8px;
+
+    @media screen and (min-width: breakpoints.$screen-ti) {
+    	justify-self: start;
+    }
+  }
+}

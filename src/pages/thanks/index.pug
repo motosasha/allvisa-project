@@ -1,4 +1,4 @@
-extends ../templates/template__default.pug
+extends ../../templates/template__default.pug
 
 block variables
   -
@@ -22,3 +22,5 @@ block content
         h2.thanks__subtitle Подписывайтесь на нас в соц. сетях:
         +socials
         a.button.button--primary.button--large.thanks__button(href="/") Вернуться на сайт
+    img.thanks__ring.thanks__ring--left(src= path.img + "img__ring.svg", alt="")
+    img.thanks__ring.thanks__ring--right(src= path.img + "img__ring.svg", alt="")

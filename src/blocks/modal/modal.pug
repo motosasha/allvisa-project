@@ -1,0 +1,45 @@
+//- Все примеси в этом файле должны начинаться c имени блока (popup)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin modal(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +popup("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " popup--" + modsList[i].trim();
+      }
+    }
+
+  #callback.hystmodal.modal(class=allMods, aria-hidden="true")&attributes(attributes)
+    .hystmodal__wrap
+      .hystmodal__window.modal__window.modal__window--callback(role="dialog", aria-modal="true")
+        h2.modal__title Введите свои контактные данные, чтобы отправить заявку
+        form#formCallback.form(action="https://jsonplaceholder.typicode.com/posts")
+          .form__inner
+            .form__section
+              .form__row.form__row--two
+                label.form__field
+                  .form__label Введите Имя
+                  input.input(type="text", name="name", placeholder="Иванов Иван", required)
+                label.form__field
+                  .form__label Введите номер телефона
+                  input.input(type="tel", name="phone", placeholder="+7 (___) ___-__-__", data-phone-field, required)
+                label.form__field
+                  .form__label Введите E-mail
+                  input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                label.form__field
+                  .form__label Город
+                  input.input(type="text", name="city", placeholder="Москва", required)
+              .form__small.
+                Нажимая кнопку "Узнать стоимость", я подтверждаю, что я ознакомлен и согласен с условиями
+                #[a(href="#", target="_blank") политики обработки персональных данных]
+              button.button.button--primary.button--large.modal__button(type="submit") Отправить заявку

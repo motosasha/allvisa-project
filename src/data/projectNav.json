@@ -11,7 +11,7 @@
         {
           "title": "Thanks",
           "description": "спасибо за заявку",
-          "href": "thanks"
+          "href": "/thanks/index"
         }
       ]
     },

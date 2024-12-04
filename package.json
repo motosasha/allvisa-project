@@ -97,7 +97,8 @@
     "intl-tel-input": "^24.6.0",
     "just-validate": "^4.3.0",
     "sanitize.css": "^13.0.0",
-    "slim-select": "^2.9.2"
+    "slim-select": "^2.9.2",
+    "tua-body-scroll-lock": "^1.4.1"
   },
   "browserslist": [
     "> 1%",

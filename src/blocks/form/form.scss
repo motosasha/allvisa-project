@@ -139,4 +139,20 @@
       height: 44px;
     }
   }
+
+  &__small {
+    max-width: 745px;
+    font-size: 16px;
+    line-height: 1.1;
+
+    @media screen and (min-width: breakpoints.$screen-ti) {
+      font-size: 18px;
+    }
+
+    a {
+      @include reset-link.reset-link;
+
+      color: var(--front-green);
+    }
+  }
 }

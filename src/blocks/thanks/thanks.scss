@@ -4,11 +4,13 @@
 .thanks {
   $block-name: &; // #{$block-name}__element
 
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 100svh;
   padding-top: var(--header-height);
+  overflow: hidden;
   color: var(--front-invert);
   background: url("/{{assets}}/img__bg--thanks.webp") no-repeat 80% 0, #01468b;
   background-size: cover;
@@ -22,6 +24,8 @@
   }
 
   &__inner {
+    position: relative;
+    z-index: var(--z-index-default);
     display: flex;
     flex-direction: column;
     max-width: 976px;
@@ -91,6 +95,36 @@
 
     @media screen and (min-width: breakpoints.$screen-d) {
       margin-top: 44px;
+    }
+  }
+
+  &__ring {
+    position: absolute;
+    pointer-events: none;
+    aspect-ratio: 1 / 1;
+
+    &--left {
+      top: 124px;
+      left: -92px;
+      width: 142px;
+
+      @media screen and (min-width: breakpoints.$screen-tl) {
+        top: 75px;
+        left: -226px;
+        width: 293px;
+      }
+    }
+
+    &--right {
+      right: -187px;
+      bottom: 163px;
+      width: 231px;
+
+      @media screen and (min-width: breakpoints.$screen-tl) {
+        right: -317px;
+        bottom: 86px;
+        width: 483px;
+      }
     }
   }
 }

@@ -1,0 +1,74 @@
+.hystmodal {
+  $block-name: &; // #{$block-name}__element
+
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  overflow: hidden;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 1;
+  pointer-events: none;
+  -webkit-overflow-scrolling: touch;
+
+  &--active {
+    opacity: 1;
+  }
+
+  &--moved,
+  &--active {
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    background-color: rgba(0 0 0 / 30%);
+    backdrop-filter: blur(10px);
+  }
+
+  &__window {
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 100%;
+    overflow: visible;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+
+    #{$block-name}--active & {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  &__shadow {
+    position: fixed;
+    inset: 0;
+    z-index: 98;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    border: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+
+    &--show {
+      opacity: 0.6;
+      pointer-events: auto;
+    }
+  }
+}

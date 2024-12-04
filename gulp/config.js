@@ -105,9 +105,9 @@ export const config = {
   paths: {
     pug: {
       root: "./",
-      js: `./${htmlPathObj.js}js/`,
-      css: `./${htmlPathObj.css}css/`,
-      img: `./${htmlPathObj.img}img/`,
+      js: `/${htmlPathObj.js}js/`,
+      css: `/${htmlPathObj.css}css/`,
+      img: `/${htmlPathObj.img}img/`,
       fonts: `./${htmlPathObj.fonts}fonts/`,
       assets: `./${htmlPathObj.assets}assets/`,
       get icon() {
@@ -161,7 +161,7 @@ export const config = {
     "src/scss/reboot.scss",
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
-    // "src/scss/vendor.scss",
+    "src/scss/vendor.scss",
     "src/scss/fonts.scss",
     // "src/scss/animations.scss"
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
