@@ -1,0 +1,24 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Allvisa | Спасибо за заявку"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .thanks
+    .container
+      .thanks__inner
+        h1.thanks__title Спасибо за заявку
+        p.thanks__descr Мы свяжемся с Вами в ближайшее время.
+        .thanks__schedule
+          .thanks__schedule-title График работы офиса:
+          .thanks__schedule-descr.
+            Пн-пт 9:00 — 18:00#[br]
+            Сб-Вс: 9:00 — 16:00
+        p.thanks__descr Если Вы оставили заявку в нерабочее время, мы перезвоним Вам на следующий рабочий день.
+        h2.thanks__subtitle Подписывайтесь на нас в соц. сетях:
+        +socials
+        a.button.button--primary.button--large.thanks__button(href="/") Вернуться на сайт

@@ -1,0 +1,96 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.thanks {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  padding-top: var(--header-height);
+  color: var(--front-invert);
+  background: url("/{{assets}}/img__bg--thanks.webp") no-repeat 80% 0, #01468b;
+  background-size: cover;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    background-position: center;
+  }
+
+  .container {
+    min-height: 100%;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    max-width: 976px;
+    height: 100%;
+    padding: 80px 0;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+    	align-items: start;
+      padding: 50px 0 88px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 5px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin: 0;
+      font-size: 94px;
+    }
+  }
+
+  &__subtitle {
+    @include text-styles.thanks(600) {
+      margin: 21px 0 12px;
+    };
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin: 33px 0 28px;
+    }
+  }
+
+  &__descr {
+    @include text-styles.thanks {
+      margin: 0;
+    };
+  }
+
+  &__schedule {
+    margin: 14px 0 19px;
+    padding: 21px;
+    background: rgb(50 50 50 / 24%);
+    border: 1px solid var(--front-invert);
+    border-radius: 24px;
+    backdrop-filter: blur(8px);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin: 33px 0 47px;
+      padding: 23px 63px 23px 23px;
+    }
+  }
+
+  &__schedule-title {
+    @include text-styles.thanks(600) {
+      margin-bottom: 6px;
+    };
+  }
+
+  &__schedule-descr {
+    @include text-styles.thanks;
+  }
+
+  &__button {
+    margin-top: 32px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-top: 44px;
+    }
+  }
+}

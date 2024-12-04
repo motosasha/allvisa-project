@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" href="./img/favicon/apple-touch-icon.png">
     <link rel="manifest" href="./img/favicon/site.webmanifest">
     <meta name="theme-color" content="#000000">
-    <title>Услуги</title>
+    <title>Allvisa | Спасибо за заявку</title>
     <meta name="description" content="description">
     <meta name="keywords" content="keywords">
     <link rel="stylesheet" href="./css/style.css"><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");const navigatorErrorMessage="Could not find `userAgent` or `userAgentData` window.navigator properties to set `os`, `browser` and `version`",removeExcessMozillaAndVersion=/^mozilla\/\d\.\d\W/,browserPattern=/(\w+)\/(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)/g,engineAndVersionPattern=/^(ver|cri|gec)/,brandList=["chrome","opera","safari","edge","firefox"],unknown="Unknown";let userAgentData=window.navigator.userAgentData,userAgent=window.navigator.userAgent;const mobiles={ios:/iphone/,ipados:/ipad|macintosh/,android:/android/},desktops={windows:/win/,osx:/macintosh/,linux:/linux/},detectPlatform=(e,n)=>{if(userAgent="string"==typeof e?e:userAgent,userAgentData="string"==typeof n?n:userAgentData,userAgent){const e=userAgent.toLowerCase().replace(removeExcessMozillaAndVersion,""),n=Object.keys(mobiles).find(n=>mobiles[n].test(e)&&window.navigator.maxTouchPoints>=1),t=Object.keys(desktops).find(n=>desktops[n].test(e)),o=n||t,r=e.match(browserPattern),s=/version\/(\d+(\.\d+)*)/,a=e.match(s),i=Array.isArray(a)?a[1]:null,d=r&&(r.length>2&&!engineAndVersionPattern.test(r[1])?1:0),l=r&&r[r.length-1-(d||0)].split("/");return{os:o,browser:l&&l[0],version:i||l&&l[1]}}if(userAgentData){const e=userAgentData.platform.toLowerCase();let n;for(const e of userAgentData.brands){const t=e.brand.toLowerCase(),o=brandList.find(e=>{if(t.includes(e))return e});if(o){n={browser:o,version:e.version};break}}return{os:e,...n||{browser:unknown,version:unknown}}}return console.error(navigatorErrorMessage),{os:navigator.platform||unknown,browser:unknown,version:unknown}};let platform=detectPlatform();document.documentElement.classList.add(platform.os,platform.browser);let vh=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",vh+"px"),window.addEventListener("resize",()=>{let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",e+"px")});</script>
@@ -335,316 +335,197 @@ document.body.addEventListener("click", (e) => {
 })
 </script><!-- delete this block if production-->
     </div>
-    <div class="page">
-      <div class="page__header">
-        <div class="header header--lk">
-          <div class="header__inner"><a class="header__logo"><img class="header__img" src="./img/logo__allvisa--color.png" alt="AllVisa" /></a><button class="header__burger" data-burger="data-burger"><img class="header__icon" src="./img/icon__burger.svg" alt="Меню" /></button></div>
-        </div>
-      </div>
-      <div class="page__main">
-        <div class="page__side">
-          <nav class="nav">
-            <div class="nav__scroll">
-              <div class="nav__inner">
-                <div class="nav__header">
-                  <div class="nav__logo"><img class="nav__img" src="./img/logo__allvisa--white.svg" alt="AllVisa" /></div><button class="nav__close" data-burger="data-burger"><svg class="nav__cross">
-                      <use href="./img/svgSprite.svg?v=1733298122915#icon__close"></use>
-                    </svg></button>
+    <div class="layout">
+      <div class="layout__header">
+        <div class="header">
+          <div class="container">
+            <div class="header__inner">
+              <div class="header__top"><a class="header__logo" href="/"><img class="header__img" src="./img/logo__allvisa--white.svg" alt="AllVisa" /></a>
+                <div class="header__center">
+                  <nav class="header__nav">
+                    <ul class="header__nav-list">
+                      <li class="header__nav-item"><a class="header__link" href="#">О компании</a></li>
+                      <li class="header__nav-item"><a class="header__link" href="#">Блог</a></li>
+                      <li class="header__nav-item"><a class="header__link" href="#">Вакансии</a></li>
+                      <li class="header__nav-item"><a class="header__link" href="#">Контакты</a></li>
+                    </ul>
+                  </nav>
+                  <form class="header__search" id="mainSearch" action="https://jsonplaceholder.typicode.com/posts"><input class="header__search-input" type="search" placeholder="Я ищу..." /><button class="header__search-button"><svg class="header__search-icon">
+                        <use href="./img/svgSprite.svg?v=1733298123150#icon__search"></use>
+                      </svg></button></form>
                 </div>
-                <div class="nav__main">
-                  <ul class="nav__list">
-                    <li class="nav__item"><a class="nav__link" href="lk-main.html"><svg class="nav__icon">
-                          <use href="./img/svgSprite.svg?v=1733298122915#icon__home"></use>
-                        </svg><span class="nav__title">Главная</span></a></li>
-                    <li class="nav__item"><a class="nav__link" href="lk-new.html"><svg class="nav__icon">
-                          <use href="./img/svgSprite.svg?v=1733298122915#icon__new"></use>
-                        </svg><span class="nav__title">Новая заявка</span></a></li>
-                    <li class="nav__item"><a class="nav__link" href="lk-services.html"><svg class="nav__icon">
-                          <use href="./img/svgSprite.svg?v=1733298122915#icon__services"></use>
-                        </svg><span class="nav__title">Услуги</span></a></li>
-                    <li class="nav__item"><a class="nav__link" href="lk-my-data.html"><svg class="nav__icon">
-                          <use href="./img/svgSprite.svg?v=1733298122915#icon__user"></use>
-                        </svg><span class="nav__title">Мои данные</span></a></li>
-                    <li class="nav__item"><a class="nav__link" href="lk-payment.html"><svg class="nav__icon">
-                          <use href="./img/svgSprite.svg?v=1733298122915#icon__payment"></use>
-                        </svg><span class="nav__title">Оплата</span></a></li>
-                    <li class="nav__item"><a class="nav__link" href="lk-loyalty.html"><svg class="nav__icon">
-                          <use href="./img/svgSprite.svg?v=1733298122915#icon__loyalty"></use>
-                        </svg><span class="nav__title">Программа лояльности</span></a></li>
-                    <li class="nav__item"><a class="nav__link" href="lk-connect.html"><svg class="nav__icon">
-                          <use href="./img/svgSprite.svg?v=1733298122915#icon__phone"></use>
-                        </svg><span class="nav__title">Связь с менеджером</span></a></li>
-                  </ul>
-                </div>
-                <div class="nav__footer"><button class="nav__link"><svg class="nav__icon">
-                      <use href="./img/svgSprite.svg?v=1733298122915#icon__logout"></use>
-                    </svg><span class="nav__title">Выход</span></button><a class="nav__doc" href="#">Условия использования Политика конфиденциальности</a><a class="nav__doc" href="#">О приложении</a></div>
+                <div class="header__actions"><button class="header__button header__button--search"><svg class="header__icon">
+                      <use href="./img/svgSprite.svg?v=1733298123150#icon__search"></use>
+                    </svg><span class="header__button-title">Поиск</span></button><a class="header__button header__button--payment" href="#"><svg class="header__icon">
+                      <use href="./img/svgSprite.svg?v=1733298123150#icon__wallet"></use>
+                    </svg><span class="header__button-title">Оплата услуг</span></a><a class="header__button" href="#"><svg class="header__icon">
+                      <use href="./img/svgSprite.svg?v=1733298123150#icon__user--alt"></use>
+                    </svg><span class="header__button-title">Личный кабинет</span></a></div><button class="button-burger header__burger" data-burger="data-burger"><span class="button-burger__line-tl"></span><span class="button-burger__line-tr"></span><span class="button-burger__line-cl"></span><span class="button-burger__line-cr"></span><span class="button-burger__line-bl"></span><span class="button-burger__line-br"></span></button>
               </div>
-            </div>
-          </nav>
-        </div>
-        <div class="page__content">
-          <div class="content">
-            <div class="content__header">
-              <h1 class="content__title">Услуги</h1>
-            </div>
-            <div class="content__cols content-cols content-cols--two">
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122915#icon__surf"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Подбор туров</h2>
-                    <div class="card__descr">Подбор самых выгодных туров по скидке в открытые на данный момент страны</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122915#icon__globe"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Оформление карты АТЭС</h2>
-                    <div class="card__descr">Оформление карты АТЭС на 5 лет с неограниченным количеством визитов в 18 стран мира</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122915#icon__visa"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Оформление виз</h2>
-                    <div class="card__descr">Оформление визы от 1 дня со 100% гарантией получения по договору</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122915#icon__pass"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Оформление загранпаспортов</h2>
-                    <div class="card__descr">Срочное оформление загранпаспортов в Москве от 2 дней</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122915#icon__ticket"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Продажа и бронирование Авиа / ЖД билетов</h2>
-                    <div class="card__descr">Быстрый поиск, бронирование и оформление ЖД и авиабилетов по низким ценам</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122915#icon__hotel"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Бронирование отелей</h2>
-                    <div class="card__descr">Поиск и бронирование отелей по всему миру с гарантией лучшей цены без комиссии</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__ticket"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Аренда бизнес-джетов</h2>
-                    <div class="card__descr">Перелёты чартерными рейсами на частном самолете в любую точку мира</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__mail"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Приглашения</h2>
-                    <div class="card__descr">Бизнес и медицинские приглашения в Европу и Китай</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__shield"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Страхование</h2>
-                    <div class="card__descr">Все виды страхование на одном сайте</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__arrows"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Трансфер</h2>
-                    <div class="card__descr">Бронирование и заказ трансфера по всему миру</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__eagle"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Путешествие по России</h2>
-                    <div class="card__descr">Все туры по России без наценок агенств</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__docs"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Услуги по доставке документов</h2>
-                    <div class="card__descr">Доставка документов и корреспонденции по городу, России и всему миру</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__bus"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Партнерская программа для туристических агенств</h2>
-                    <div class="card__descr">Оставьте заявку и получите персональные варианты сотрудничества</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__ticket--2"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Подарочные сертификаты Allvisa</h2>
-                    <div class="card__descr">У нас вы можете приобрести сертификат для друзей и родственников на любыую сумму или на определенную услугу</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__user--2"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Выезд специалиста визового центра</h2>
-                    <div class="card__descr">Оставьте заявку и мы согласуем выезд специалиста по Вашему адресу</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__right"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Оформление гражданства</h2>
-                    <div class="card__descr">Гарантированное оформление европейского гражданства в кратчайшие сроки</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__phone-user"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Грин-карта США</h2>
-                    <div class="card__descr">Помощь в оформлении и получении Green Card США</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__map"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Приглашение для иностранцев в России</h2>
-                    <div class="card__descr">Оформление приглашения в Россию для иностранцев в кратчайшие сроки</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__case"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Оформление рабочих виз в Польшу</h2>
-                    <div class="card__descr">Оформление рабочей визы категории D в Польшу за 12 дней, только для граждан РФ</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__translate"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Переводы документов на иностранный язык</h2>
-                    <div class="card__descr">Оформление перевода на любой язык</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__folder"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">РВП и ВНЖ в России</h2>
-                    <div class="card__descr">Проверка перечня документов на подачу, заполнение анкеты согласно требованиям, запись на подачу</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__building"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Вид на жительство в ОАЭ</h2>
-                    <div class="card__descr">На 3 года через регистрацию юридического лица</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-              <div class="content-cols__col">
-                <div class="card card--iconed">
-                  <div class="card__icon"><svg>
-                      <use href="./img/svgSprite.svg?v=1733298122916#icon__pass--2"></use>
-                    </svg></div>
-                  <div class="card__inner">
-                    <h2 class="card__title">Оформление ВНЖ Словении</h2>
-                    <div class="card__descr">Получение ВНЖ на территории страны проживания</div><a class="card__more" href="#">Подробнее</a>
-                  </div>
-                </div>
+              <div class="header__bottom">
+                <div class="header__socials"><a class="header__social" href="#"><svg class="header__social-icon">
+                      <use href="./img/svgSprite.svg?v=1733298123150#icon__social--tg"></use>
+                    </svg></a><a class="header__social" href="#"><svg class="header__social-icon">
+                      <use href="./img/svgSprite.svg?v=1733298123150#icon__social--vk"></use>
+                    </svg></a><a class="header__social" href="#"><svg class="header__social-icon">
+                      <use href="./img/svgSprite.svg?v=1733298123150#icon__social--wa"></use>
+                    </svg></a></div>
+                <ul class="header__links">
+                  <li class="header__links-item"><a class="header__link" href="#">Оформление виз</a></li>
+                  <li class="header__links-item"><a class="header__link" href="#">Эмиграционные услуги</a></li>
+                  <li class="header__links-item"><a class="header__link" href="#">Туристические услуги</a></li>
+                  <li class="header__links-item"><a class="header__link" href="#">Услуги для Юр. Лиц</a></li>
+                  <li class="header__links-item"><button class="header__link" data-burger="data-burger">Все услуги</button></li>
+                </ul>
+                <div class="header__call"><a class="header__phone" href="tel:88004444140">8 (800) 444-41-40</a><button class="header__callback" data-callback="data-callback">обратный звонок</button></div>
               </div>
             </div>
           </div>
-        </div><img class="page__ring page__ring--left" src="./img/img__ring.svg" alt=""><img class="page__ring page__ring--right" src="./img/img__ring.svg" alt="">
+        </div>
+      </div>
+      <div class="layout__nav">
+        <div class="side-nav">
+          <div class="side-nav__close" data-burger="data-burger"><svg class="side-nav__icon">
+              <use href="./img/svgSprite.svg?v=1733298123150#icon__close"></use>
+            </svg></div>
+          <div class="side-nav__inner">
+            <div class="side-nav__links">
+              <div class="side-nav__section">
+                <div class="side-nav__title">Визовый центр</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">Оформление виз</a><a class="side-nav__link" href="#">Шенгенская виза</a><a class="side-nav__link" href="#">Карта АТЭС</a><a class="side-nav__link" href="#">Срочный загранпаспорт</a><a class="side-nav__link" href="#">Рабочая виза в Польшу</a><a class="side-nav__link" href="#">Приглашение для иностранцев в РФ</a><a class="side-nav__link" href="#">Грин карта</a></div>
+              </div>
+              <div class="side-nav__section">
+                <div class="side-nav__title">Эмиграционные услуги</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">РВП и ВНЖ в Россию</a><a class="side-nav__link" href="#">ВНЖ Словении</a><a class="side-nav__link" href="#">Вид на жительство в ОАЭ</a><a class="side-nav__link" href="#">Оформление гражданства</a></div>
+              </div>
+              <div class="side-nav__section">
+                <div class="side-nav__title">Все услуги</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">Аренда бизнес-джетов</a><a class="side-nav__link" href="#">Доставка документов</a><a class="side-nav__link" href="#"> Перевод документов на иностранный язык</a><a class="side-nav__link" href="#">Аренда автомобилей</a></div>
+              </div>
+              <div class="side-nav__section">
+                <div class="side-nav__title">Основные разделы</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">О компании</a><a class="side-nav__link" href="#">Блог</a><a class="side-nav__link" href="#">Отзывы</a><a class="side-nav__link" href="#">Вопрос-ответ</a><a class="side-nav__link" href="#">Кейсы</a><a class="side-nav__link" href="#">Cотрудничество</a><a class="side-nav__link" href="#">Контакты</a></div>
+              </div>
+            </div>
+            <div class="side-nav__call"><a class="side-nav__phone" href="tel:88004444140">8 (800) 444-41-40</a><button class="side-nav__callback" data-callback="data-callback">обратный звонок</button></div>
+            <div class="side-nav__socials"><a class="side-nav__social" href="#"><svg class="side-nav__icon">
+                  <use href="./img/svgSprite.svg?v=1733298123150#icon__social--tg"></use>
+                </svg></a><a class="side-nav__social" href="#"><svg class="side-nav__icon">
+                  <use href="./img/svgSprite.svg?v=1733298123150#icon__social--vk"></use>
+                </svg></a><a class="side-nav__social" href="#"><svg class="side-nav__icon">
+                  <use href="./img/svgSprite.svg?v=1733298123150#icon__social--wa"></use>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="layout__main">
+        <div class="thanks">
+          <div class="container">
+            <div class="thanks__inner">
+              <h1 class="thanks__title">Спасибо за заявку</h1>
+              <p class="thanks__descr">Мы свяжемся с Вами в ближайшее время.</p>
+              <div class="thanks__schedule">
+                <div class="thanks__schedule-title">График работы офиса:</div>
+                <div class="thanks__schedule-descr">Пн-пт 9:00 — 18:00<br>
+Сб-Вс: 9:00 — 16:00</div>
+              </div>
+              <p class="thanks__descr">Если Вы оставили заявку в нерабочее время, мы перезвоним Вам на следующий рабочий день.</p>
+              <h2 class="thanks__subtitle">Подписывайтесь на нас в соц. сетях:</h2>
+              <div class="socials"><a class="socials__item" href="#">
+                  <div class="socials__inner"><svg class="socials__icon">
+                      <use href="./img/svgSprite.svg?v=1733298123150#icon__social--tg-2"></use>
+                    </svg></div>
+                </a><a class="socials__item" href="#">
+                  <div class="socials__inner"><svg class="socials__icon">
+                      <use href="./img/svgSprite.svg?v=1733298123150#icon__social--yt"></use>
+                    </svg></div>
+                </a><a class="socials__item" href="#">
+                  <div class="socials__inner"><svg class="socials__icon">
+                      <use href="./img/svgSprite.svg?v=1733298123150#icon__social--vk-2"></use>
+                    </svg></div>
+                </a></div><a class="button button--primary button--large thanks__button" href="/">Вернуться на сайт</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layout__footer">
+        <div class="footer">
+          <div class="container">
+            <div class="footer__inner">
+              <div class="footer__top"><a class="footer__logo" href="/"><img class="footer__img" src="./img/logo__allvisa--white.svg" alt="AllVisa" /></a>
+                <div class="socials  socials--footer__socials"><a class="socials__item" href="#">
+                    <div class="socials__inner"><svg class="socials__icon">
+                        <use href="./img/svgSprite.svg?v=1733298123150#icon__social--tg-2"></use>
+                      </svg></div>
+                  </a><a class="socials__item" href="#">
+                    <div class="socials__inner"><svg class="socials__icon">
+                        <use href="./img/svgSprite.svg?v=1733298123150#icon__social--yt"></use>
+                      </svg></div>
+                  </a><a class="socials__item" href="#">
+                    <div class="socials__inner"><svg class="socials__icon">
+                        <use href="./img/svgSprite.svg?v=1733298123150#icon__social--vk-2"></use>
+                      </svg></div>
+                  </a></div>
+              </div>
+              <div class="footer__main">
+                <div class="footer__rating">
+                  <div class="rating">
+                    <div class="rating__top">
+                      <div class="rating__num"><span>4,9</span></div>
+                      <div class="rating__inner">
+                        <div class="rating__stars"><svg class="rating__star">
+                            <use href="./img/svgSprite.svg?v=1733298123150#icon__star"></use>
+                          </svg><svg class="rating__star">
+                            <use href="./img/svgSprite.svg?v=1733298123150#icon__star"></use>
+                          </svg><svg class="rating__star">
+                            <use href="./img/svgSprite.svg?v=1733298123150#icon__star"></use>
+                          </svg><svg class="rating__star">
+                            <use href="./img/svgSprite.svg?v=1733298123150#icon__star"></use>
+                          </svg><svg class="rating__star">
+                            <use href="./img/svgSprite.svg?v=1733298123150#icon__star"></use>
+                          </svg></div>
+                        <div class="rating__descr">286 отзывов, 327 оценки</div>
+                      </div>
+                    </div>
+                    <div class="rating__row"><img src="./img/img__yandex-map.png" alt="Yandex Map" /><img src="./img/img__2gis.png" alt="2Gis" /></div>
+                  </div>
+                </div>
+                <div class="footer__nav">
+                  <div class="footer__section">
+                    <div class="footer__title">Визовый центр</div>
+                    <div class="footer__row"><a class="footer__link" href="#">Оформление виз</a><a class="footer__link" href="#">Шенгенская виза</a><a class="footer__link" href="#">Карта АТЭС</a><a class="footer__link" href="#">Срочный загранпаспорт</a><a class="footer__link" href="#">Рабочая виза в Польшу</a><a class="footer__link" href="#">Приглашение для иностранцев в РФ</a><a class="footer__link" href="#">Грин карта</a></div>
+                  </div>
+                  <div class="footer__section">
+                    <div class="footer__title">Эмиграционные услуги</div>
+                    <div class="footer__row"><a class="footer__link" href="#">РВП и ВНЖ в Россию</a><a class="footer__link" href="#">ВНЖ Словении</a><a class="footer__link" href="#">Вид на жительство в ОАЭ</a><a class="footer__link" href="#">Оформление гражданства</a></div>
+                  </div>
+                  <div class="footer__section">
+                    <div class="footer__title">Туристические услуги</div>
+                    <div class="footer__row"><a class="footer__link" href="#">Подбор туров</a><a class="footer__link" href="#">Продажа и бронирование Авиа/ЖД билетов</a><a class="footer__link" href="#">Бронирование отелей</a></div>
+                  </div>
+                  <div class="footer__section">
+                    <div class="footer__title">Все услуги</div>
+                    <div class="footer__row"><a class="footer__link" href="#">Аренда бизнес-джетов</a><a class="footer__link" href="#">Доставка документов</a><a class="footer__link" href="#"> Перевод документов на иностранный язык</a><a class="footer__link" href="#">Аренда автомобилей</a></div>
+                  </div>
+                  <div class="footer__section">
+                    <div class="footer__title">Основные разделы</div>
+                    <div class="footer__row"><a class="footer__link" href="#">О компании</a><a class="footer__link" href="#">Блог</a><a class="footer__link" href="#">Отзывы</a><a class="footer__link" href="#">Вопрос-ответ</a><a class="footer__link" href="#">Кейсы</a><a class="footer__link" href="#">Cотрудничество</a><a class="footer__link" href="#">Контакты</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer__bottom">
+                <div class="footer__line footer__line--strong">ООО «ГК Бизнес Обеспечение»</div>
+                <div class="footer__lines">
+                  <div class="footer__line">ИНН 7709995951</div>
+                  <div class="footer__line">ОГРН 1177746337922</div>
+                  <div class="footer__line">КПП 770901001</div>
+                  <div class="footer__line">© 2017–2024 г. Визовый центр ALLVISA</div>
+                </div>
+                <div class="footer__docs"><a class="footer__doc" href="#">Политика конфиденциальности</a><a class="footer__doc" href="#">Услуги для юр. лиц</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div><script src="./js/bundle.js"></script>
   </body>

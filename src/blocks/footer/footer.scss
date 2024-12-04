@@ -58,46 +58,6 @@
     }
   }
 
-  &__socials {
-    display: flex;
-    gap: 8px;
-  }
-
-  &__social {
-    @include reset-link.reset-link;
-
-    position: relative;
-    width: 42px;
-    height: 42px;
-    margin-bottom: 6px;
-    padding: 3px;
-    background: var(--gold-gradient);
-    border-radius: 50%;
-
-    @media screen and (min-width: breakpoints.$screen-d) {
-      width: 68px;
-      height: 68px;
-      padding: 5px;
-    }
-  }
-
-  &__social-inner {
-    width: 100%;
-    height: 100%;
-    padding: 6px;
-    background: var(--green-gradient);
-    border-radius: 50%;
-
-    @media screen and (min-width: breakpoints.$screen-d) {
-      padding: 13px;
-    }
-  }
-
-  &__icon {
-    width: 100%;
-    height: 100%;
-  }
-
   &__nav {
     display: grid;
     gap: 20px;

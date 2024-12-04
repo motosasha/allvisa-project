@@ -1,0 +1,49 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/text-styles";
+
+.socials {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  gap: 8px;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    gap: 16px;
+  }
+
+  &__item {
+    @include reset-link.reset-link;
+
+    position: relative;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 6px;
+    padding: 3px;
+    background: var(--gold-gradient);
+    border-radius: 50%;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      width: 68px;
+      height: 68px;
+      padding: 5px;
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    background: var(--green-gradient);
+    border-radius: 50%;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 13px;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+}

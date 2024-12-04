@@ -82,10 +82,15 @@
   --z-index-noscript: 99;
 
   // layout
+  --header-height: 105px;
   --container-padding: 16px;
   --container-max-width: 1760px;
 
   @media screen and (min-width: breakpoints.$screen-ti) {
     --container-padding: 32px;
+  }
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    --header-height: 185px;
   }
 }

@@ -119,5 +119,9 @@ $is-cursor-pointer-needed: false; // don't make it true, please!
 
   @if $is-mods-needed {
     @include button-primary.button-primary($is-hate-state-needed, $is-disabled-state-needed);
+
+    &--large {
+      font-size: 24px;
+    }
   }
 }

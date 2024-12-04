@@ -29,19 +29,7 @@ mixin footer(mods)
           else
             a.footer__logo(href="/")
               img.footer__img(src= path.img + "logo__allvisa--white.svg", alt="AllVisa")
-          .footer__socials
-            a.footer__social(href="#")
-              .footer__social-inner
-                svg.footer__icon
-                  use(href= path.icon + "icon__social--tg-2")
-            a.footer__social(href="#")
-              .footer__social-inner
-                svg.footer__icon
-                  use(href= path.icon + "icon__social--yt")
-            a.footer__social(href="#")
-              .footer__social-inner
-                svg.footer__icon
-                  use(href= path.icon + "icon__social--vk-2")
+          +socials("footer__socials")
         .footer__main
           .footer__rating
             .rating
