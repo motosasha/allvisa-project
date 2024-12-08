@@ -46,7 +46,7 @@ mixin header(mods)
                 svg.header__search-icon
                   use(href= path.icon + "icon__search")
           .header__actions
-            button.header__button.header__button--search
+            button.header__button.header__button--search(data-search)
               svg.header__icon
                 use(href= path.icon + "icon__search")
               span.header__button-title Поиск
