@@ -9,7 +9,7 @@
 
   min-height: 44px;
   max-height: 356px;
-  padding: 12px 21px 8px 11px;
+  padding: 8px 21px 8px 11px;
   background-size: 24px 24px;
   border: 1px solid var(--divider);
   border-radius: 25px;
@@ -19,13 +19,17 @@
 
   @media screen and (min-width: breakpoints.$screen-tl) {
     min-height: 50px;
-    padding: 15px 21px 11px 11px;
+    padding: 11px 21px 11px 11px;
     background-size: 24px 24px;
   }
 
   &--has-value,
   &:focus {
     border-color: var(--front-accent);
+  }
+
+  &--has-value + & {
+    border-color: var(--outline-color);
   }
 
   &--invalid {
@@ -42,8 +46,20 @@
       box-shadow: none;
     }
 
+    &.ss-open-above {
+      border-radius: 25px;
+    }
+
     .ss-arrow {
       margin: auto 0;
+    }
+
+    .ss-values .ss-single {
+      display: flex;
+      align-items: center;
+      min-height: 26px;
+      margin: 0;
+      padding-top: 2px;
     }
   }
 
@@ -85,3 +101,227 @@
     -webkit-box-shadow: none;
   }
 }
+
+// stylelint-disable
+.ss-flag {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  padding-left: 34px;
+
+  &::before {
+    --iti-path-flags-1x: url("{{img}}/flags.webp");
+    --iti-path-flags-2x: url("{{img}}/flags@2x.webp");
+    --iti-flag-offset: 100px;
+    --iti-flag-sprite-width: 3904px;
+    --iti-flag-sprite-height: 12px;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 13px;
+    height: 13px;
+    border: 0.5px solid var(--divider);
+    border-radius: 50%;
+    content: "";
+    transform: translate(2px, -4px);
+    scale: 2;
+    background-image: var(--iti-path-flags-1x);
+    background-repeat: no-repeat;
+    background-position: var(--iti-flag-offset) 0;
+    background-size: var(--iti-flag-sprite-width) var(--iti-flag-sprite-height);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      transform: translate(3px, -4px);
+    }
+
+    @media (min-resolution: 2x) {
+      & {
+        background-image: var(--iti-path-flags-2x);
+      }
+    }
+  }
+
+  &.australia::before {
+    --iti-flag-offset: -194px;
+  }
+
+  &.austria::before {
+    --iti-flag-offset: -178px;
+  }
+
+  &.belgium::before {
+    --iti-flag-offset: -306px;
+  }
+
+  &.bulgaria::before {
+    --iti-flag-offset: -338px;
+  }
+
+  &.canada::before {
+    --iti-flag-offset: -578px;
+  }
+
+  &.china::before {
+    --iti-flag-offset: -738px;
+  }
+
+  &.croatia::before {
+    --iti-flag-offset: -1506px;
+  }
+
+  &.cyprus::before {
+    --iti-flag-offset: -850px;
+  }
+
+  &.czech::before {
+    --iti-flag-offset: -866px;
+  }
+
+  &.denmark::before {
+    --iti-flag-offset: -914px;
+  }
+
+  &.estonia::before {
+    --iti-flag-offset: -994px;
+  }
+
+  &.finland::before {
+    --iti-flag-offset: -1090px;
+  }
+
+  &.france::before {
+    --iti-flag-offset: -1170px;
+  }
+
+  &.germany::before {
+    --iti-flag-offset: -882px;
+  }
+
+  &.greece::before {
+    --iti-flag-offset: -1394px;
+  }
+
+  &.hungary::before {
+    --iti-flag-offset: -1538px;
+  }
+
+  &.iceland::before {
+    --iti-flag-offset: -1682px;
+  }
+
+  &.india::before {
+    --iti-flag-offset: -1618px;
+  }
+
+  &.indonesia::before {
+    --iti-flag-offset: -1554px;
+  }
+
+  &.ireland::before {
+    --iti-flag-offset: -1570px;
+  }
+
+  &.italy::before {
+    --iti-flag-offset: -1698px;
+  }
+
+  &.japan::before {
+    --iti-flag-offset: -1762px;
+  }
+
+  &.latvia::before {
+    --iti-flag-offset: -2098px;
+  }
+
+  &.lithuania::before {
+    --iti-flag-offset: -2066px;
+  }
+
+  &.malta::before {
+    --iti-flag-offset: -2386px;
+  }
+
+  &.mexico::before {
+    --iti-flag-offset: -2450px;
+  }
+
+  &.netherlands::before {
+    --iti-flag-offset: -2594px;
+  }
+
+  &.new-zealand::before {
+    --iti-flag-offset: -2674px;
+  }
+
+  &.norway::before {
+    --iti-flag-offset: -2610px;
+  }
+
+  &.poland::before {
+    --iti-flag-offset: -2802px;
+  }
+
+  &.portugal::before {
+    --iti-flag-offset: -2866px;
+  }
+
+  &.romania::before {
+    --iti-flag-offset: -2946px;
+  }
+
+  &.singapore::before {
+    --iti-flag-offset: -3090px;
+  }
+
+  &.slovakia::before {
+    --iti-flag-offset: -3154px;
+  }
+
+  &.slovenia::before {
+    --iti-flag-offset: -3122px;
+  }
+
+  &.south-korea::before {
+    --iti-flag-offset: -1890px;
+  }
+
+  &.spain::before {
+    --iti-flag-offset: -1058px;
+  }
+
+  &.sri-lanka::before {
+    --iti-flag-offset: -2018px;
+  }
+
+  &.sweden::before {
+    --iti-flag-offset: -3074px;
+  }
+
+  &.switzerland::before {
+    --iti-flag-offset: -658px;
+  }
+
+  &.thailand::before {
+    --iti-flag-offset: -3394px;
+  }
+
+  &.uae::before {
+    --iti-flag-offset: -34px;
+  }
+
+  &.united-kingdom::before {
+    --iti-flag-offset: -1202px;
+  }
+
+  &.usa::before {
+    --iti-flag-offset: -3618px;
+  }
+
+  &.vietnam::before {
+    --iti-flag-offset: -3746px;
+  }
+}
+// stylelint-enable

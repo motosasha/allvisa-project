@@ -1,0 +1,99 @@
+@use "src/scss/breakpoints";
+@use "src/scss/functions/iterations";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/text-styles";
+
+.request-form {
+  $block-name: &; // #{$block-name}__element
+
+  color: var(--front-primary);
+
+  &__title {
+    margin: 0 0 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  &__descr {
+    @include text-styles.text-m;
+
+    margin: 0 0 24px;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  &__row {
+    display: grid;
+    gap: 24px;
+
+    &--two {
+      @media screen and (min-width: breakpoints.$screen-t) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  &__small {
+    @include text-styles.stepper-small {
+      grid-column: 1 / -1;
+      max-width: 680px;
+      margin-top: 6px;
+    };
+
+    a {
+      @include reset-link.reset-link;
+
+      color: var(--front-green);
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--front-secondary);
+        }
+      }
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-areas: "section";
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      align-content: start;
+      align-items: start;
+    }
+  }
+
+  &__section {
+    position: absolute;
+    grid-area: section;
+    transform: translateY(8px);
+    visibility: hidden;
+    opacity: 0;
+    transition: iterations.iterate-transition([opacity, transform, visibility]);
+
+    [data-steps="3"] & {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+    }
+
+    [data-steps="1"] &:nth-child(1),
+    [data-steps="2"] &:nth-child(2),
+    [data-steps="3"] &:nth-child(3) {
+      position: relative;
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

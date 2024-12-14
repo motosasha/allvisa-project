@@ -1,0 +1,86 @@
+//- Все примеси в этом файле должны начинаться c имени блока (request-form)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin request-form(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +request-form("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " request-form--" + modsList[i].trim();
+      }
+    }
+
+  form.form.request-form(class=allMods)&attributes(attributes)
+    .request-form__inner
+      .request-form__section(data-step="1")
+        h2.request-form__title Отправьте заявку
+          p.request-form__descr Получите список документов бесплатно
+        .request-form__grid
+          .request-form__row.request-form__row--two
+            label.form__field
+              .form__label Вид услуг
+              +select([], "", "country")(data-country-select, required)
+            label.form__field
+              .form__label К какому числу нужна виза?
+              .form__field-row
+                +select([
+                  ["Январь", 1],
+                  ["Февраль", 2],
+                  ["Март", 3],
+                  ["Апрель", 4],
+                  ["Май", 5],
+                  ["Июнь", 6],
+                  ["Июль", 7],
+                  ["Август", 8],
+                  ["Сентябрь", 9],
+                  ["Октябрь", 10],
+                  ["Ноябрь", 11],
+                  ["Декабрь", 12],
+                ], "", "type", "month")(data-slim-select)
+                +select([], "", "type", "days")
+          .request-form__row.request-form__row--two
+            label.form__field
+              .form__label Количество человек
+              +number("", 1, 31, 1)
+            label.form__field
+              .form__label Тип визы
+              +select([
+                ["Выберите тип", ""],
+                ["Туристическая", "Туристическая"],
+                ["Деловая", "Деловая"],
+                ["Медицинская", "Медицинская"],
+                ["Студенческая", "Студенческая"],
+                ["По приглашению", "По приглашению"]
+              ], "", "visaType")(data-slim-select, required)
+          .button.button--primary.button--large(data-action="forward") Далее
+      .request-form__section(data-step="2")
+        h2.request-form__title Отправьте заявку
+        p.request-form__descr Получите список документов бесплатно
+        .request-form__grid
+          .request-form__row.request-form__row--two
+            label.form__field
+              .form__label Введите Имя
+              input.input(type="text", name="name", placeholder="Иванов Иван", required)
+            label.form__field
+              .form__label Введите телефон
+              input.input(type="tel", name="phone", placeholder="+7 (_____) ____-____-____", data-phone-field, required)
+          .request-form__row
+            label.form__field
+              .form__label Введите e-mail
+              input.input(type="email", name="email", placeholder="example@mail.ru", required)
+          .request-form__small.
+            Нажимая кнопку «Получить расчет и документы», я подтверждаю, что я ознакомлен и согласен с условиями
+            #[a(href="#") политики обработки персональных данных]
+          button.button.button--primary.button--large(data-action="submit") Получить расчет и документы
+      .request-form__section(data-step="3")
+        h2.request-form__title Ваша заявка отправлена
+        p.request-form__descr Мы свяжемся с вами в ближайшее время

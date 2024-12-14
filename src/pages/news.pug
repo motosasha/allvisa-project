@@ -1,0 +1,20 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Allvisa | Новости"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .hero.hero--full-height-mobile
+    .hero__back
+      img.hero__bg.hero__bg--right-vp(src= path.img + "img__bg-hero--plane.webp", alt="", aria-hidden="true")
+      img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
+      img.hero__ring.hero__ring--right(src= path.img + "img__ring.svg", alt="")
+    .container
+      .hero__inner
+        .hero__info
+          .hero__label Новости компании
+          h1.hero__title Туристический блог

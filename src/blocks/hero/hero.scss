@@ -1,14 +1,586 @@
 @use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-button";
+@use "src/scss/mixins/reset-link";
 @use "src/scss/mixins/text-styles";
 
 .hero {
   $block-name: &; // #{$block-name}__element
 
-  height: 300px;
-  padding-top: 105px;
-  background-color: black;
+  position: relative;
+  padding-top: var(--header-height);
+  color: var(--front-invert);
 
-  @media screen and (min-width: breakpoints.$screen-d) {
-    padding-top: 175px;
+  &--full-height {
+    display: flex;
+    min-height: 100svh;
+  }
+
+  &--full-height-mobile {
+    display: flex;
+    min-height: 100svh;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	min-height: auto;
+    }
+  }
+
+  &--visas {
+    @media screen and (min-width: breakpoints.$screen-d) {
+      height: 970px;
+    }
+  }
+
+  &--intpass {
+    margin-bottom: 80px;
+  }
+
+  &--mh {
+    @media screen and (min-width: breakpoints.$screen-d) {
+      min-height: 675px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: var(--z-index-default);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 50px 0;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 100px 0;
+    }
+
+    &--grid {
+      display: grid;
+      gap: 24px;
+      align-content: center;
+
+      @media screen and (min-width: breakpoints.$screen-tl) {
+      	grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+
+        #{$block-name}__title {
+          text-align: left;
+        }
+
+        #{$block-name}__descr {
+          max-width: 672px;
+          margin-top: 8px;
+          text-align: left;
+        }
+
+        #{$block-name}__info {
+          grid-column: 1 / 8;
+          align-items: start;
+        }
+      }
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        #{$block-name}__title {
+          font-size: 84px;
+        }
+      }
+    }
+
+    &--china {
+      display: grid;
+      gap: 24px;
+      align-content: center;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+
+        #{$block-name}__title {
+          text-align: left;
+        }
+
+        #{$block-name}__descr {
+          max-width: 672px;
+          margin-top: 8px;
+          text-align: left;
+        }
+
+        #{$block-name}__info {
+          grid-column: 1 / 8;
+          align-items: start;
+        }
+      }
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        #{$block-name}__title {
+          font-size: 84px;
+        }
+      }
+    }
+
+    #{$block-name}--intpass & {
+      max-width: 1168px;
+      margin: 0 auto;
+      padding-top: 56px;
+      padding-bottom: 0;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        padding-top: 16px;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--mw {
+      max-width: 870px;
+    }
+
+    #{$block-name}--visas & {
+      max-width: 624px;
+    }
+  }
+
+  &__label {
+    margin-bottom: 8px;
+    padding: 10px 16px 6px;
+    font-size: 20px;
+    line-height: 1;
+    background-color: var(--back-white-o10);
+    border-radius: 32px;
+    backdrop-filter: blur(5px);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-bottom: 24px;
+      padding: 14px 22px 10px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+
+  &__title {
+    @include text-styles.hero-title {
+      margin: 0;
+      text-align: center;
+    };
+
+    &--alt {
+      @media screen and (min-width: breakpoints.$screen-d) {
+        font-size: 84px;
+      }
+    }
+
+    #{$block-name}--intpass & {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__descr {
+    max-width: 980px;
+    margin: 20px 0 0;
+    font-size: 21px;
+    line-height: 1.3;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-top: 34px;
+      font-size: 28px;
+    }
+
+    #{$block-name}--intpass & {
+      display: none;
+
+      @media screen and (min-width: breakpoints.$screen-tl) {
+        display: block;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  &__button {
+    @include reset-link.reset-link;
+    @include reset-button.reset-button;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 16px 24px;
+    color: var(--front-primary);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+    background-color: var(--back-primary);
+    border-radius: 32px;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    &--mt {
+      margin-top: 44px;
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &__main-button {
+    width: 100%;
+    margin-top: 24px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      width: auto;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-top: 40px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px 0;
+    max-width: 1466px;
+    margin-top: 114px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    	justify-content: center;
+      margin: 260px auto 0;
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: 16px;
+    align-content: start;
+    width: 50%;
+    padding: 0 32px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      width: auto;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 20px;
+      padding: 0 44px;
+      box-shadow: inset -1px 0 0 var(--back-white-o20);
+
+      &:last-child {
+        box-shadow: none;
+      }
+    }
+
+    &:nth-child(odd) {
+      box-shadow: inset -1px 0 0 var(--back-white-o20);
+    }
+  }
+
+  &__item-title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: 0.32px;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 50px;
+      text-align: left;
+    }
+  }
+
+  &__item-descr {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+
+  &__reviews {
+    display: grid;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 14px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-top: 43px;
+    }
+  }
+
+  &__reviews-title {
+    font-size: 21px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  &__reviews-row {
+    display: grid;
+    gap: 12px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	display: flex;
+    }
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      max-width: 624px;
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	grid-column: 8 / 13;
+      justify-self: end;
+    }
+  }
+
+  &__side-row {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 16px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 20px;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-dl) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__side-item {
+    display: grid;
+    gap: 6px;
+    padding-bottom: 16px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      padding: 0;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 12px;
+    }
+  }
+
+  &__side-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--back-white-o20);
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      width: 1px;
+      height: auto;
+    }
+
+    & + #{$block-name}__side-item {
+      padding: 16px 0 0;
+
+      @media screen and (min-width: breakpoints.$screen-t) {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__side-title {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: 0.54px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      font-size: 64px;
+    }
+  }
+
+  &__side-descr {
+    font-size: 21px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 24px;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    min-height: 200px;
+    margin: 24px auto -80px;
+    background-color: var(--back-primary);
+    border-radius: 20px;
+    box-shadow: 0 12px 38px 0 rgb(0 0 0 / 12%);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-top: 40px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    min-height: 320px;
+    padding: 20px;
+    background: var(--back-primary);
+    border-radius: 20px;
+    box-shadow: 0 12px 24px 0 rgb(0 0 0 / 8%);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 24px;
+    }
+
+    &--mt {
+      margin-top: 24px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        margin-top: 40px;
+      }
+    }
+
+    .form {
+      padding: 0;
+    }
+  }
+
+  &__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--back-green);
+    pointer-events: none;
+    inset: 0;
+
+    #{$block-name}--intpass & {
+      max-height: 1024px;
+    }
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &--left-vp {
+      object-position: 12%;
+    }
+
+    &--right-vp {
+      object-position: 78%;
+    }
+
+    #{$block-name}--intpass & {
+      object-position: center top;
+    }
+
+    #{$block-name}--visas & {
+      object-position: center top;
+    }
+  }
+
+  &__passport {
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    z-index: var(--z-index-passport);
+    display: none;
+    width: 370px;
+    height: 514px;
+    transform: translateX(560px) rotate(-24.8deg);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: block;
+    }
+  }
+
+  &__couple {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: var(--z-index-passport);
+    display: none;
+    width: 680px;
+    height: 921px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: block;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-dxl) {
+    	transform: translateX(-80px);
+    }
+  }
+
+  &__ring {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+
+    &--left {
+      top: 124px;
+      left: -92px;
+      width: 142px;
+
+      @media screen and (min-width: breakpoints.$screen-tl) {
+        top: 208px;
+        left: -226px;
+        width: 293px;
+      }
+
+      #{$block-name}--ring-alt & {
+        @media screen and (min-width: breakpoints.$screen-tl) {
+          top: auto;
+          bottom: -200px;
+          left: -160px;
+          width: 367px;
+        }
+      }
+    }
+
+    &--right {
+      right: -187px;
+      bottom: -60px;
+      width: 231px;
+
+      @media screen and (min-width: breakpoints.$screen-tl) {
+        right: -317px;
+        bottom: -100px;
+        width: 483px;
+      }
+
+      #{$block-name}--ring-alt & {
+        @media screen and (min-width: breakpoints.$screen-tl) {
+          top: 213px;
+          right: -317px;
+          width: 520px;
+        }
+      }
+    }
   }
 }

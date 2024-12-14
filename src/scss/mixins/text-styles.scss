@@ -34,6 +34,7 @@
   font-weight: $weight;
   font-size: 16px;
   line-height: 1.375;
+  @content;
 }
 
 @mixin text-xs($weight: 400) {
@@ -56,5 +57,70 @@
 
   @media screen and (min-width: breakpoints.$screen-d) {
     font-size: 34px;
+  }
+}
+
+@mixin hero-title($weight: 700) {
+  font-weight: $weight;
+  font-size: 40px;
+  line-height: 1;
+  @content;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    font-size: 104px;
+  }
+}
+
+@mixin stepper-point {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  @content;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    font-size: 25px;
+  }
+}
+
+@mixin stepper-title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  @content;
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    font-size: 42px;
+  }
+}
+
+@mixin stepper-subtitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  @content;
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    font-size: 36px;
+  }
+}
+
+@mixin stepper-small {
+  font-size: 16px;
+  line-height: 1.125;
+  @content;
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    font-size: 18px;
+  }
+}
+
+@mixin radio {
+  font-size: 18px;
+  line-height: 1.2778;
+  @content;
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    font-size: 28px;
+    line-height: 1.2858;
   }
 }

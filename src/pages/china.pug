@@ -1,0 +1,33 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Allvisa | Виза в Китай"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .hero.hero--full-height-mobile
+    .hero__back
+      img.hero__bg.hero__bg--left-vp(src= path.img + "img__bg-hero--wall.webp", alt="", aria-hidden="true")
+      img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
+      img.hero__ring.hero__ring--right(src= path.img + "img__ring.svg", alt="")
+    .container
+      .hero__inner.hero__inner--china
+        .hero__info
+          h1.hero__title.hero__title--alt Оформление деловых и туристических виз в Китай Ежедневная подача
+          p.hero__descr.
+            При заключении договора, мы начислим 500 баллов, которые можно будет использовать при следующих обращениях.
+            Кешбек от 2 % до 10 %
+        .hero__side
+          .hero__form
+            +request-form()(action="https://jsonplaceholder.typicode.com/todos/", id="requestForm", data-steps="1", data-selected-country="Китай")
+          .hero__side-row
+            .hero__side-item
+              .hero__side-title 9500 ₽
+              .hero__side-descr Стоимость оформления
+            .hero__side-divider
+            .hero__side-item
+              .hero__side-title От 3 дней
+              .hero__side-descr Срок оформления

@@ -1,0 +1,23 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Allvisa | Оформление загранпаспорта"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .hero.hero--intpass.hero--ring-alt
+    .hero__back
+      img.hero__bg(src= path.img + "img__bg-hero--castle.webp", alt="", aria-hidden="true")
+      img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
+      img.hero__ring.hero__ring--right(src= path.img + "img__ring.svg", alt="")
+    img.hero__passport(src= path.img + "img__int-pass.webp", alt="", aria-hidden="true")
+    .container
+      .hero__inner
+        .hero__info
+          h1.hero__title.hero__title--alt Срочное оформление загранпаспорта
+          p.hero__descr Только для граждан РФ
+        .hero__card
+          +stepper()(action="https://jsonplaceholder.typicode.com/todos/", id="intPassForm", data-steps="1")

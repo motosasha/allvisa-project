@@ -17,18 +17,18 @@
 
   &__main {
     flex: 1 0 auto;
-    //min-height: 1500px;
+    overflow: hidden;
   }
 
   &__nav {
     position: fixed;
     inset: 0;
-    z-index: var(--z-index-default);
+    z-index: var(--z-index-nav);
     transform: translate(100%, 0);
     transition: transform var(--transition-default);
 
     @media screen and (min-width: breakpoints.$screen-d) {
-    	z-index: var(--z-index-nav);
+    	z-index: calc(var(--z-index-nav) + 2);
       width: min(calc(100vw - var(--container-padding) * 2), var(--container-max-width));
       overflow: hidden;
       border-radius: 0 0 20px 20px;

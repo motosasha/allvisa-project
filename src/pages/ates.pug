@@ -1,0 +1,22 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Allvisa | Оформление карт АТЭС"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .hero.hero--full-height.hero--ring-alt
+    .hero__back
+      img.hero__bg(src= path.img + "img__bg-hero--sidney.webp", alt="", aria-hidden="true")
+      img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
+      img.hero__ring.hero__ring--right(src= path.img + "img__ring.svg", alt="")
+    .container
+      .hero__inner.hero__inner--grid
+        .hero__info.hero__info--mw
+          h1.hero__title.hero__title--alt ОФОРМЛЕНИЕ КАРТ АТЭС ОТ 70 000 ₽
+          p.hero__descr.
+            Заполните форму и получите карту АТЭС на 5 лет с неограниченным количеством визитов в 18 стран мира
+          button.button.button--primary.button--large.hero__main-button(data-modal="#callback") Получить карту АТЭС

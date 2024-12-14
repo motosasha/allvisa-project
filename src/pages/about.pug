@@ -1,0 +1,24 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Allvisa | О компании"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .hero.hero--full-height
+    .hero__back
+      img.hero__bg.hero__bg--left-vp(src= path.img + "img__bg-hero--team.webp", alt="", aria-hidden="true")
+      img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
+      img.hero__ring.hero__ring--right(src= path.img + "img__ring.svg", alt="")
+    .container
+      .hero__inner
+        .hero__info
+          h1.hero__title Наша миссия:<br>открыть мир для каждого!
+          p.hero__descr.
+            Мы стремимся сделать процесс получения визы максимально доступным, удобным
+            и прозрачным для каждого нашего клиента. Мы верим, что путешествия
+            — это неотъемлемая часть жизни, способ расширить кругозор, познакомиться
+            с новыми культурами и получить незабываемые впечатления.

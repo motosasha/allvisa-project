@@ -94,6 +94,12 @@
     align-items: start;
   }
 
+  &__field-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 8px;
+  }
+
   &__label {
     @include text-styles.text-xs;
 

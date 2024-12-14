@@ -1,0 +1,88 @@
+@use "src/scss/breakpoints";
+@use "src/scss/functions/iterations";
+@use "src/scss/mixins/text-styles";
+
+.number {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  padding: 0;
+  appearance: none;
+
+  &__input {
+    @include text-styles.text-s {
+      display: block;
+      width: 100%;
+      padding: 12px 40px 8px;
+      text-align: center;
+      border: 1px solid var(--border-light-grey);
+      border-radius: 20px;
+      outline: none;
+      appearance: none;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 15px 4px 11px;
+      border-radius: 26px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    z-index: var(--z-index-default);
+    width: 38px;
+    padding: 8px 4px 6px;
+    color: var(--front-primary);
+    font-size: 20px;
+    line-height: 1;
+    background-color: var(--grey-medium);
+    border: none;
+    cursor: pointer;
+    transition: iterations.iterate-transition([background-color, scale]);
+    appearance: none;
+    aspect-ratio: 1 / 1;
+
+    @media (hover: hover) {
+      &:hover:not(:active, :disabled) {
+        background-color: var(--green-dark);
+      }
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      width: 44px;
+    }
+
+    &[data-action="sub"] {
+      left: 1px;
+      border-right: 1px solid var(--border-light-grey);
+      border-radius: 50% 0 0 50%;
+    }
+
+    &[data-action="add"] {
+      right: 1px;
+      border-radius: 0 50% 50% 0;
+    }
+
+    &[disabled],
+    &[disabled]:hover {
+      opacity: 0.25;
+      pointer-events: none;
+    }
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    user-select: none;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="google" content="notranslate">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" sizes="32x32" href="/img/favicon/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg">
+    <link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <meta name="theme-color" content="#000000">
+    <title>Allvisa | Оформление загранпаспорта</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <link rel="stylesheet" href="/css/style.css"><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");const navigatorErrorMessage="Could not find `userAgent` or `userAgentData` window.navigator properties to set `os`, `browser` and `version`",removeExcessMozillaAndVersion=/^mozilla\/\d\.\d\W/,browserPattern=/(\w+)\/(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)/g,engineAndVersionPattern=/^(ver|cri|gec)/,brandList=["chrome","opera","safari","edge","firefox"],unknown="Unknown";let userAgentData=window.navigator.userAgentData,userAgent=window.navigator.userAgent;const mobiles={ios:/iphone/,ipados:/ipad|macintosh/,android:/android/},desktops={windows:/win/,osx:/macintosh/,linux:/linux/},detectPlatform=(e,n)=>{if(userAgent="string"==typeof e?e:userAgent,userAgentData="string"==typeof n?n:userAgentData,userAgent){const e=userAgent.toLowerCase().replace(removeExcessMozillaAndVersion,""),n=Object.keys(mobiles).find(n=>mobiles[n].test(e)&&window.navigator.maxTouchPoints>=1),t=Object.keys(desktops).find(n=>desktops[n].test(e)),o=n||t,r=e.match(browserPattern),s=/version\/(\d+(\.\d+)*)/,a=e.match(s),i=Array.isArray(a)?a[1]:null,d=r&&(r.length>2&&!engineAndVersionPattern.test(r[1])?1:0),l=r&&r[r.length-1-(d||0)].split("/");return{os:o,browser:l&&l[0],version:i||l&&l[1]}}if(userAgentData){const e=userAgentData.platform.toLowerCase();let n;for(const e of userAgentData.brands){const t=e.brand.toLowerCase(),o=brandList.find(e=>{if(t.includes(e))return e});if(o){n={browser:o,version:e.version};break}}return{os:e,...n||{browser:unknown,version:unknown}}}return console.error(navigatorErrorMessage),{os:navigator.platform||unknown,browser:unknown,version:unknown}};let platform=detectPlatform();document.documentElement.classList.add(platform.os,platform.browser);let vh=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",vh+"px"),window.addEventListener("resize",()=>{let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",e+"px")});</script>
+  </head>
+  <body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
+    <div class="project-nav"><!-- delete this block if production-->
+      <style>
+        :root {
+          --elem-shift-width: 240px;
+
+          --chrome-100: hsl(0 0% 96%);
+          --chrome-200: hsl(0 0% 90%);
+          --chrome-300: hsl(0 0% 83%);
+          --chrome-400: hsl(0 0% 64%);
+          --chrome-500: hsl(0 0% 45%);
+          --chrome-600: hsl(0 0% 32%);
+          --chrome-700: hsl(0 0% 25%);
+          --chrome-800: hsl(0 0% 15%);
+          --chrome-900: hsl(0 0% 9%);
+
+          --sky-200: hsl(201 94% 86%);
+          --sky-400: hsl(198 93% 60%);
+          --sky-600: hsl(200 98% 39%);
+          --sky-700: hsl(201 96% 32%);
+
+          @media (prefers-color-scheme: light) {
+            & {
+              --main-bg-color: var(--chrome-100);
+              --main-border-color: var(--chrome-200);
+
+              --section-title-color: var(--chrome-400);
+              --section-title-border-color: var(--sky-400);
+              --section-title-border-top-color: var(--chrome-200);
+
+              --link-title-color: var(--sky-700);
+              --link-description-color: var(--chrome-500);
+              --link-description-color-hover: var(--chrome-700);
+              --link-bg-hover: var(--chrome-200);
+
+              --button-bg-color: var(--sky-200);
+              --button-title-color: var(--sky-700);
+
+              --icon-stroke-color: var(--link-description-color);
+              --icon-stroke-color-hover: var(--chrome-700);
+            }
+          }
+
+          @media (prefers-color-scheme: dark) {
+            & {
+              --main-bg-color: var(--chrome-900);
+              --main-border-color: var(--chrome-800);
+
+              --section-title-color: var(--chrome-600);
+              --section-title-border-color: var(--sky-700);
+              --section-title-border-top-color: var(--chrome-800);
+
+              --link-title-color: var(--sky-400);
+              --link-description-color: var(--chrome-500);
+              --link-description-color-hover: var(--chrome-300);
+              --link-bg-hover: var(--chrome-800);
+
+              --button-bg-color: var(--sky-600);
+              --button-title-color: var(--sky-200);
+
+              --icon-stroke-color: var(--link-description-color);
+              --icon-stroke-color-hover: var(--chrome-100);
+            }
+          }
+        }
+
+        .project-nav {
+          position: fixed;
+          top: 50%;
+          left: 0;
+          z-index: 999999;
+          width: 0;
+          transform: translateY(-50%);
+        }
+
+        .project-nav__nav {
+          width: var(--elem-shift-width);
+          overflow: hidden;
+          overflow-y: auto;
+          max-height: 75vh;
+          height: 100%;
+          border: 1px solid var(--main-border-color);
+          border-left: none;
+          border-radius: 0 8px 8px 0;
+          transform: translateX(calc(var(--elem-shift-width) * -1));
+          transition: transform 0.2s;
+        }
+
+        .project-nav__list {
+          margin: 0;
+          padding: 4px;
+          background-color: var(--main-bg-color);
+        }
+
+        .project-nav__list-title {
+          padding: 15px 0 8px 12px;
+          font-size: 10px;
+          line-height: 1.6;
+          text-transform: uppercase;
+          color: var(--section-title-color);
+        }
+
+        .project-nav__list-title::after {
+          display: block;
+          margin: 8px -4px 0;
+          width: 100%;
+          height: 1px;
+          background-color: var(--section-title-border-color);
+          content: "";
+        }
+
+        .project-nav__list-item {
+          display: grid;
+          grid-template-columns: auto 48px;
+          gap: 4px;
+          list-style: none;
+        }
+
+        .project-nav__list-item::before {
+          content: none;
+        }
+
+        .project-nav__list-item+.project-nav__list-title {
+          margin-top: 8px;
+          padding: 19px 0 8px 12px;
+          border-top: 1px solid var(--section-title-border-top-color);
+        }
+
+        .project-nav__link {
+          display: grid;
+          gap: 6px;
+          padding: 8px 12px;
+          background-color: transparent;
+          border-radius: 4px;
+          text-decoration: none;
+          transition: background-color 0.2s;
+        }
+
+        .project-nav__link:hover {
+          background-color: var(--link-bg-hover);
+        }
+
+        .project-nav__link+.project-nav__link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 16px;
+        }
+
+        .project-nav__link svg {
+          display: block;
+          color: var(--icon-stroke-color);
+          transition: color 0.2s;
+        }
+
+        .project-nav__link:hover svg {
+          color: var(--icon-stroke-color-hover);
+        }
+
+        .project-nav__title {
+          font-size: 14px;
+          line-height: 1.14286;
+          color: var(--link-title-color);
+        }
+
+        .project-nav__descr {
+          font-size: 10px;
+          line-height: 1.2;
+          color: var(--link-description-color);
+          transition: color 0.2s;
+        }
+
+        .project-nav__link:hover .project-nav__descr {
+          color: var(--link-description-color-hover);
+        }
+
+        .project-nav__trigger {
+          position: fixed;
+          bottom: 9px;
+          z-index: 999999;
+          padding: 10px 8px;
+          font-size: 16px;
+          text-align: left;
+          text-transform: uppercase;
+          color: var(--button-title-color);
+          background-color: var(--button-bg-color);
+          border: none;
+          border-radius: 0 8px 8px 0;
+          outline: none;
+          transition: all .3s;
+          opacity: 0.2;
+        }
+
+        .project-nav__trigger:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+
+        .project-nav[data-state="project-nav-open"] .project-nav__nav {
+          transform: translateX(0);
+        }
+
+        .project-nav[data-state="project-nav-open"] .project-nav__trigger {
+          transform: translateX(var(--elem-shift-width));
+          opacity: 1;
+        }
+      </style>
+      <nav class="project-nav__nav" role="nav">
+        <ul class="project-nav__list">
+          <li class="project-nav__list-title">Открытая часть</li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/index.html">
+              <div class="project-nav__title">Main page</div>
+              <div class="project-nav__descr">главная страница</div>
+            </a><a class="project-nav__link" href="/index.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/about.html">
+              <div class="project-nav__title">About page</div>
+              <div class="project-nav__descr">страница о компании</div>
+            </a><a class="project-nav__link" href="/about.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/news.html">
+              <div class="project-nav__title">News page</div>
+              <div class="project-nav__descr">страница новостей</div>
+            </a><a class="project-nav__link" href="/news.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/news-post.html">
+              <div class="project-nav__title">News post page</div>
+              <div class="project-nav__descr">страница новости</div>
+            </a><a class="project-nav__link" href="/news-post.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/services.html">
+              <div class="project-nav__title">Services page</div>
+              <div class="project-nav__descr">страница услуг</div>
+            </a><a class="project-nav__link" href="/services.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/reviews.html">
+              <div class="project-nav__title">Reviews page</div>
+              <div class="project-nav__descr">страница отзывов</div>
+            </a><a class="project-nav__link" href="/reviews.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/china.html">
+              <div class="project-nav__title">China visa page</div>
+              <div class="project-nav__descr">страница виз в Китай</div>
+            </a><a class="project-nav__link" href="/china.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/ates.html">
+              <div class="project-nav__title">ATES page</div>
+              <div class="project-nav__descr">страница АТЭС</div>
+            </a><a class="project-nav__link" href="/ates.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/zagran.html">
+              <div class="project-nav__title">International passport page</div>
+              <div class="project-nav__descr">страница загран паспорт</div>
+            </a><a class="project-nav__link" href="/zagran.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/visas.html">
+              <div class="project-nav__title">Visas page</div>
+              <div class="project-nav__descr">страница оформление виз</div>
+            </a><a class="project-nav__link" href="/visas.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/thanks/index.html">
+              <div class="project-nav__title">Thanks page</div>
+              <div class="project-nav__descr">спасибо за заявку</div>
+            </a><a class="project-nav__link" href="/thanks/index.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-title">Закрытая часть (Личный кабинет)</li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/lk-login.html">
+              <div class="project-nav__title">LK: Login page</div>
+              <div class="project-nav__descr">ЛК: вход в личный кабинет</div>
+            </a><a class="project-nav__link" href="/lk-login.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/lk-main.html">
+              <div class="project-nav__title">LK: Main page</div>
+              <div class="project-nav__descr">ЛК: главная страница</div>
+            </a><a class="project-nav__link" href="/lk-main.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/lk-transaction.html">
+              <div class="project-nav__title">LK: Transaction page</div>
+              <div class="project-nav__descr">ЛК: страница сделки</div>
+            </a><a class="project-nav__link" href="/lk-transaction.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/lk-new.html">
+              <div class="project-nav__title">LK: New request</div>
+              <div class="project-nav__descr">ЛК: новая заявка</div>
+            </a><a class="project-nav__link" href="/lk-new.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/lk-services.html">
+              <div class="project-nav__title">LK: Services page</div>
+              <div class="project-nav__descr">ЛК: страница услуги</div>
+            </a><a class="project-nav__link" href="/lk-services.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/lk-my-data.html">
+              <div class="project-nav__title">LK: My data page</div>
+              <div class="project-nav__descr">ЛК: мои данные</div>
+            </a><a class="project-nav__link" href="/lk-my-data.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/lk-payment.html">
+              <div class="project-nav__title">LK: Payment page</div>
+              <div class="project-nav__descr">ЛК: оплата</div>
+            </a><a class="project-nav__link" href="/lk-payment.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/lk-loyalty.html">
+              <div class="project-nav__title">LK: Loyalty page</div>
+              <div class="project-nav__descr">ЛК: программа лояльности</div>
+            </a><a class="project-nav__link" href="/lk-loyalty.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="/lk-connect.html">
+              <div class="project-nav__title">LK: Connect page</div>
+              <div class="project-nav__descr">ЛК: связь с менеджером</div>
+            </a><a class="project-nav__link" href="/lk-connect.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+        </ul>
+      </nav><button class="project-nav__trigger" title="Pages list">📄</button><script>const projectNav = document.querySelector(".project-nav");
+const projectNavButton = projectNav.querySelector(".project-nav__trigger");
+
+document.body.addEventListener("click", (e) => {
+  if (e.target === projectNavButton) {
+    projectNav.dataset.state === "project-nav-open"
+            ? (projectNav.dataset.state = "")
+            : (projectNav.dataset.state = "project-nav-open");
+  } else if (!projectNav.contains(e.target) && projectNav.dataset.state === "project-nav-open") {
+    projectNav.dataset.state = "";
+  }
+})
+</script><!-- delete this block if production-->
+    </div>
+    <div class="layout">
+      <div class="layout__header">
+        <div class="header">
+          <div class="container">
+            <div class="header__inner">
+              <div class="header__top"><a class="header__logo" href="/"><img class="header__img" src="/img/logo__allvisa--white.svg" alt="AllVisa" /></a>
+                <div class="header__center">
+                  <nav class="header__nav">
+                    <ul class="header__nav-list">
+                      <li class="header__nav-item"><a class="header__link" href="#">О компании</a></li>
+                      <li class="header__nav-item"><a class="header__link" href="#">Блог</a></li>
+                      <li class="header__nav-item"><a class="header__link" href="#">Вакансии</a></li>
+                      <li class="header__nav-item"><a class="header__link" href="#">Контакты</a></li>
+                    </ul>
+                  </nav>
+                  <form class="header__search" id="mainSearch" action="https://jsonplaceholder.typicode.com/posts"><input class="header__search-input" type="search" placeholder="Я ищу..." /><button class="header__search-button"><svg class="header__search-icon">
+                        <use href="/img/svgSprite.svg?v=1734190047926#icon__search"></use>
+                      </svg></button></form>
+                </div>
+                <div class="header__actions"><button class="header__button header__button--search" data-search="data-search"><svg class="header__icon">
+                      <use href="/img/svgSprite.svg?v=1734190047926#icon__search"></use>
+                    </svg><span class="header__button-title">Поиск</span></button><a class="header__button header__button--payment" href="#"><svg class="header__icon">
+                      <use href="/img/svgSprite.svg?v=1734190047926#icon__wallet"></use>
+                    </svg><span class="header__button-title">Оплата услуг</span></a><a class="header__button" href="#"><svg class="header__icon">
+                      <use href="/img/svgSprite.svg?v=1734190047926#icon__user--alt"></use>
+                    </svg><span class="header__button-title">Личный кабинет</span></a></div><button class="button-burger header__burger" data-burger="data-burger"><span class="button-burger__line-tl"></span><span class="button-burger__line-tr"></span><span class="button-burger__line-cl"></span><span class="button-burger__line-cr"></span><span class="button-burger__line-bl"></span><span class="button-burger__line-br"></span></button>
+              </div>
+              <div class="header__bottom">
+                <div class="header__socials"><a class="header__social" href="#"><svg class="header__social-icon">
+                      <use href="/img/svgSprite.svg?v=1734190047926#icon__social--tg"></use>
+                    </svg></a><a class="header__social" href="#"><svg class="header__social-icon">
+                      <use href="/img/svgSprite.svg?v=1734190047926#icon__social--vk"></use>
+                    </svg></a><a class="header__social" href="#"><svg class="header__social-icon">
+                      <use href="/img/svgSprite.svg?v=1734190047926#icon__social--wa"></use>
+                    </svg></a></div>
+                <ul class="header__links">
+                  <li class="header__links-item"><a class="header__link" href="#">Оформление виз</a></li>
+                  <li class="header__links-item"><a class="header__link" href="#">Эмиграционные услуги</a></li>
+                  <li class="header__links-item"><a class="header__link" href="#">Туристические услуги</a></li>
+                  <li class="header__links-item"><a class="header__link" href="#">Услуги для Юр. Лиц</a></li>
+                  <li class="header__links-item"><button class="header__link" data-burger="data-burger">Все услуги</button></li>
+                </ul>
+                <div class="header__call"><a class="header__phone" href="tel:88004444140">8 (800) 444-41-40</a><button class="header__callback" data-modal="#callback">обратный звонок</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layout__nav">
+        <div class="side-nav">
+          <div class="side-nav__close" data-burger="data-burger"><svg class="side-nav__icon">
+              <use href="/img/svgSprite.svg?v=1734190047926#icon__close"></use>
+            </svg></div>
+          <div class="side-nav__inner">
+            <div class="side-nav__links">
+              <div class="side-nav__section">
+                <div class="side-nav__title">Визовый центр</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">Оформление виз</a><a class="side-nav__link" href="#">Шенгенская виза</a><a class="side-nav__link" href="#">Карта АТЭС</a><a class="side-nav__link" href="#">Срочный загранпаспорт</a><a class="side-nav__link" href="#">Рабочая виза в Польшу</a><a class="side-nav__link" href="#">Приглашение для иностранцев в РФ</a><a class="side-nav__link" href="#">Грин карта</a></div>
+              </div>
+              <div class="side-nav__section">
+                <div class="side-nav__title">Эмиграционные услуги</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">РВП и ВНЖ в Россию</a><a class="side-nav__link" href="#">ВНЖ Словении</a><a class="side-nav__link" href="#">Вид на жительство в ОАЭ</a><a class="side-nav__link" href="#">Оформление гражданства</a></div>
+              </div>
+              <div class="side-nav__section">
+                <div class="side-nav__title">Все услуги</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">Аренда бизнес-джетов</a><a class="side-nav__link" href="#">Доставка документов</a><a class="side-nav__link" href="#"> Перевод документов на иностранный язык</a><a class="side-nav__link" href="#">Аренда автомобилей</a></div>
+              </div>
+              <div class="side-nav__section">
+                <div class="side-nav__title">Основные разделы</div>
+                <div class="side-nav__row"><a class="side-nav__link" href="#">О компании</a><a class="side-nav__link" href="#">Блог</a><a class="side-nav__link" href="#">Отзывы</a><a class="side-nav__link" href="#">Вопрос-ответ</a><a class="side-nav__link" href="#">Кейсы</a><a class="side-nav__link" href="#">Cотрудничество</a><a class="side-nav__link" href="#">Контакты</a></div>
+              </div>
+            </div>
+            <div class="side-nav__call"><a class="side-nav__phone" href="tel:88004444140">8 (800) 444-41-40</a><button class="side-nav__callback" data-modal="#callback">обратный звонок</button></div>
+            <div class="side-nav__socials"><a class="side-nav__social" href="#"><svg class="side-nav__icon">
+                  <use href="/img/svgSprite.svg?v=1734190047926#icon__social--tg"></use>
+                </svg></a><a class="side-nav__social" href="#"><svg class="side-nav__icon">
+                  <use href="/img/svgSprite.svg?v=1734190047926#icon__social--vk"></use>
+                </svg></a><a class="side-nav__social" href="#"><svg class="side-nav__icon">
+                  <use href="/img/svgSprite.svg?v=1734190047926#icon__social--wa"></use>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="layout__main">
+        <div class="hero hero--intpass hero--ring-alt">
+          <div class="hero__back"><img class="hero__bg" src="/img/img__bg-hero--castle.webp" alt="" aria-hidden="true"><img class="hero__ring hero__ring--left" src="/img/img__ring.svg" alt=""><img class="hero__ring hero__ring--right" src="/img/img__ring.svg" alt=""></div><img class="hero__passport" src="/img/img__int-pass.webp" alt="" aria-hidden="true">
+          <div class="container">
+            <div class="hero__inner">
+              <div class="hero__info">
+                <h1 class="hero__title hero__title--alt">Срочное оформление загранпаспорта</h1>
+                <p class="hero__descr">Только для граждан РФ</p>
+              </div>
+              <div class="hero__card">
+                <form class="form stepper" action="https://jsonplaceholder.typicode.com/todos/" id="intPassForm" data-steps="1">
+                  <h2 class="stepper__title">Заполните форму и узнайте точную стоимость оформления загранпаспорта нового образца на 10 лет</h2>
+                  <div class="stepper__header">
+                    <div class="stepper__point" data-state="active">1</div>
+                    <div class="stepper__point">2</div>
+                    <div class="stepper__point">3</div>
+                    <div class="stepper__point">4</div>
+                    <div class="stepper__bar"></div>
+                  </div>
+                  <div class="stepper__inner">
+                    <div class="stepper__section" data-step="1">
+                      <h3 class="stepper__subtitle">Укажите возраст</h3>
+                      <div class="stepper__row"><label class="radio"><input type="radio" name="age" value="До 14" checked="checked" />
+                          <div class="radio__fake-radio">До 14</div>
+                        </label><label class="radio"><input type="radio" name="age" value="14-18" />
+                          <div class="radio__fake-radio">14-18</div>
+                        </label><label class="radio"><input type="radio" name="age" value="18+" />
+                          <div class="radio__fake-radio">18+</div>
+                        </label></div>
+                    </div>
+                    <div class="stepper__section" data-step="2">
+                      <h3 class="stepper__subtitle">Есть ли у вас военный билет?</h3>
+                      <div class="stepper__row"><label class="radio"><input type="radio" name="militaryID" value="Да" checked="checked" />
+                          <div class="radio__fake-radio">Да</div>
+                        </label><label class="radio"><input type="radio" name="militaryID" value="Нет" />
+                          <div class="radio__fake-radio">Нет</div>
+                        </label></div>
+                    </div>
+                    <div class="stepper__section" data-step="3">
+                      <h3 class="stepper__subtitle">Есть ли у вас задолженности?</h3>
+                      <div class="stepper__row"><label class="radio"><input type="radio" name="debt" value="Нет" checked="checked" />
+                          <div class="radio__fake-radio">Нет</div>
+                        </label><label class="radio"><input type="radio" name="debt" value="Задолженности ФССМ" />
+                          <div class="radio__fake-radio">Задолженности ФССМ</div>
+                        </label><label class="radio"><input type="radio" name="debt" value="Алименты" />
+                          <div class="radio__fake-radio">Алименты</div>
+                        </label></div>
+                    </div>
+                    <div class="stepper__section" data-step="4">
+                      <h3 class="stepper__subtitle">Укажите контакты куда выслать расчёт</h3>
+                      <div class="stepper__list"><label class="form__field">
+                          <div class="form__label">Введите Имя</div><input class="input" type="text" name="name" placeholder="Иванов Иван" required="required" />
+                        </label><label class="form__field">
+                          <div class="form__label">Введите номер телефона</div><input class="input" type="tel" name="phone" placeholder="+7 (_____) ____-____-____" data-phone-field="data-phone-field" required="required" />
+                        </label><label class="form__field">
+                          <div class="form__label">Введите E-mail</div><input class="input" type="email" name="email" placeholder="example@mail.ru" required="required" />
+                        </label>
+                        <div class="stepper__small">Нажимая кнопку «Получить расчёт», я подтверждаю, что я ознакомлен и согласен с условиями
+                          <a href="#">политики обработки персональных данных</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="stepper__section" data-step="5">
+                      <h2 class="stepper__subtitle">Ваша заявка отправлена</h2>
+                      <p class="stepper__descr">Мы свяжемся с вами в ближайшее время</p>
+                    </div>
+                  </div>
+                  <hr class="stepper__divider" />
+                  <div class="stepper__footer"><button class="button button--secondary button--large stepper__button" data-action="back" disabled="disabled">Назад</button><button class="button button--primary button--large stepper__button" data-action="forward">Далее</button><button class="button button--primary button--large stepper__button" data-action="submit" hidden="hidden">Получить расчёт</button></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layout__footer">
+        <div class="footer">
+          <div class="container">
+            <div class="footer__inner">
+              <div class="footer__top"><a class="footer__logo" href="/"><img class="footer__img" src="/img/logo__allvisa--white.svg" alt="AllVisa" /></a>
+                <div class="socials  socials--footer__socials"><a class="socials__item" href="#">
+                    <div class="socials__inner"><svg class="socials__icon">
+                        <use href="/img/svgSprite.svg?v=1734190047927#icon__social--tg-2"></use>
+                      </svg></div>
+                  </a><a class="socials__item" href="#">
+                    <div class="socials__inner"><svg class="socials__icon">
+                        <use href="/img/svgSprite.svg?v=1734190047927#icon__social--yt"></use>
+                      </svg></div>
+                  </a><a class="socials__item" href="#">
+                    <div class="socials__inner"><svg class="socials__icon">
+                        <use href="/img/svgSprite.svg?v=1734190047927#icon__social--vk-2"></use>
+                      </svg></div>
+                  </a></div>
+              </div>
+              <div class="footer__main">
+                <div class="footer__rating">
+                  <div class="rating">
+                    <div class="rating__top">
+                      <div class="rating__num"><span>4,9</span></div>
+                      <div class="rating__inner">
+                        <div class="rating__stars"><svg class="rating__star">
+                            <use href="/img/svgSprite.svg?v=1734190047927#icon__star"></use>
+                          </svg><svg class="rating__star">
+                            <use href="/img/svgSprite.svg?v=1734190047927#icon__star"></use>
+                          </svg><svg class="rating__star">
+                            <use href="/img/svgSprite.svg?v=1734190047927#icon__star"></use>
+                          </svg><svg class="rating__star">
+                            <use href="/img/svgSprite.svg?v=1734190047927#icon__star"></use>
+                          </svg><svg class="rating__star">
+                            <use href="/img/svgSprite.svg?v=1734190047927#icon__star"></use>
+                          </svg></div>
+                        <div class="rating__descr">286 отзывов, 327 оценки</div>
+                      </div>
+                    </div>
+                    <div class="rating__row"><img src="/img/img__yandex-map.png" alt="Yandex Map" /><img src="/img/img__2gis.png" alt="2Gis" /></div>
+                  </div>
+                </div>
+                <div class="footer__nav">
+                  <div class="footer__section">
+                    <div class="footer__title">Визовый центр</div>
+                    <div class="footer__row"><a class="footer__link" href="#">Оформление виз</a><a class="footer__link" href="#">Шенгенская виза</a><a class="footer__link" href="#">Карта АТЭС</a><a class="footer__link" href="#">Срочный загранпаспорт</a><a class="footer__link" href="#">Рабочая виза в Польшу</a><a class="footer__link" href="#">Приглашение для иностранцев в РФ</a><a class="footer__link" href="#">Грин карта</a></div>
+                  </div>
+                  <div class="footer__section">
+                    <div class="footer__title">Эмиграционные услуги</div>
+                    <div class="footer__row"><a class="footer__link" href="#">РВП и ВНЖ в Россию</a><a class="footer__link" href="#">ВНЖ Словении</a><a class="footer__link" href="#">Вид на жительство в ОАЭ</a><a class="footer__link" href="#">Оформление гражданства</a></div>
+                  </div>
+                  <div class="footer__section">
+                    <div class="footer__title">Туристические услуги</div>
+                    <div class="footer__row"><a class="footer__link" href="#">Подбор туров</a><a class="footer__link" href="#">Продажа и бронирование Авиа/ЖД билетов</a><a class="footer__link" href="#">Бронирование отелей</a></div>
+                  </div>
+                  <div class="footer__section">
+                    <div class="footer__title">Все услуги</div>
+                    <div class="footer__row"><a class="footer__link" href="#">Аренда бизнес-джетов</a><a class="footer__link" href="#">Доставка документов</a><a class="footer__link" href="#"> Перевод документов на иностранный язык</a><a class="footer__link" href="#">Аренда автомобилей</a></div>
+                  </div>
+                  <div class="footer__section">
+                    <div class="footer__title">Основные разделы</div>
+                    <div class="footer__row"><a class="footer__link" href="#">О компании</a><a class="footer__link" href="#">Блог</a><a class="footer__link" href="#">Отзывы</a><a class="footer__link" href="#">Вопрос-ответ</a><a class="footer__link" href="#">Кейсы</a><a class="footer__link" href="#">Cотрудничество</a><a class="footer__link" href="#">Контакты</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer__bottom">
+                <div class="footer__line footer__line--strong">ООО «ГК Бизнес Обеспечение»</div>
+                <div class="footer__lines">
+                  <div class="footer__line">ИНН 7709995951</div>
+                  <div class="footer__line">ОГРН 1177746337922</div>
+                  <div class="footer__line">КПП 770901001</div>
+                  <div class="footer__line">© 2017–2024 г. Визовый центр ALLVISA</div>
+                </div>
+                <div class="footer__docs"><a class="footer__doc" href="#">Политика конфиденциальности</a><a class="footer__doc" href="#">Услуги для юр. лиц</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hystmodal modal" id="callback" aria-hidden="true">
+      <div class="hystmodal__wrap">
+        <div class="hystmodal__window modal__window modal__window--callback" role="dialog" aria-modal="true">
+          <h2 class="modal__title">Введите свои контактные данные, чтобы отправить заявку</h2>
+          <form class="form" id="formCallback" action="https://jsonplaceholder.typicode.com/posts">
+            <div class="form__inner">
+              <div class="form__section">
+                <div class="form__row form__row--two"><label class="form__field">
+                    <div class="form__label">Введите Имя</div><input class="input" type="text" name="name" placeholder="Иванов Иван" required="required" />
+                  </label><label class="form__field">
+                    <div class="form__label">Введите номер телефона</div><input class="input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" data-phone-field="data-phone-field" required="required" />
+                  </label><label class="form__field">
+                    <div class="form__label">Введите E-mail</div><input class="input" type="email" name="email" placeholder="example@mail.ru" required="required" />
+                  </label><label class="form__field">
+                    <div class="form__label">Город</div><input class="input" type="text" name="city" placeholder="Москва" required="required" />
+                  </label></div>
+                <div class="form__small">Нажимая кнопку "Узнать стоимость", я подтверждаю, что я ознакомлен и согласен с условиями
+                  <a href="#" target="_blank">политики обработки персональных данных</a>
+                </div><button class="button button--primary button--large modal__button" type="submit">Отправить заявку</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><script src="/js/bundle.js"></script>
+  </body>
+</html>

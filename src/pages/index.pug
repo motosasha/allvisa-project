@@ -8,4 +8,27 @@ block variables
     metaKeywords = "keywords"
 
 block content
-  .hero hero
+  .hero.hero--full-height
+    .hero__back
+      img.hero__bg(src= path.img + "img__bg-hero--family.webp", alt="", aria-hidden="true")
+      img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
+      img.hero__ring.hero__ring--right(src= path.img + "img__ring.svg", alt="")
+    .container
+      .hero__inner
+        .hero__info
+          .hero__label Визовый центр ALLVISA
+          h1.hero__title Оформим визы, поможем с эммиграцией в другую страну
+          button.hero__button.hero__button--mt(data-modal="#callback") Получить консультацию
+        .hero__row
+          .hero__item
+            .hero__item-title 9+ лет
+            .hero__item-descr Работаем на рынке
+          .hero__item
+            .hero__item-title 99 %
+            .hero__item-descr Одобренных виз
+          .hero__item
+            .hero__item-title 0 %
+            .hero__item-descr Рассрочка для клиентов
+          .hero__item
+            .hero__item-title 100 тыс.
+            .hero__item-descr Оформленных виз

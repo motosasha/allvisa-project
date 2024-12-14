@@ -1,0 +1,23 @@
+extends ../templates/template__default.pug
+
+block variables
+  -
+    isMainPage = false
+    pageTitle = "Allvisa | Оформление виз"
+    metaDescription = "description"
+    metaKeywords = "keywords"
+
+block content
+  .hero.hero--visas.hero--ring-alt
+    .hero__back
+      img.hero__bg(src= path.img + "img__bg-hero--airport.webp", alt="", aria-hidden="true")
+      img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
+      img.hero__ring.hero__ring--right(src= path.img + "img__ring.svg", alt="")
+    img.hero__couple(src= path.img + "img__couple.webp", alt="", aria-hidden="true")
+    .container
+      .hero__inner.hero__inner--grid
+        .hero__info
+          h1.hero__title.hero__title--alt Оформление виз
+          p.hero__descr От 1 дня со 100 % гарантией получения по договору
+          .hero__form.hero__form--mt
+            +request-form()(action="https://jsonplaceholder.typicode.com/todos/", id="requestForm", data-steps="1")

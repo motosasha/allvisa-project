@@ -1,0 +1,86 @@
+//- Все примеси в этом файле должны начинаться c имени блока (form)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin stepper(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +form("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " form--" + modsList[i].trim();
+      }
+    }
+
+  form.form.stepper(class=allMods)&attributes(attributes)
+    h2.stepper__title Заполните форму и узнайте точную стоимость оформления загранпаспорта нового образца на 10 лет
+    .stepper__header
+      .stepper__point(data-state="active") 1
+      .stepper__point 2
+      .stepper__point 3
+      .stepper__point 4
+      .stepper__bar
+    .stepper__inner
+      .stepper__section(data-step="1")
+        h3.stepper__subtitle Укажите возраст
+        .stepper__row
+          label.radio
+            input(type="radio", name="age", value="До 14", checked)
+            .radio__fake-radio До 14
+          label.radio
+            input(type="radio", name="age", value="14-18")
+            .radio__fake-radio 14-18
+          label.radio
+            input(type="radio", name="age", value="18+")
+            .radio__fake-radio 18+
+      .stepper__section(data-step="2")
+        h3.stepper__subtitle Есть ли у вас военный билет?
+        .stepper__row
+          label.radio
+            input(type="radio", name="militaryID", value="Да", checked)
+            .radio__fake-radio Да
+          label.radio
+            input(type="radio", name="militaryID", value="Нет")
+            .radio__fake-radio Нет
+      .stepper__section(data-step="3")
+        h3.stepper__subtitle Есть ли у вас задолженности?
+        .stepper__row
+          label.radio
+            input(type="radio", name="debt", value="Нет", checked)
+            .radio__fake-radio Нет
+          label.radio
+            input(type="radio", name="debt", value="Задолженности ФССМ")
+            .radio__fake-radio Задолженности ФССМ
+          label.radio
+            input(type="radio", name="debt", value="Алименты")
+            .radio__fake-radio Алименты
+      .stepper__section(data-step="4")
+        h3.stepper__subtitle Укажите контакты куда выслать расчёт
+        .stepper__list
+          label.form__field
+            .form__label Введите Имя
+            input.input(type="text", name="name", placeholder="Иванов Иван", required)
+          label.form__field
+            .form__label Введите номер телефона
+            input.input(type="tel", name="phone", placeholder="+7 (_____) ____-____-____", data-phone-field, required)
+          label.form__field
+            .form__label Введите E-mail
+            input.input(type="email", name="email", placeholder="example@mail.ru", required)
+          .stepper__small.
+            Нажимая кнопку «Получить расчёт», я подтверждаю, что я ознакомлен и согласен с условиями
+            #[a(href="#") политики обработки персональных данных]
+      .stepper__section(data-step="5")
+        h2.stepper__subtitle Ваша заявка отправлена
+        p.stepper__descr Мы свяжемся с вами в ближайшее время
+    hr.stepper__divider
+    .stepper__footer
+      button.button.button--secondary.button--large.stepper__button(data-action="back", disabled) Назад
+      button.button.button--primary.button--large.stepper__button(data-action="forward") Далее
+      button.button.button--primary.button--large.stepper__button(data-action="submit", hidden) Получить расчёт

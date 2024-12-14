@@ -26,7 +26,7 @@ block content
                 ["Бизнес приглашение", "business"],
                 ["Медицинское приглашение", "medical"],
                 ["Другая услуга", "others"],
-        ], "", "type", "service")
+        ], "", "type", "service")(data-slim-select)
 
       .form-set__inner
         .form-set__pane.form-set__pane--active(data-form="visa")
@@ -57,7 +57,7 @@ block content
                             ["Медицинская", "Медицинская"],
                             ["Студенческая", "Студенческая"],
                             ["По приглашению", "По приглашению"]
-                    ], "", "visaType")
+                    ], "", "visaType")(data-slim-select)
                   label.form__field
                     .form__label Страна поездки
                     +select([
@@ -107,7 +107,7 @@ block content
                             ["Эстония", "Эстония"],
                             ["Южная Корея", "Южная Корея"],
                             ["Япония", "Япония"],
-                    ], "", "country")
+                    ], "", "country")(data-slim-select)
                   label.form__field
                     .form__label Количество человек
                     input.input(type="text", name="amount", data-number, required)
@@ -181,7 +181,7 @@ block content
                     +select([
                       ["Выберите страну", ""],
                       ["Польша", "Польша"],
-                    ], "", "country")
+                    ], "", "country")(data-slim-select)
                   label.form__field
                     .form__label Количество человек
                     input.input(type="text", name="amount", data-number, required)
@@ -230,21 +230,21 @@ block content
                       ["Румыния", "Румыния"],
                       ["Словения", "Словения"],
                       ["США", "США"],
-                    ], "", "citizenshipCountry")
+                    ], "", "citizenshipCountry")(data-slim-select)
                   label.form__field
                     .form__label Программа
                     +select([
                       ["Выберите программу", ""],
                       ["Натурализация", "Натурализация"],
                       ["Репатриация", "Репатриация"],
-                    ], "", "program")
+                    ], "", "program")(data-slim-select)
                   label.form__field
                     .form__label Судимость
                     +select([
                       ["Выберите значение", ""],
                       ["Нет судимости", "Нет судимости"],
                       ["Есть судимость", "Есть судимость"],
-                    ], "", "criminalRecord")
+                    ], "", "criminalRecord")(data-slim-select)
               .form__footer
                 button.button.button--primary(type="submit") Отправить заявку
         .form-set__pane(data-form="intPassport")
@@ -273,14 +273,14 @@ block content
                       ["до 14 лет", "до 14 лет"],
                       ["14-18", "14-18"],
                       ["18+", "18+"],
-                    ], "", "age")
+                    ], "", "age")(data-slim-select)
                   label.form__field
                     .form__label Военный билет
                     +select([
                       ["Выберите значение", ""],
                       ["Нет", "Нет"],
                       ["Есть", "Есть"],
-                    ], "", "militaryId")
+                    ], "", "militaryId")(data-slim-select)
                   label.form__field
                     .form__label Задолженность
                     +select([
@@ -288,7 +288,7 @@ block content
                       ["Нет", "Нет"],
                       ["Задолженности ФССМ", "Задолженности ФССМ"],
                       ["Алименты", "Алименты"],
-                    ], "", "debt")
+                    ], "", "debt")(data-slim-select)
               .form__footer
                 button.button.button--primary(type="submit") Отправить заявку
         .form-set__pane(data-form="invite")
@@ -318,7 +318,7 @@ block content
                       ["Трудовое", "Трудовое"],
                       ["Деловое", "Деловое"],
                       ["Медицинское", "Медицинское"],
-                    ], "", "inviteType")
+                    ], "", "inviteType")(data-slim-select)
                   label.form__field
                     .form__label Сроки пребывания
                     +select([
@@ -326,7 +326,7 @@ block content
                       ["до 30 дней", "до 30 дней"],
                       ["от 30 до 90 дней", "от 30 до 90 дней"],
                       ["от 180 до 365 дней", "от 180 до 365 дней"],
-                    ], "", "stayDuration")
+                    ], "", "stayDuration")(data-slim-select)
                   label.form__field
                     .form__label Страна приглашаемого
                     input.input(type="text", name="inviteeCountry", placeholder="Бразилия", required)
@@ -359,7 +359,7 @@ block content
                       ["Аренда самолёта", "Аренда самолёта"],
                       ["Групповые чартеры", "Групповые чартеры"],
                       ["Продажа ВС", "Продажа ВС"],
-                    ], "", "serviceType")
+                    ], "", "serviceType")(data-slim-select)
                   label.form__field
                     .form__label Количество пассажиров
                     input.input(type="text", name="passengersNumber", data-number, required)
@@ -395,7 +395,7 @@ block content
                       ["Деловое", "Деловое"],
                       ["Медицинское", "Медицинское"],
                       ["Студенческое", "Студенческое"]
-                    ], "", "inviteType")
+                    ], "", "inviteType")(data-slim-select)
                   label.form__field
                     .form__label Страна поездки
                     +select([
@@ -445,7 +445,7 @@ block content
                       ["Эстония", "Эстония"],
                       ["Южная Корея", "Южная Корея"],
                       ["Япония", "Япония"],
-                    ], "", "country")
+                    ], "", "country")(data-slim-select)
                   label.form__field
                     .form__label Количество человек
                     input.input(type="text", name="amount", data-number, required)
@@ -488,7 +488,7 @@ block content
                       ["Деловое", "Деловое"],
                       ["Медицинское", "Медицинское"],
                       ["Студенческое", "Студенческое"]
-                    ], "", "inviteType")
+                    ], "", "inviteType")(data-slim-select)
                   label.form__field
                     .form__label Страна поездки
                     +select([
@@ -538,7 +538,7 @@ block content
                       ["Эстония", "Эстония"],
                       ["Южная Корея", "Южная Корея"],
                       ["Япония", "Япония"],
-                    ], "", "country")
+                    ], "", "country")(data-slim-select)
                   label.form__field
                     .form__label Количество человек
                     input.input(type="text", name="amount", data-number, required)

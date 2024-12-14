@@ -155,12 +155,15 @@
       display: none;
     }
 
+    // stylelint-disable
+    &::-webkit-input-placeholder,
     &::placeholder {
       @include text-styles.text-m-lh1;
 
       color: var(--front-invert);
       opacity: 1;
     }
+    // stylelint-enable
   }
 
   &__search-button {

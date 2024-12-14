@@ -14,8 +14,10 @@ ready(function () {
       });
     });
 
-    searchTrigger.addEventListener("click", () => {
-      searchForm.classList.toggle("header__search--active");
-    });
+    if (searchTrigger) {
+      searchTrigger.addEventListener("click", () => {
+        searchForm.classList.toggle("header__search--active");
+      });
+    }
   }
 });
