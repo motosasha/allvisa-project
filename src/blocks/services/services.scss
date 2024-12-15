@@ -1,0 +1,165 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/text-styles";
+
+.services {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 12px;
+
+  @media screen and (min-width: breakpoints.$screen-t) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+  	grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  &__item {
+    @include reset-link.reset-link;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    overflow: hidden;
+    background: #eee;
+    border-radius: 12px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 28px;
+
+      &--large {
+        grid-row: span 2;
+
+        &::before,
+        &::after {
+          position: absolute;
+          display: block;
+          background-image: url("{{img}}/img__ring.svg");
+          background-size: cover;
+          opacity: 0.1;
+          content: "";
+          aspect-ratio: 1 / 1;
+          pointer-events: none;
+        }
+
+        &::before {
+          top: -165px;
+          right: -205px;
+          width: 350px;
+        }
+
+        &::after {
+          bottom: -160px;
+          left: -235px;
+          width: 500px;
+        }
+      }
+
+      &:nth-child(5) {
+        &::before {
+          position: absolute;
+          right: -166px;
+          bottom: -204px;
+          display: block;
+          width: 350px;
+          background-image: url("{{img}}/img__ring.svg");
+          background-size: cover;
+          opacity: 0.1;
+          content: "";
+          aspect-ratio: 1 / 1;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      width: 40px;
+      height: 40px;
+
+      #{$block-name}__item--large & {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  }
+
+  &__title {
+    @include text-styles.text-m-lh1(500);
+
+    margin: 12px 0;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin: 20px 0;
+      font-size: 36px;
+    }
+  }
+
+  &__descr {
+    margin: 0 0 12px;
+    font-size: 12px;
+    line-height: 1.3;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin: 0 0 20px;
+      font-size: 18px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  &__price {
+    padding: 6px 6px 2px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    background-color: var(--back-primary);
+    border-radius: 24px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 10px 16px 4px;
+      font-size: 24px;
+    }
+  }
+
+  &__label {
+    color: #b1b1b1;
+    font-size: 15px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 24px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: #f90;
+    font-size: 16px;
+    line-height: 1;
+
+    span {
+      text-decoration: underline;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

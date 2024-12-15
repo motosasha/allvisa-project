@@ -1,0 +1,51 @@
+//- Все примеси в этом файле должны начинаться c имени блока (services)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin services(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +services(object, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " services--" + modsList[i].trim();
+      }
+    }
+
+  .services(class=allMods)&attributes(attributes)
+    each item in data
+      if item.isLink
+        a.services__item(href="#", class= item.isLarge? "services__item--large": "")
+          img.services__icon(src= path.img + "icon__" + item.icon + ".svg", alt= item.icon)
+          h2.services__title!= item.title
+          p.services__descr!= item.description
+          .services__footer
+            if item.link
+              a.services__link(href= item.link) Подробнее
+            if item.price
+              .services__price от #{item.price} ₽
+            if item.label
+              .services__label!= item.label
+      else
+        .services__item(class= item.isLarge? "services__item--large": "")
+          img.services__icon(src= path.img + "icon__" + item.icon + ".svg", alt= item.icon)
+          h2.services__title!= item.title
+          p.services__descr!= item.description
+          .services__footer
+            if item.link
+              a.services__link(href= item.link)
+                span Подробнее
+                svg
+                  use(href= path.icon + "icon__arrow--up-right")
+            if item.price
+              .services__price от #{item.price} ₽
+            if item.label
+              .services__label!= item.label
