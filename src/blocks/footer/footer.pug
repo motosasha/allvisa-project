@@ -33,7 +33,7 @@ mixin footer(mods)
         .footer__main
           .footer__rating
             .rating
-              .rating__top
+              a.rating__top(href="https://yandex.ru/maps/org/allvisa/73595793376/reviews/?ll=37.635135%2C55.754223&z=15&roistat_visit=489845", target="_blank", rel="nofollow")
                 .rating__num
                   span 4,9
                 .rating__inner
@@ -43,8 +43,10 @@ mixin footer(mods)
                         use(href= path.icon + "icon__star")
                   .rating__descr 286 отзывов, 327 оценки
               .rating__row
-                img(src= path.img + "img__yandex-map.png", alt="Yandex Map")
-                img(src= path.img + "img__2gis.png", alt="2Gis")
+                a(href="https://yandex.ru/maps/org/allvisa/73595793376/reviews/?ll=37.635135%2C55.754223&z=15&roistat_visit=489845", target="_blank", rel="nofollow")
+                  img(src= path.img + "img__yandex-map.png", alt="Yandex Map")
+                a(href="https://2gis.ru/moscow/firm/70000001027565734/tab/reviews?m=37.637801%2C55.753206%2F14.73&roistat_visit=489845", target="_blank", rel="nofollow")
+                  img(src= path.img + "img__2gis.png", alt="2gis")
           .footer__nav
             each section in json.footerNav
               .footer__section
