@@ -1,0 +1,75 @@
+//- Все примеси в этом файле должны начинаться c имени блока (news-slider)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin news-slider(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +news-slider("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " news-slider--" + modsList[i].trim();
+      }
+    }
+
+  .news-slider(class=allMods)&attributes(attributes)
+    .swiper.news-slider__carousel
+      .swiper-wrapper.news-slider__track
+        .swiper-slide.news-slider__slide
+          .news-tile
+            img.news-tile__image(src= path.img + "img__news-post.webp", alt="")
+            a.news-tile__title(href="#") Переезд в Португалию из России: особенности и нюансы
+            p.news-tile__descr.
+              Переезд из России в Португалию имеет ряд особенностей, которые стоит
+              рассмотреть для тех, кто рассматривает эту страну как возможное место
+              для проживания.
+            a.button.button--primary.button--large.news-tile__button(href="#") Подробнее
+        .swiper-slide.news-slider__slide
+          .news-tile
+            img.news-tile__image(src= path.img + "img__news-post.webp", alt="")
+            a.news-tile__title(href="#") Переезд в Португалию из России: особенности и нюансы
+            p.news-tile__descr.
+              Переезд из России в Португалию имеет ряд особенностей, которые стоит
+              рассмотреть для тех, кто рассматривает эту страну как возможное место
+              для проживания.
+            a.button.button--primary.button--large.news-tile__button(href="#") Подробнее
+        .swiper-slide.news-slider__slide
+          .news-tile
+            img.news-tile__image(src= path.img + "img__news-post.webp", alt="")
+            a.news-tile__title(href="#") Переезд в Португалию из России: особенности и нюансы
+            p.news-tile__descr.
+              Переезд из России в Португалию имеет ряд особенностей, которые стоит
+              рассмотреть для тех, кто рассматривает эту страну как возможное место
+              для проживания.
+            a.button.button--primary.button--large.news-tile__button(href="#") Подробнее
+        .swiper-slide.news-slider__slide
+          .news-tile
+            img.news-tile__image(src= path.img + "img__news-post.webp", alt="")
+            a.news-tile__title(href="#") Переезд в Португалию из России: особенности и нюансы
+            p.news-tile__descr.
+              Переезд из России в Португалию имеет ряд особенностей, которые стоит
+              рассмотреть для тех, кто рассматривает эту страну как возможное место
+              для проживания.
+            a.button.button--primary.button--large.news-tile__button(href="#") Подробнее
+        .swiper-slide.news-slider__slide
+          .news-tile
+            img.news-tile__image(src= path.img + "img__news-post.webp", alt="")
+            a.news-tile__title(href="#") Переезд в Португалию из России: особенности и нюансы
+            p.news-tile__descr.
+              Переезд из России в Португалию имеет ряд особенностей, которые стоит
+              рассмотреть для тех, кто рассматривает эту страну как возможное место
+              для проживания.
+            a.button.button--primary.button--large.news-tile__button(href="#") Подробнее
+      .news-slider__footer
+        .news-slider__prev
+          svg: use(href= path.icon + "icon__arrow-round--prev")
+        .news-slider__fraction
+        .news-slider__next
+          svg: use(href= path.icon + "icon__arrow-round--next")

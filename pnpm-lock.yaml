@@ -26,8 +26,11 @@ importers:
       slim-select:
         specifier: ^2.9.2
         version: 2.9.2
+      swiper:
+        specifier: ^11.1.15
+        version: 11.1.15
       tua-body-scroll-lock:
-        specifier: ^1.5.3
+        specifier: ^1.4.1
         version: 1.5.3
     devDependencies:
       '@babel/eslint-parser':
@@ -5248,6 +5251,10 @@ packages:
     resolution: {integrity: sha512-OoohrmuUlBs8B8o6MB2Aevn+pRIH9zDALSR+6hhqVfa6fRwG/Qw9VUMSMW9VNg2CFc/MTIfabtdOVl9ODIJjpw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
+
+  swiper@11.1.15:
+    resolution: {integrity: sha512-IzWeU34WwC7gbhjKsjkImTuCRf+lRbO6cnxMGs88iVNKDwV+xQpBCJxZ4bNH6gSrIbbyVJ1kuGzo3JTtz//CBw==}
+    engines: {node: '>= 4.7.0'}
 
   synckit@0.9.1:
     resolution: {integrity: sha512-7gr8p9TQP6RAHusBOSLs46F4564ZrjV8xFmw5zCmgmhGUcw2hxsShhJ6CEiHQMgPDwAQ1fWHPM0ypc4RMAig4A==}
@@ -11397,6 +11404,8 @@ snapshots:
       css-what: 6.1.0
       csso: 5.0.5
       picocolors: 1.0.1
+
+  swiper@11.1.15: {}
 
   synckit@0.9.1:
     dependencies:

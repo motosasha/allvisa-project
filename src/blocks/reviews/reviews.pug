@@ -1,0 +1,42 @@
+//- Все примеси в этом файле должны начинаться c имени блока (reviews)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin reviews(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +reviews("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " reviews--" + modsList[i].trim();
+      }
+    }
+
+  .reviews(class=allMods)&attributes(attributes)
+    each tile in [1, 2, 3, 4]
+      .reviews__tile
+        .reviews__row
+          .reviews__name Анна Сергеевна
+          .reviews__stars
+            svg.reviews__star
+              use(href= path.icon + "icon__star")
+            svg.reviews__star
+              use(href= path.icon + "icon__star")
+            svg.reviews__star
+              use(href= path.icon + "icon__star")
+            svg.reviews__star
+              use(href= path.icon + "icon__star")
+            svg.reviews__star.reviews__star--empty
+              use(href= path.icon + "icon__star")
+        p.reviews__descr "Огромное спасибо ALLVISA за помощь в получении визы в США! Все было быстро, четко и без лишних нервов. Консультанты очень грамотные, всегда отвечали на все вопросы и помогали с документами. Рекомендую всем, кто планирует путешествовать!"
+        a.reviews__link(href="#")
+          span Подробнее
+          svg
+            use(href= path.icon + "icon__arrow--up-right")

@@ -1,0 +1,50 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/text-styles";
+
+.news-tile {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    border-radius: 12px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	border-radius: 24px;
+    }
+  }
+
+  &__title {
+    @include reset-link.reset-link;
+
+    margin: 22px 0;
+    color: #0036ae;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin: 40px 0 20px;
+      font-size: 31px;
+    }
+  }
+
+  &__descr {
+    margin: 0 0 40px;
+    font-size: 14px;
+    line-height: 1.2;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  &__button {
+    align-self: center;
+    min-width: 274px;
+    margin-top: auto;
+  }
+}

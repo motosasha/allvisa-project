@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (news-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin news-tile(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +news-tile("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " news-tile--" + modsList[i].trim();
+      }
+    }
+
+  .news-tile(class=allMods)&attributes(attributes)
+    .news-tile__inner
+      block

@@ -1,0 +1,93 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.countries {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 32px;
+  }
+
+  @media screen and (min-width: breakpoints.$screen-tl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media screen and (min-width: breakpoints.$screen-dl) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px 40px;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 40px auto;
+    gap: 6px 8px;
+    padding: 12px;
+    background-color: #fbfbfb;
+    border-radius: 8px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 6px 12px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    grid-row: 1 / 3;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-image: linear-gradient(115deg, #6d7081 75%, #f90 75%);
+    border-radius: 50%;
+
+    &::after {
+      position: absolute;
+      display: block;
+      background-color: var(--back-primary);
+      border-radius: 50%;
+      content: "";
+      inset: 1px;
+    }
+
+    svg {
+      position: relative;
+      z-index: var(--z-index-default);
+      width: 28px;
+      height: 20px;
+    }
+  }
+
+  &__title {
+    grid-column: 2;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 20px;
+    }
+  }
+
+  &__descr {
+    grid-row: 2;
+    grid-column: 2;
+    color: #8c8c8c;
+    font-size: 14px;
+    line-height: 1
+  }
+}

@@ -1,0 +1,48 @@
+[
+  [
+    {
+      "img": "img__slider--china",
+      "title": "Виза в Китай",
+      "city": "Гонконг",
+      "price": "7000"
+    },
+    {
+      "img": "img__slider--usa",
+      "title": "Виза в США",
+      "city": "Нью-Йорк",
+      "price": "7000"
+    },
+    {
+      "img": "img__slider--france",
+      "title": "Виза в Францию",
+      "city": "Париж",
+      "price": "7000"
+    },
+    {
+      "img": "img__slider--spain",
+      "title": "Виза в Испанию",
+      "city": "Барселона",
+      "price": "7000"
+    }
+  ],
+  [
+    {
+      "img": "img__slider--china",
+      "title": "Виза в Китай",
+      "city": "Гонконг",
+      "price": "7000"
+    },
+    {
+      "img": "img__slider--usa",
+      "title": "Виза в США",
+      "city": "Нью-Йорк",
+      "price": "7000"
+    },
+    {
+      "img": "img__slider--france",
+      "title": "Виза в Францию",
+      "city": "Париж",
+      "price": "7000"
+    }
+  ]
+]

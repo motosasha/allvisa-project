@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (countries)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin countries(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - список модификаторов
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +countries(object, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " countries--" + modsList[i].trim();
+      }
+    }
+
+  .countries(class=allMods)&attributes(attributes)
+    each item in data
+      .countries__item
+        .countries__icon
+          svg
+            use(href= path.icon + "icon__flag--" + item.icon)
+        .countries__title!= item.title
+        .countries__descr от 20 000 ₽

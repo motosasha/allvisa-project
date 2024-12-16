@@ -34,5 +34,64 @@ block content
             .hero__item-descr Оформленных виз
   section.section
     .container
+      +services(json.mainPage.services)
+  section.section
+    .container
       .section__inner
-        +services(json.mainPage.services)
+        .section__header
+          h2.section__title Популярные направления
+          p.section__descr «ALLVISA» — ваш надёжный помощник в получении #[b визы]
+        .section__body
+          +direction-slider(json.directionSlider)
+          +countries(json.countries.full)
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Отзывы
+          p.section__descr.section__descr--flex Рейтинг на 2GIS
+            span 4,9
+              svg
+                use(href= path.icon + "icon__star")
+            svg.section__gis
+              use(href= path.icon + "logo__2gis")
+        .section__body
+          +reviews
+        .section__footer
+          a.button.button--primary.button--large(href="#") Смотреть все отзывы
+  section.section
+    .container
+      .about-section
+        h2.about-section__title О компании
+        button.about-section__video
+          img(src= path.img + "img__video-bg.webp", alt="")
+          svg
+            use(href= path.icon + "icon__play")
+        .about-section__text
+          h2.about-section__title О компании
+          p.
+            Туристический визовый центр «Allvisa» — команда настоящих профессионалов,
+            готовых помочь в решении туристических вопросов, таких как оформление виз,
+            подбор отелей, запись в визовые центры, бронирование и покупка билетов,
+            оформление ВНЖ и других.
+          p.
+            Работая уже не первый год в этой сфере, мы настроили грамотный процесс
+            оформления туристических документов, предлагая на сайте свои услуги по доступным
+            ценам. Оставьте заявку, и наши менеджеры очень скоро с вами свяжутся
+            для решения вашего вопроса. Официальный визовый центр «Allvisa» — можете
+            нам доверять!
+          a.button.button--primary.button--large.about-section__button(href="#") Перейти в раздел
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Наши преимущества
+        .section__body
+          +advantages(json.advantages)
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Новости
+        .section__body
+          +news-slider

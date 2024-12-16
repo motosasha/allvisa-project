@@ -1,0 +1,41 @@
+//- Все примеси в этом файле должны начинаться c имени блока (direction-slider)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin direction-slider(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +direction-slider(object, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " direction-slider--" + modsList[i].trim();
+      }
+    }
+
+  .direction-slider(class=allMods)&attributes(attributes)
+    .swiper.direction-slider__carousel
+      .swiper-wrapper.direction-slider__track
+        each slide in data
+          .swiper-slide.direction-slider__slide
+            each tile in slide
+              a.direction-slider__tile(href="#")
+                .direction-slider__tile-inner
+                  .direction-slider__city!= tile.city
+                  .direction-slider__row
+                    h3.direction-slider__title!= tile.title
+                    .direction-slider__price от #{tile.price} ₽
+                img.direction-slider__image(src= path.img + tile.img + ".webp", alt="")
+      .direction-slider__footer
+        .direction-slider__prev
+          svg: use(href= path.icon + "icon__arrow-round--prev")
+        .direction-slider__fraction
+        .direction-slider__next
+          svg: use(href= path.icon + "icon__arrow-round--next")

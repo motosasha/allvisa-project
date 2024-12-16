@@ -1,0 +1,66 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.advantages {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 32px;
+
+  @media screen and (min-width: breakpoints.$screen-ti) {
+  	grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 32px;
+      align-items: start;
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      max-width: 264px;
+      font-weight: 600;
+      font-size: 31px;
+      line-height: 1.2;
+      text-align: left;
+    }
+  }
+
+  &__descr {
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+}
