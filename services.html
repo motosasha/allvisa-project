@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/img/favicon/site.webmanifest">
     <meta name="theme-color" content="#000000">
-    <title>Allvisa | Главная страница</title>
+    <title>Allvisa | Услуги</title>
     <meta name="description" content="description">
     <meta name="keywords" content="keywords">
     <link rel="stylesheet" href="/css/style.css"><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");const navigatorErrorMessage="Could not find `userAgent` or `userAgentData` window.navigator properties to set `os`, `browser` and `version`",removeExcessMozillaAndVersion=/^mozilla\/\d\.\d\W/,browserPattern=/(\w+)\/(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)/g,engineAndVersionPattern=/^(ver|cri|gec)/,brandList=["chrome","opera","safari","edge","firefox"],unknown="Unknown";let userAgentData=window.navigator.userAgentData,userAgent=window.navigator.userAgent;const mobiles={ios:/iphone/,ipados:/ipad|macintosh/,android:/android/},desktops={windows:/win/,osx:/macintosh/,linux:/linux/},detectPlatform=(e,n)=>{if(userAgent="string"==typeof e?e:userAgent,userAgentData="string"==typeof n?n:userAgentData,userAgent){const e=userAgent.toLowerCase().replace(removeExcessMozillaAndVersion,""),n=Object.keys(mobiles).find(n=>mobiles[n].test(e)&&window.navigator.maxTouchPoints>=1),t=Object.keys(desktops).find(n=>desktops[n].test(e)),o=n||t,r=e.match(browserPattern),s=/version\/(\d+(\.\d+)*)/,a=e.match(s),i=Array.isArray(a)?a[1]:null,d=r&&(r.length>2&&!engineAndVersionPattern.test(r[1])?1:0),l=r&&r[r.length-1-(d||0)].split("/");return{os:o,browser:l&&l[0],version:i||l&&l[1]}}if(userAgentData){const e=userAgentData.platform.toLowerCase();let n;for(const e of userAgentData.brands){const t=e.brand.toLowerCase(),o=brandList.find(e=>{if(t.includes(e))return e});if(o){n={browser:o,version:e.version};break}}return{os:e,...n||{browser:unknown,version:unknown}}}return console.error(navigatorErrorMessage),{os:navigator.platform||unknown,browser:unknown,version:unknown}};let platform=detectPlatform();document.documentElement.classList.add(platform.os,platform.browser);let vh=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",vh+"px"),window.addEventListener("resize",()=>{let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",e+"px")});</script>
@@ -373,8 +373,7 @@ document.body.addEventListener("click", (e) => {
         <div class="header">
           <div class="container">
             <div class="header__inner">
-              <div class="header__top">
-                <div class="header__logo"><img class="header__img" src="/img/logo__allvisa--white.svg" alt="AllVisa" /></div>
+              <div class="header__top"><a class="header__logo" href="/"><img class="header__img" src="/img/logo__allvisa--white.svg" alt="AllVisa" /></a>
                 <div class="header__center">
                   <nav class="header__nav">
                     <ul class="header__nav-list">
@@ -385,24 +384,24 @@ document.body.addEventListener("click", (e) => {
                     </ul>
                   </nav>
                   <form class="header__search" id="mainSearch" action="https://jsonplaceholder.typicode.com/posts"><input class="header__search-input" type="search" placeholder="Я ищу..." /><button class="header__search-button"><svg class="header__search-icon">
-                        <use href="/img/svgSprite.svg?v=1734477393483#icon__search"></use>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__search"></use>
                       </svg></button></form>
                 </div>
                 <div class="header__actions"><button class="header__button header__button--search" data-search="data-search"><svg class="header__icon">
-                      <use href="/img/svgSprite.svg?v=1734477393483#icon__search"></use>
+                      <use href="/img/svgSprite.svg?v=1734477394888#icon__search"></use>
                     </svg><span class="header__button-title">Поиск</span></button><a class="header__button header__button--payment" href="#"><svg class="header__icon">
-                      <use href="/img/svgSprite.svg?v=1734477393483#icon__wallet"></use>
+                      <use href="/img/svgSprite.svg?v=1734477394888#icon__wallet"></use>
                     </svg><span class="header__button-title">Оплата услуг</span></a><a class="header__button" href="#"><svg class="header__icon">
-                      <use href="/img/svgSprite.svg?v=1734477393483#icon__user--alt"></use>
+                      <use href="/img/svgSprite.svg?v=1734477394888#icon__user--alt"></use>
                     </svg><span class="header__button-title">Личный кабинет</span></a></div><button class="button-burger header__burger" data-burger="data-burger"><span class="button-burger__line-tl"></span><span class="button-burger__line-tr"></span><span class="button-burger__line-cl"></span><span class="button-burger__line-cr"></span><span class="button-burger__line-bl"></span><span class="button-burger__line-br"></span></button>
               </div>
               <div class="header__bottom">
                 <div class="header__socials"><a class="header__social" href="https://t.me/allvisa_client?roistat_visit=489845&amp;start=roistat_489845" target="_blank"><svg class="header__social-icon">
-                      <use href="/img/svgSprite.svg?v=1734477393483#icon__social--tg"></use>
+                      <use href="/img/svgSprite.svg?v=1734477394888#icon__social--tg"></use>
                     </svg></a><a class="header__social" href="https://vk.com/allvisacentre?roistat_visit=489845" target="_blank"><svg class="header__social-icon">
-                      <use href="/img/svgSprite.svg?v=1734477393483#icon__social--vk"></use>
+                      <use href="/img/svgSprite.svg?v=1734477394888#icon__social--vk"></use>
                     </svg></a><a class="header__social" href="https://api.whatsapp.com/send?phone=79296761959&amp;text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%20489845" target="_blank"><svg class="header__social-icon">
-                      <use href="/img/svgSprite.svg?v=1734477393483#icon__social--wa"></use>
+                      <use href="/img/svgSprite.svg?v=1734477394888#icon__social--wa"></use>
                     </svg></a></div>
                 <ul class="header__links">
                   <li class="header__links-item"><a class="header__link" href="#">Оформление виз</a></li>
@@ -420,7 +419,7 @@ document.body.addEventListener("click", (e) => {
       <div class="layout__nav">
         <div class="side-nav">
           <div class="side-nav__close" data-burger="data-burger"><svg class="side-nav__icon">
-              <use href="/img/svgSprite.svg?v=1734477393484#icon__close"></use>
+              <use href="/img/svgSprite.svg?v=1734477394888#icon__close"></use>
             </svg></div>
           <div class="side-nav__inner">
             <div class="side-nav__links">
@@ -443,11 +442,11 @@ document.body.addEventListener("click", (e) => {
             </div>
             <div class="side-nav__call"><a class="side-nav__phone" href="tel:88004444140">8 (800) 444-41-40</a><button class="side-nav__callback" data-modal="#callback">обратный звонок</button></div>
             <div class="side-nav__socials"><a class="side-nav__social" href="https://t.me/allvisa_client?roistat_visit=489845&amp;start=roistat_489845" target="_blank"><svg class="side-nav__icon">
-                  <use href="/img/svgSprite.svg?v=1734477393484#icon__social--tg"></use>
+                  <use href="/img/svgSprite.svg?v=1734477394888#icon__social--tg"></use>
                 </svg></a><a class="side-nav__social" href="https://vk.com/allvisacentre?roistat_visit=489845" target="_blank"><svg class="side-nav__icon">
-                  <use href="/img/svgSprite.svg?v=1734477393484#icon__social--vk"></use>
+                  <use href="/img/svgSprite.svg?v=1734477394888#icon__social--vk"></use>
                 </svg></a><a class="side-nav__social" href="https://api.whatsapp.com/send?phone=79296761959&amp;text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%20489845" target="_blank"><svg class="side-nav__icon">
-                  <use href="/img/svgSprite.svg?v=1734477393484#icon__social--wa"></use>
+                  <use href="/img/svgSprite.svg?v=1734477394888#icon__social--wa"></use>
                 </svg></a></div>
           </div>
         </div>
@@ -458,8 +457,7 @@ document.body.addEventListener("click", (e) => {
           <div class="container">
             <div class="hero__inner">
               <div class="hero__info">
-                <div class="hero__label">Визовый центр ALLVISA</div>
-                <h1 class="hero__title">Оформим визы, поможем с эммиграцией в другую страну</h1><button class="hero__button hero__button--mt" data-modal="#callback">Получить консультацию</button>
+                <h1 class="hero__title">Услуги ALLVISA</h1>
               </div>
               <div class="hero__row">
                 <div class="hero__item">
@@ -484,540 +482,87 @@ document.body.addEventListener("click", (e) => {
         </div>
         <section class="section">
           <div class="container">
-            <div class="services"><a class="services__item services__item--large" href="#"><img class="services__icon" src="/img/icon__visa.svg" alt="visa" />
-                <h2 class="services__title">Оформление виз</h2>
-                <p class="services__descr">Долгое время не мог получить визу в Канаду, но благодаря ALLVISA все получилось! Сотрудники профессионально подготовили документы и помогли с заполнением анкеты. Теперь я в Канаде! Огромное спасибо за помощь!</p>
-                <div class="services__footer">
-                  <div class="services__price">от 15000 ₽</div>
-                  <div class="services__label">~ 3 недели</div>
-                </div>
-              </a><a class="services__item" href="#"><img class="services__icon" src="/img/icon__plane.svg" alt="plane" />
-                <h2 class="services__title">Туристические услуги</h2>
-                <p class="services__descr">Выбирайте и покупайте туры онлайн. Подбор самых выгодных туров напрямую от туроператоров, в открытые на данный момент страны.</p>
-                <div class="services__footer">
-                  <div class="services__price">от 7000 ₽</div>
-                  <div class="services__label">~ 3 недели</div>
-                </div>
-              </a><a class="services__item" href="#"><img class="services__icon" src="/img/icon__card.svg" alt="card" />
-                <h2 class="services__title">Срочный загранпаспорт</h2>
-                <p class="services__descr">Команда Allvisa готова оказать помощь в получении загранпаспорта в срочном порядке. Надежность и безопасность клиентов — наш главный приоритет. Мы сотрудничаем с государственными учреждениями.</p>
-                <div class="services__footer">
-                  <div class="services__price">от 15000 ₽</div>
-                  <div class="services__label">~ 3 недели</div>
-                </div>
-              </a><a class="services__item" href="#"><img class="services__icon" src="/img/icon__passport.svg" alt="passport" />
-                <h2 class="services__title">Карта АТЭС</h2>
-                <p class="services__descr">Карта АТЭС — уникальный международный инструмент, дающий право безвизового многократного въезда в 18 стран Азии, а так же Тихоокеанского региона.</p>
-                <div class="services__footer">
-                  <div class="services__price">от 7000 ₽</div>
-                  <div class="services__label">~ 3 недели</div>
-                </div>
-              </a><a class="services__item" href="#"><img class="services__icon" src="/img/icon__case.svg" alt="case" />
-                <h2 class="services__title">Эммиграционные услуги</h2>
-                <p class="services__descr">Долгое время не мог получить визу в Канаду, но благодаря ALLVISA все получилось! Сотрудники профессионально подготовили документы </p>
-                <div class="services__footer">
-                  <div class="services__price">от 15000 ₽</div>
-                  <div class="services__label">~ 3 недели</div>
-                </div>
-              </a></div>
-          </div>
-        </section>
-        <section class="section">
-          <div class="container">
             <div class="section__inner">
-              <div class="section__header">
-                <h2 class="section__title">Популярные направления</h2>
-                <p class="section__descr">«ALLVISA» — ваш надёжный помощник в получении <b>визы</b></p>
-              </div>
-              <div class="section__body">
-                <div class="direction-slider">
-                  <div class="swiper direction-slider__carousel">
-                    <div class="swiper-wrapper direction-slider__track">
-                      <div class="swiper-slide direction-slider__slide"><a class="direction-slider__tile" href="#">
-                          <div class="direction-slider__tile-inner">
-                            <div class="direction-slider__city">Гонконг</div>
-                            <div class="direction-slider__row">
-                              <h3 class="direction-slider__title">Виза в Китай</h3>
-                              <div class="direction-slider__price">от 7000 ₽</div>
-                            </div>
-                          </div><img class="direction-slider__image" src="/img/img__slider--china.webp" alt="" />
-                        </a><a class="direction-slider__tile" href="#">
-                          <div class="direction-slider__tile-inner">
-                            <div class="direction-slider__city">Нью-Йорк</div>
-                            <div class="direction-slider__row">
-                              <h3 class="direction-slider__title">Виза в США</h3>
-                              <div class="direction-slider__price">от 7000 ₽</div>
-                            </div>
-                          </div><img class="direction-slider__image" src="/img/img__slider--usa.webp" alt="" />
-                        </a><a class="direction-slider__tile" href="#">
-                          <div class="direction-slider__tile-inner">
-                            <div class="direction-slider__city">Париж</div>
-                            <div class="direction-slider__row">
-                              <h3 class="direction-slider__title">Виза в Францию</h3>
-                              <div class="direction-slider__price">от 7000 ₽</div>
-                            </div>
-                          </div><img class="direction-slider__image" src="/img/img__slider--france.webp" alt="" />
-                        </a><a class="direction-slider__tile" href="#">
-                          <div class="direction-slider__tile-inner">
-                            <div class="direction-slider__city">Барселона</div>
-                            <div class="direction-slider__row">
-                              <h3 class="direction-slider__title">Виза в Испанию</h3>
-                              <div class="direction-slider__price">от 7000 ₽</div>
-                            </div>
-                          </div><img class="direction-slider__image" src="/img/img__slider--spain.webp" alt="" />
-                        </a></div>
-                      <div class="swiper-slide direction-slider__slide"><a class="direction-slider__tile" href="#">
-                          <div class="direction-slider__tile-inner">
-                            <div class="direction-slider__city">Гонконг</div>
-                            <div class="direction-slider__row">
-                              <h3 class="direction-slider__title">Виза в Китай</h3>
-                              <div class="direction-slider__price">от 7000 ₽</div>
-                            </div>
-                          </div><img class="direction-slider__image" src="/img/img__slider--china.webp" alt="" />
-                        </a><a class="direction-slider__tile" href="#">
-                          <div class="direction-slider__tile-inner">
-                            <div class="direction-slider__city">Нью-Йорк</div>
-                            <div class="direction-slider__row">
-                              <h3 class="direction-slider__title">Виза в США</h3>
-                              <div class="direction-slider__price">от 7000 ₽</div>
-                            </div>
-                          </div><img class="direction-slider__image" src="/img/img__slider--usa.webp" alt="" />
-                        </a><a class="direction-slider__tile" href="#">
-                          <div class="direction-slider__tile-inner">
-                            <div class="direction-slider__city">Париж</div>
-                            <div class="direction-slider__row">
-                              <h3 class="direction-slider__title">Виза в Францию</h3>
-                              <div class="direction-slider__price">от 7000 ₽</div>
-                            </div>
-                          </div><img class="direction-slider__image" src="/img/img__slider--france.webp" alt="" />
-                        </a></div>
-                    </div>
-                    <div class="direction-slider__footer">
-                      <div class="direction-slider__prev"><svg>
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__arrow-round--prev"></use>
-                        </svg></div>
-                      <div class="direction-slider__fraction"></div>
-                      <div class="direction-slider__next"><svg>
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__arrow-round--next"></use>
-                        </svg></div>
-                    </div>
+              <div class="services">
+                <div class="services__item services__item--large"><img class="services__icon" src="/img/icon__visa.svg" alt="visa" />
+                  <h2 class="services__title">Оформление виз</h2>
+                  <p class="services__descr">Долгое время не мог получить визу в Канаду, но благодаря ALLVISA все получилось! Сотрудники профессионально подготовили документы и помогли с заполнением анкеты. Теперь я в Канаде! Огромное спасибо за помощь!</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
+                      </svg></a>
+                    <div class="services__label">~ 3 недели</div>
                   </div>
                 </div>
-                <div class="countries">
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--argentina"></use>
-                      </svg></div>
-                    <div class="countries__title">Аргентина</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--cyprus"></use>
-                      </svg></div>
-                    <div class="countries__title">Кипр</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--hungary"></use>
-                      </svg></div>
-                    <div class="countries__title">Венгрия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--iceland"></use>
-                      </svg></div>
-                    <div class="countries__title">Исландия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--lithuania"></use>
-                      </svg></div>
-                    <div class="countries__title">Литва</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--new-zealand"></use>
-                      </svg></div>
-                    <div class="countries__title">Новая Зеландия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--spain"></use>
-                      </svg></div>
-                    <div class="countries__title">Испания</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--australia"></use>
-                      </svg></div>
-                    <div class="countries__title">Австралия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--germany"></use>
-                      </svg></div>
-                    <div class="countries__title">Германия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--canada"></use>
-                      </svg></div>
-                    <div class="countries__title">Канада</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--luxembourg"></use>
-                      </svg></div>
-                    <div class="countries__title">Люксембург</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--norway"></use>
-                      </svg></div>
-                    <div class="countries__title">Норвегия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--greece"></use>
-                      </svg></div>
-                    <div class="countries__title">Греция</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--austria"></use>
-                      </svg></div>
-                    <div class="countries__title">Австрия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--denmark"></use>
-                      </svg></div>
-                    <div class="countries__title">Дания</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--china"></use>
-                      </svg></div>
-                    <div class="countries__title">Китай</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--malta"></use>
-                      </svg></div>
-                    <div class="countries__title">Мальта</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--uae"></use>
-                      </svg></div>
-                    <div class="countries__title">ОАЭ</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--croatia"></use>
-                      </svg></div>
-                    <div class="countries__title">Хорватия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--belgium"></use>
-                      </svg></div>
-                    <div class="countries__title">Бельгия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--india"></use>
-                      </svg></div>
-                    <div class="countries__title">Индия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--korea"></use>
-                      </svg></div>
-                    <div class="countries__title">Корея</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--mexico"></use>
-                      </svg></div>
-                    <div class="countries__title">Мексика</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--portugal"></use>
-                      </svg></div>
-                    <div class="countries__title">Португалия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--bulgaria"></use>
-                      </svg></div>
-                    <div class="countries__title">Болгария</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--united-kingdom"></use>
-                      </svg></div>
-                    <div class="countries__title">Великобритания</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--ireland"></use>
-                      </svg></div>
-                    <div class="countries__title">Ирландия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--latvia"></use>
-                      </svg></div>
-                    <div class="countries__title">Латвия</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--netherlands"></use>
-                      </svg></div>
-                    <div class="countries__title">Нидерланды</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
-                  </div>
-                  <div class="countries__item">
-                    <div class="countries__icon"><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__flag--romania"></use>
-                      </svg></div>
-                    <div class="countries__title">Румыния</div>
-                    <div class="countries__descr">от 20 000 ₽</div>
+                <div class="services__item"><img class="services__icon" src="/img/icon__plane.svg" alt="plane" />
+                  <h2 class="services__title">Туристические услуги</h2>
+                  <p class="services__descr">Выбирайте и покупайте туры онлайн. Подбор самых выгодных туров напрямую от туроператоров, в открытые на данный момент страны.</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
+                      </svg></a>
+                    <div class="services__label">~ 3 недели</div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section">
-          <div class="container">
-            <div class="section__inner">
-              <div class="section__header">
-                <h2 class="section__title">Отзывы</h2>
-                <p class="section__descr section__descr--flex">Рейтинг на 2GIS<span>4,9<svg><use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use></svg></span><svg class="section__gis">
-                    <use href="/img/svgSprite.svg?v=1734477393484#logo__2gis"></use>
-                  </svg></p>
-              </div>
-              <div class="section__body">
-                <div class="reviews">
-                  <div class="reviews__tile">
-                    <div class="reviews__row">
-                      <div class="reviews__name">Анна Сергеевна</div>
-                      <div class="reviews__stars"><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star reviews__star--empty">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg></div>
-                    </div>
-                    <p class="reviews__descr">"Огромное спасибо ALLVISA за помощь в получении визы в США! Все было быстро, четко и без лишних нервов. Консультанты очень грамотные, всегда отвечали на все вопросы и помогали с документами. Рекомендую всем, кто планирует путешествовать!"</p><a class="reviews__link" href="#"><span>Подробнее</span><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__arrow--up-right"></use>
+                <div class="services__item"><img class="services__icon" src="/img/icon__card.svg" alt="card" />
+                  <h2 class="services__title">Срочный загранпаспорт</h2>
+                  <p class="services__descr">Команда Allvisa готова оказать помощь в получении загранпаспорта в срочном порядке. Надежность и безопасность клиентов — наш главный приоритет. Мы сотрудничаем с государственными учреждениями.</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
                       </svg></a>
-                  </div>
-                  <div class="reviews__tile">
-                    <div class="reviews__row">
-                      <div class="reviews__name">Анна Сергеевна</div>
-                      <div class="reviews__stars"><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star reviews__star--empty">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg></div>
-                    </div>
-                    <p class="reviews__descr">"Огромное спасибо ALLVISA за помощь в получении визы в США! Все было быстро, четко и без лишних нервов. Консультанты очень грамотные, всегда отвечали на все вопросы и помогали с документами. Рекомендую всем, кто планирует путешествовать!"</p><a class="reviews__link" href="#"><span>Подробнее</span><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__arrow--up-right"></use>
-                      </svg></a>
-                  </div>
-                  <div class="reviews__tile">
-                    <div class="reviews__row">
-                      <div class="reviews__name">Анна Сергеевна</div>
-                      <div class="reviews__stars"><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star reviews__star--empty">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg></div>
-                    </div>
-                    <p class="reviews__descr">"Огромное спасибо ALLVISA за помощь в получении визы в США! Все было быстро, четко и без лишних нервов. Консультанты очень грамотные, всегда отвечали на все вопросы и помогали с документами. Рекомендую всем, кто планирует путешествовать!"</p><a class="reviews__link" href="#"><span>Подробнее</span><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__arrow--up-right"></use>
-                      </svg></a>
-                  </div>
-                  <div class="reviews__tile">
-                    <div class="reviews__row">
-                      <div class="reviews__name">Анна Сергеевна</div>
-                      <div class="reviews__stars"><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg><svg class="reviews__star reviews__star--empty">
-                          <use href="/img/svgSprite.svg?v=1734477393484#icon__star"></use>
-                        </svg></div>
-                    </div>
-                    <p class="reviews__descr">"Огромное спасибо ALLVISA за помощь в получении визы в США! Все было быстро, четко и без лишних нервов. Консультанты очень грамотные, всегда отвечали на все вопросы и помогали с документами. Рекомендую всем, кто планирует путешествовать!"</p><a class="reviews__link" href="#"><span>Подробнее</span><svg>
-                        <use href="/img/svgSprite.svg?v=1734477393484#icon__arrow--up-right"></use>
-                      </svg></a>
+                    <div class="services__label">~ 3 недели</div>
                   </div>
                 </div>
-              </div>
-              <div class="section__footer"><a class="button button--primary button--large" href="#">Смотреть все отзывы</a></div>
-            </div>
-          </div>
-        </section>
-        <section class="section">
-          <div class="container">
-            <div class="about-section">
-              <h2 class="about-section__title">О компании</h2><button class="about-section__video"><img src="/img/img__video-bg.webp" alt=""><svg>
-                  <use href="/img/svgSprite.svg?v=1734477393484#icon__play"></use>
-                </svg></button>
-              <div class="about-section__text">
-                <h2 class="about-section__title">О компании</h2>
-                <p>Туристический визовый центр «Allvisa» — команда настоящих профессионалов,
-                  готовых помочь в решении туристических вопросов, таких как оформление виз,
-                  подбор отелей, запись в визовые центры, бронирование и покупка билетов,
-                  оформление ВНЖ и других.</p>
-                <p>Работая уже не первый год в этой сфере, мы настроили грамотный процесс
-                  оформления туристических документов, предлагая на сайте свои услуги по доступным
-                  ценам. Оставьте заявку, и наши менеджеры очень скоро с вами свяжутся
-                  для решения вашего вопроса. Официальный визовый центр «Allvisa» — можете
-                  нам доверять!</p><a class="button button--primary button--large about-section__button" href="#">Перейти в раздел</a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section">
-          <div class="container">
-            <div class="section__inner">
-              <div class="section__header">
-                <h2 class="section__title">Наши преимущества</h2>
-              </div>
-              <div class="section__body">
-                <div class="advantages">
-                  <div class="advantages__item"><img class="advantages__icon" src="/img/icon__calendar.svg" alt="" />
-                    <div class="advantages__title">Работаем уже более 7 лет</div>
-                    <div class="advantages__descr">Наше визовое агентство работает с 2015 года в Москве</div>
-                  </div>
-                  <div class="advantages__item"><img class="advantages__icon" src="/img/icon__key.svg" alt="" />
-                    <div class="advantages__title">Оказываем услуги под ключ</div>
-                    <div class="advantages__descr">Вам не надо стоять в очередях и собирать кучу документов, мы оформляем все сами.</div>
-                  </div>
-                  <div class="advantages__item"><img class="advantages__icon" src="/img/icon__laptop.svg" alt="" />
-                    <div class="advantages__title">Вы можете заказать услуги удаленно</div>
-                    <div class="advantages__descr">Вы можете заказать курьера для отправки и получения документов.</div>
-                  </div>
-                  <div class="advantages__item"><img class="advantages__icon" src="/img/icon__building.svg" alt="" />
-                    <div class="advantages__title">Туристические услуги в рассрочку</div>
-                    <div class="advantages__descr">Мы готовы предоставить вам беспроцентную рассрочку без первого взноса.</div>
+                <div class="services__item"><img class="services__icon" src="/img/icon__passport.svg" alt="passport" />
+                  <h2 class="services__title">Карта АТЭС</h2>
+                  <p class="services__descr">Карта АТЭС — уникальный международный инструмент, дающий право безвизового многократного въезда в 18 стран Азии, а так же Тихоокеанского региона.</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
+                      </svg></a>
+                    <div class="services__label">~ 3 недели</div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section">
-          <div class="container">
-            <div class="section__inner">
-              <div class="section__header">
-                <h2 class="section__title">Новости</h2>
-              </div>
-              <div class="section__body">
-                <div class="news-slider">
-                  <div class="swiper news-slider__carousel">
-                    <div class="swiper-wrapper news-slider__track">
-                      <div class="swiper-slide news-slider__slide">
-                        <div class="news-tile"><img class="news-tile__image" src="/img/img__news-post.webp" alt="" /><a class="news-tile__title" href="#">Переезд в Португалию из России: особенности и нюансы</a>
-                          <p class="news-tile__descr">Переезд из России в Португалию имеет ряд особенностей, которые стоит
-                            рассмотреть для тех, кто рассматривает эту страну как возможное место
-                            для проживания.</p><a class="button button--primary button--large news-tile__button" href="#">Подробнее</a>
-                        </div>
-                      </div>
-                      <div class="swiper-slide news-slider__slide">
-                        <div class="news-tile"><img class="news-tile__image" src="/img/img__news-post.webp" alt="" /><a class="news-tile__title" href="#">Переезд в Португалию из России: особенности и нюансы</a>
-                          <p class="news-tile__descr">Переезд из России в Португалию имеет ряд особенностей, которые стоит
-                            рассмотреть для тех, кто рассматривает эту страну как возможное место
-                            для проживания.</p><a class="button button--primary button--large news-tile__button" href="#">Подробнее</a>
-                        </div>
-                      </div>
-                      <div class="swiper-slide news-slider__slide">
-                        <div class="news-tile"><img class="news-tile__image" src="/img/img__news-post.webp" alt="" /><a class="news-tile__title" href="#">Переезд в Португалию из России: особенности и нюансы</a>
-                          <p class="news-tile__descr">Переезд из России в Португалию имеет ряд особенностей, которые стоит
-                            рассмотреть для тех, кто рассматривает эту страну как возможное место
-                            для проживания.</p><a class="button button--primary button--large news-tile__button" href="#">Подробнее</a>
-                        </div>
-                      </div>
-                      <div class="swiper-slide news-slider__slide">
-                        <div class="news-tile"><img class="news-tile__image" src="/img/img__news-post.webp" alt="" /><a class="news-tile__title" href="#">Переезд в Португалию из России: особенности и нюансы</a>
-                          <p class="news-tile__descr">Переезд из России в Португалию имеет ряд особенностей, которые стоит
-                            рассмотреть для тех, кто рассматривает эту страну как возможное место
-                            для проживания.</p><a class="button button--primary button--large news-tile__button" href="#">Подробнее</a>
-                        </div>
-                      </div>
-                      <div class="swiper-slide news-slider__slide">
-                        <div class="news-tile"><img class="news-tile__image" src="/img/img__news-post.webp" alt="" /><a class="news-tile__title" href="#">Переезд в Португалию из России: особенности и нюансы</a>
-                          <p class="news-tile__descr">Переезд из России в Португалию имеет ряд особенностей, которые стоит
-                            рассмотреть для тех, кто рассматривает эту страну как возможное место
-                            для проживания.</p><a class="button button--primary button--large news-tile__button" href="#">Подробнее</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="news-slider__footer">
-                      <div class="news-slider__prev"><svg>
-                          <use href="/img/svgSprite.svg?v=1734477393485#icon__arrow-round--prev"></use>
-                        </svg></div>
-                      <div class="news-slider__fraction"></div>
-                      <div class="news-slider__next"><svg>
-                          <use href="/img/svgSprite.svg?v=1734477393485#icon__arrow-round--next"></use>
-                        </svg></div>
-                    </div>
+                <div class="services__item"><img class="services__icon" src="/img/icon__case.svg" alt="case" />
+                  <h2 class="services__title">Эмиграционные услуги</h2>
+                  <p class="services__descr">Долгое время не мог получить визу в Канаду, но благодаря ALLVISA все получилось! Сотрудники профессионально подготовили документы</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
+                      </svg></a>
+                    <div class="services__label">~ 3 недели</div>
                   </div>
+                </div>
+                <div class="services__item"><img class="services__icon" src="/img/icon__ticket.svg" alt="ticket" />
+                  <h2 class="services__title">Подбор туров</h2>
+                  <p class="services__descr">Подбор самых выгодных туров по скидке в открытые на данный момент страны</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
+                      </svg></a></div>
+                </div>
+                <div class="services__item"><img class="services__icon" src="/img/icon__percent.svg" alt="percent" />
+                  <h2 class="services__title">Трансфер</h2>
+                  <p class="services__descr">Бронирование и заказ трансфера по всему миру</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
+                      </svg></a></div>
+                </div>
+                <div class="services__item services__item--large"><img class="services__icon" src="/img/icon__gerb.svg" alt="gerb" />
+                  <h2 class="services__title">Путешествие по России</h2>
+                  <p class="services__descr">Все туры по России без наценок агенств</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
+                      </svg></a></div>
+                </div>
+                <div class="services__item"><img class="services__icon" src="/img/icon__link.svg" alt="link" />
+                  <h2 class="services__title">Страхование</h2>
+                  <p class="services__descr">Все виды страхования на одном сайте</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
+                      </svg></a></div>
+                </div>
+                <div class="services__item"><img class="services__icon" src="/img/icon__box.svg" alt="box" />
+                  <h2 class="services__title">Услуги по доставке документов</h2>
+                  <p class="services__descr">Доставка документов и корреспонценции по городу, России и всему миру</p>
+                  <div class="services__footer"><a class="services__link" href="#"><span>Подробнее</span><svg>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__arrow--up-right"></use>
+                      </svg></a></div>
                 </div>
               </div>
             </div>
@@ -1028,19 +573,18 @@ document.body.addEventListener("click", (e) => {
         <div class="footer">
           <div class="container">
             <div class="footer__inner">
-              <div class="footer__top">
-                <div class="footer__logo"><img class="footer__img" src="/img/logo__allvisa--white.svg" alt="AllVisa" /></div>
+              <div class="footer__top"><a class="footer__logo" href="/"><img class="footer__img" src="/img/logo__allvisa--white.svg" alt="AllVisa" /></a>
                 <div class="socials  socials--footer__socials"><a class="socials__item" href="https://t.me/allvisa_client?roistat_visit=489845&amp;start=roistat_489845" target="_blank">
                     <div class="socials__inner"><svg class="socials__icon">
-                        <use href="/img/svgSprite.svg?v=1734477393485#icon__social--tg-2"></use>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__social--tg-2"></use>
                       </svg></div>
                   </a><a class="socials__item" href="https://www.youtube.com/channel/UCEIm8VR6kYk_goO7NSZUzLw?roistat_visit=489845" target="_blank">
                     <div class="socials__inner"><svg class="socials__icon">
-                        <use href="/img/svgSprite.svg?v=1734477393485#icon__social--yt"></use>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__social--yt"></use>
                       </svg></div>
                   </a><a class="socials__item" href="https://vk.com/allvisacentre?roistat_visit=489845" target="_blank">
                     <div class="socials__inner"><svg class="socials__icon">
-                        <use href="/img/svgSprite.svg?v=1734477393485#icon__social--vk-2"></use>
+                        <use href="/img/svgSprite.svg?v=1734477394888#icon__social--vk-2"></use>
                       </svg></div>
                   </a></div>
               </div>
@@ -1050,15 +594,15 @@ document.body.addEventListener("click", (e) => {
                       <div class="rating__num"><span>4,9</span></div>
                       <div class="rating__inner">
                         <div class="rating__stars"><svg class="rating__star">
-                            <use href="/img/svgSprite.svg?v=1734477393485#icon__star"></use>
+                            <use href="/img/svgSprite.svg?v=1734477394888#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="/img/svgSprite.svg?v=1734477393485#icon__star"></use>
+                            <use href="/img/svgSprite.svg?v=1734477394888#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="/img/svgSprite.svg?v=1734477393485#icon__star"></use>
+                            <use href="/img/svgSprite.svg?v=1734477394888#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="/img/svgSprite.svg?v=1734477393485#icon__star"></use>
+                            <use href="/img/svgSprite.svg?v=1734477394888#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="/img/svgSprite.svg?v=1734477393485#icon__star"></use>
+                            <use href="/img/svgSprite.svg?v=1734477394888#icon__star"></use>
                           </svg></div>
                         <div class="rating__descr">286 отзывов, 327 оценки</div>
                       </div>
