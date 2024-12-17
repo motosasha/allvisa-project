@@ -29,30 +29,6 @@
           "href": "services"
         },
         {
-          "title": "Reviews page",
-          "description": "страница отзывов",
-          "href": "reviews"
-        },
-        {
-          "title": "China visa page",
-          "description": "страница виз в Китай",
-          "href": "china"
-        },
-        {
-          "title": "ATES page",
-          "description": "страница АТЭС",
-          "href": "ates"
-        },
-        {
-          "title": "International passport page",
-          "description": "страница загран паспорт",
-          "href": "zagran"
-        },{
-          "title": "Visas page",
-          "description": "страница оформление виз",
-          "href": "visas"
-        },
-        {
           "title": "Thanks page",
           "description": "спасибо за заявку",
           "href": "thanks/index"
