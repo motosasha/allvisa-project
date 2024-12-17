@@ -1,0 +1,24 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.news-grid {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 18px;
+  width: 100%;
+  max-width: 1464px;
+  margin: 0 auto;
+
+  @media screen and (min-width: breakpoints.$screen-tl) {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  &__footer {
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: center;
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (news-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin pagination()
+
+  //- Вызов:
+        +pagination
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " news-tile--" + modsList[i].trim();
+      }
+    }
+
+  .pagination
+    .pagination__current 1
+    a.pagination__link(href="#") 2
+    a.pagination__link(href="#") 3
+    a.pagination__link(href="#") 4
+    a.pagination__link(href="#") 5

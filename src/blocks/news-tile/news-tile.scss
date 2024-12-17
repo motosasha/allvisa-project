@@ -8,6 +8,12 @@
   display: flex;
   flex-direction: column;
 
+  &--alt {
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 20px;
+  }
+
   &__image {
     border-radius: 12px;
 
@@ -29,6 +35,22 @@
       margin: 40px 0 20px;
       font-size: 31px;
     }
+
+    #{$block-name}--alt & {
+      margin: 24px 0 8px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: 0.24px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        margin: 24px 0 12px;
+        color: inherit;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 1;
+      }
+    }
   }
 
   &__descr {
@@ -40,11 +62,35 @@
       font-size: 16px;
       line-height: 1.5;
     }
+
+    #{$block-name}--alt & {
+      display: -webkit-box;
+      margin: 0 0 24px;
+      overflow: hidden;
+      font-size: 18px;
+      line-height: 1;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        font-size: 24px;
+        line-height: 1;
+      }
+    }
   }
 
   &__button {
     align-self: center;
     min-width: 274px;
     margin-top: auto;
+
+    #{$block-name}--alt & {
+      width: 100%;
+
+      @media screen and (min-width: breakpoints.$screen-t) {
+        align-self: start;
+        width: auto;
+      }
+    }
   }
 }

@@ -1,0 +1,38 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.pagination {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  gap: 8px;
+
+  &__current,
+  &__link {
+    @include text-styles.text-m-lh1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 10px 8px 6px;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+
+  &__current {
+    color: var(--front-invert);
+    background: var(--back-green);
+    cursor: default;
+  }
+
+  &__link {
+    color: inherit;
+    transition: background .25s ease;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+}

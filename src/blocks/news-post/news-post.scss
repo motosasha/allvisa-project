@@ -1,0 +1,41 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.news-post {
+  $block-name: &; // #{$block-name}__element
+
+  max-width: 1464px;
+  margin: 0 auto;
+
+  h2 {
+    margin: 0 0 24px;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 28px;
+    }
+  }
+
+  p {
+    margin: 0 0 24px;
+    font-size: 18px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 24px;
+    }
+
+    &#{$block-name}__lead {
+      margin: 0 0 24px;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 1;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        font-size: 40px;
+      }
+    }
+  }
+}

@@ -2,12 +2,13 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin news-tile(mods)
+mixin news-tile(data, mods)
 
   //- Принимает:
+  //-   data    {object} - данные
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +news-tile("some-mod")
+        +news-tile(object, "some-mod")
 
   //- список модификаторов
   -
@@ -20,5 +21,7 @@ mixin news-tile(mods)
     }
 
   .news-tile(class=allMods)&attributes(attributes)
-    .news-tile__inner
-      block
+    img.news-tile__image(src= path.img + "img__news-post--" + data.img + ".webp", alt="")
+    a.news-tile__title(href="#")!= data.title
+    p.news-tile__descr!= data.description
+    a.button.button--primary.button--large.news-tile__button(href="#") Подробнее

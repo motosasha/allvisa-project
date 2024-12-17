@@ -18,3 +18,10 @@ block content
         .hero__info
           .hero__label Новости компании
           h1.hero__title Туристический блог
+  section.section
+    .container
+      .news-grid
+        each tile in json.news
+          +news-tile(tile, "alt")
+        .news-grid__footer
+          +pagination
