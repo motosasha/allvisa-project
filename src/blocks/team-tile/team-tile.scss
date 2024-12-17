@@ -1,0 +1,35 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.team-tile {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 24px;
+  padding: 20px;
+  background-color: #eee;
+  border-radius: 20px;
+
+  &__image {
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__info {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1;
+  }
+}

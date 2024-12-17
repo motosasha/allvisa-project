@@ -1,0 +1,97 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.digits {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+
+  @media screen and (min-width: breakpoints.$screen-t) {
+  	grid-template-columns: 1fr 1fr;
+    gap: 40px 0;
+  }
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+  	display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    position: relative;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding-right: 44px;
+      padding-left: 44px;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 28px;
+
+      @media screen and (min-width: breakpoints.$screen-t) {
+        padding-bottom: 0;
+      }
+    }
+
+    & + & {
+      padding-top: 28px;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        width: 60px;
+        height: 1px;
+        background-color: #9e9e9e;
+        content: "";
+      }
+
+      @media screen and (min-width: breakpoints.$screen-t) {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        &::before {
+          top: 50%;
+          left: 0;
+          width: 1px;
+          height: 60px;
+          transform: translateY(-50%);
+          content: "";
+        }
+
+        &:nth-child(3)::before {
+          content: none;
+        }
+      }
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        &:nth-child(3)::before {
+          content: "";
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1;
+    background-image: var(--green-gradient-vertical);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      text-align: center;
+    }
+  }
+
+  &__descr {
+    font-size: 28px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      text-align: center;
+    }
+  }
+}

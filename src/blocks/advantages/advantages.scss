@@ -16,15 +16,31 @@
     gap: 24px;
   }
 
+  &--alt {
+    gap: 18px;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
     gap: 12px;
     align-items: center;
 
+    #{$block-name}--alt & {
+      gap: 0;
+      padding: 20px;
+      background-color: #eee;
+      border-radius: 20px;
+    }
+
     @media screen and (min-width: breakpoints.$screen-d) {
       gap: 32px;
       align-items: start;
+
+      #{$block-name}--alt & {
+        gap: 0;
+        padding: 24px;
+      }
     }
   }
 
@@ -32,9 +48,19 @@
     width: 32px;
     height: 32px;
 
+    #{$block-name}--alt & {
+      width: 54px;
+      height: 54px;
+    }
+
     @media screen and (min-width: breakpoints.$screen-d) {
       width: 40px;
       height: 40px;
+
+      #{$block-name}--alt & {
+        width: 74px;
+        height: 74px;
+      }
     }
   }
 
@@ -44,12 +70,24 @@
     line-height: 1.2;
     text-align: center;
 
+    #{$block-name}--alt & {
+      margin: 34px 0 8px;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: 0.24px;
+    }
+
     @media screen and (min-width: breakpoints.$screen-d) {
       max-width: 264px;
       font-weight: 600;
       font-size: 31px;
       line-height: 1.2;
       text-align: left;
+
+      #{$block-name}--alt & {
+        max-width: none;
+        font-size: 28px;
+      }
     }
   }
 
@@ -58,9 +96,18 @@
     line-height: 1.2;
     text-align: center;
 
+    #{$block-name}--alt & {
+      font-size: 18px;
+      line-height: 1;
+    }
+
     @media screen and (min-width: breakpoints.$screen-d) {
       font-size: 20px;
       text-align: left;
+
+      #{$block-name}--alt & {
+        font-size: 24px;
+      }
     }
   }
 }

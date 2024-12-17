@@ -1,0 +1,27 @@
+//- Все примеси в этом файле должны начинаться c имени блока (team-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin team-tile(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +team-tile(data, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " team-tile--" + modsList[i].trim();
+      }
+    }
+
+  .team-tile(class=allMods)&attributes(attributes)
+    img.team-tile__image(src= path.img + "img__team--" + data.img + ".webp", alt= data.name)
+    .team-tile__info
+      .team-tile__label!= data.label
+      .team-tile__name!= data.name

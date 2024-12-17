@@ -1,0 +1,149 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.team {
+  $block-name: &; // #{$block-name}__element
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    & + & {
+      margin-top: 60px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        margin-top: 120px;
+      }
+    }
+  }
+
+  &__address {
+    max-width: 760px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 24px;
+    font-style: normal;
+    line-height: 1;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 38px;
+      line-height: 1;
+    }
+  }
+
+  &__label {
+    margin: 24px auto;
+    padding: 6px 10px 4px;
+    color: var(--front-invert);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    background: #f90;
+    border-radius: 24px;
+  }
+
+  &__wrap {
+    display: flex;
+    width: calc(100% + var(--container-padding) * 2);
+    margin: 0 calc(var(--container-padding) * -1);
+
+    &::before,
+    &::after {
+      display: inline-block;
+      flex-shrink: 0;
+      width: var(--container-padding);
+      content: "";
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &__wrap + &__label {
+    margin-top: 60px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-top: 70px;
+    }
+  }
+
+  &__carousel {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      overflow: hidden;
+    }
+  }
+
+  &__track {
+    height: auto;
+  }
+
+  &__slide {
+    max-width: 295px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	max-width: none;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__fraction {
+    display: flex;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+
+    span {
+      width: 32px;
+    }
+
+    .swiper-pagination-current {
+      text-align: right;
+    }
+
+    .swiper-pagination-total {
+      text-align: left;
+    }
+  }
+
+  &__prev,
+  &__next {
+    cursor: pointer;
+
+    &.swiper-button-disabled {
+      cursor: default;
+      opacity: 0.15;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: var(--front-primary);
+    }
+  }
+}

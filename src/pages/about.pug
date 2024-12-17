@@ -22,3 +22,98 @@ block content
             и прозрачным для каждого нашего клиента. Мы верим, что путешествия
             — это неотъемлемая часть жизни, способ расширить кругозор, познакомиться
             с новыми культурами и получить незабываемые впечатления.
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Наша миссия заключается в том, чтобы:
+        .section__body
+          +advantages(json.about.mission, "alt")
+  section.section
+    .container
+      .shout
+        h2.shout__title Получение визы — это ответственный процесс, который требует времени и внимания
+        p.shout__descr “ALLVISA” — это ваш надежный помощник, который сделает этот процесс максимально комфортным и эффективным.
+        img.shout__ring.shout__ring--left(src= path.img + "img__ring.svg", alt="")
+        img.shout__ring.shout__ring--right(src= path.img + "img__ring.svg", alt="")
+        img.shout__ring.shout__ring--bottom(src= path.img + "img__ring.svg", alt="")
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Компания в цифрах
+        .section__body
+          .digits
+            .digits__item
+              .digits__title 9 лет
+              .digits__descr Компании
+            .digits__item
+              .digits__title 25+
+              .digits__descr Сотрудников в штате
+            .digits__item
+              .digits__title 20+
+              .digits__descr Услуг
+            .digits__item
+              .digits__title 100000+
+              .digits__descr Виз
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Команда
+        .section__body
+          .team
+            .team__section
+              address.team__address Г. Москва, ДЦ “Китай-город”, Лубянский проезд, 27/1c1, офис 436
+              .team__label Руководство
+              .team__wrap
+                +team(json.about.team.moscow.management)
+              .team__label Отдел продаж
+              .team__wrap
+                +team(json.about.team.moscow.salers)
+              .team__label Отдел оформления
+              .team__wrap
+                +team(json.about.team.moscow.registration)
+            .team__section
+              address.team__address Г. Оренбург, ул. Чкалова, 35/1, ТЦ “Европа-Азия”
+              .team__label Руководство
+              .team__wrap
+                +team(json.about.team.orenburg.management)
+              .team__label Отдел продаж
+              .team__wrap
+                +team(json.about.team.orenburg.salers)
+  section.section
+    .about-form
+      img.about-form__image(src= path.img + "img__bg-about--form" + ".webp", alt="")
+      .container
+        .about-form__inner
+          .about-form__col
+            h2.about-form__title Реквизиты
+            p.about-form__info.
+              #[strong ООО “ГК Бизнес Обеспечение”]<br>
+              ИНН 7709995951<br>
+              ОГРН 117774637922<br>
+              КПП 770901001<br>
+          .about-form__col
+            h2.about-form__title Есть вопросы
+            .about-form__card
+              form.form.request-form(action="https://jsonplaceholder.typicode.com/todos/", id="aboutForm")
+                .request-form__inner
+                  .request-form__grid
+                    .request-form__row
+                      label.form__field
+                        .form__label Введите Имя
+                        input.input(type="text", name="name", placeholder="Иванов Иван", required)
+                      label.form__field
+                        .form__label Введите телефон
+                        input.input(type="tel", name="phone", placeholder="+7 (_____) ____-____-____", data-phone-field, required)
+                    .request-form__row
+                      label.form__field
+                        .form__label Введите e-mail
+                        input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                    .request-form__row.request-form__row--two
+                      button.button.button--primary Отправить
+                      a.button.button--secondary(href="#") Ваш вопрос
+                    .request-form__small.
+                      Нажимая кнопку "Получить карту АТЭС", я подтверждаю, что ознакомлен и согласен
+                      с условиями #[a(href="#") политики обработки персональных данных]

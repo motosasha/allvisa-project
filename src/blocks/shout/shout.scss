@@ -1,0 +1,88 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.shout {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 20px;
+  overflow: hidden;
+  background-color: #eee;
+  border-radius: 20px;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    padding: 132px 40px;
+  }
+
+  &__title {
+    max-width: 1185px;
+    margin: 0 0 14px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 56px;
+    }
+  }
+
+  &__descr {
+    @include text-styles.text-m;
+
+    max-width: 740px;
+    margin: 0;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      @include text-styles.title-s(500);
+    }
+  }
+
+  &__ring {
+    position: absolute;
+    max-width: none;
+    aspect-ratio: 1 / 1;
+    opacity: 0.1;
+
+    &--right {
+      top: -105px;
+      right: -206px;
+      width: 300px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        top: -178px;
+        right: -100px;
+        width: 377px;
+      }
+    }
+
+    &--bottom {
+      right: -150px;
+      bottom: -335px;
+      width: 390px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        right: auto;
+        bottom: -329px;
+        left: calc(50% + 32px);
+        width: 530px;
+      }
+    }
+
+    &--left {
+      top: -140px;
+      left: -80px;
+      width: 224px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        top: -176px;
+        left: -87px;
+        width: 300px;
+      }
+    }
+  }
+}

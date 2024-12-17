@@ -1,0 +1,33 @@
+//- Все примеси в этом файле должны начинаться c имени блока (team)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin team(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +team(object, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " team--" + modsList[i].trim();
+      }
+    }
+
+  .swiper.team__carousel(class=allMods)&attributes(attributes)
+    .swiper-wrapper.team__track
+      each slide in data
+        .swiper-slide.team__slide
+          +team-tile(slide)
+    .team__footer
+      .team__prev
+        svg: use(href= path.icon + "icon__arrow-round--prev")
+      .team__fraction
+      .team__next
+        svg: use(href= path.icon + "icon__arrow-round--next")
