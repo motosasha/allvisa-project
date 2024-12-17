@@ -12,6 +12,11 @@
     padding: 20px;
     background-color: #eee;
     border-radius: 20px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 24px;
+      border-radius: 24px;
+    }
   }
 
   &__image {
@@ -19,6 +24,14 @@
 
     @media screen and (min-width: breakpoints.$screen-d) {
     	border-radius: 24px;
+    }
+
+    #{$block-name}--alt & {
+      border-radius: 16px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        border-radius: 16px;
+      }
     }
   }
 
