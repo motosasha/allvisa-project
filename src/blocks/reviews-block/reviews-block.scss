@@ -46,6 +46,7 @@
     font-size: 18px;
     line-height: 1;
     white-space: nowrap;
+    cursor: pointer;
 
     @media screen and (min-width: breakpoints.$screen-d) {
       padding: 0 24px 16px;
