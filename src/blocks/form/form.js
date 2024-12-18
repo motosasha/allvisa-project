@@ -360,7 +360,7 @@ ready(function () {
           formCallback,
           actionUrl,
           () => {
-            location.replace("/thanks/");
+            location.replace("/thanks.html");
           },
           errorFn,
         );

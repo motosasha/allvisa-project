@@ -105,9 +105,9 @@ export const config = {
   paths: {
     pug: {
       root: "./",
-      js: `/${htmlPathObj.js}js/`,
-      css: `/${htmlPathObj.css}css/`,
-      img: `/${htmlPathObj.img}img/`,
+      js: `./${htmlPathObj.js}js/`,
+      css: `./${htmlPathObj.css}css/`,
+      img: `./${htmlPathObj.img}img/`,
       fonts: `./${htmlPathObj.fonts}fonts/`,
       assets: `./${htmlPathObj.assets}assets/`,
       get icon() {
@@ -120,7 +120,7 @@ export const config = {
       css: `./${cssPathObj.css}css/`,
       img: `../${cssPathObj.img}img/`,
       fonts: `../${cssPathObj.fonts}fonts/`,
-      assets: `./${cssPathObj.assets}assets/`,
+      assets: `../${cssPathObj.assets}assets/`,
       get icon() {
         return `${this.img}svgSprite.svg?v=${Date.now()}#`;
       },

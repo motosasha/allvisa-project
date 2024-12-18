@@ -12,7 +12,7 @@
   padding-top: var(--header-height);
   overflow: hidden;
   color: var(--front-invert);
-  background: url("/{{assets}}/img__bg--thanks.webp") no-repeat 80% 0, #01468b;
+  background: url("{{assets}}/img__bg--thanks.webp") no-repeat 80% 0, #01468b;
   background-size: cover;
 
   @media screen and (min-width: breakpoints.$screen-d) {
