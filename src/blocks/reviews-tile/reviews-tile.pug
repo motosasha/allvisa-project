@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (reviews-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin reviews-tile(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +reviews-tile(object, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " reviews-tile--" + modsList[i].trim();
+      }
+    }
+
+  .reviews-tile(class=allMods, data-review-tile= data.type)&attributes(attributes)
+    .reviews-tile__head
+      .reviews-tile__name!= data.title
+      .reviews-tile__date!= data.date
+    .reviews-tile__inner
+      .reviews-tile__stars
+        each star in [1, 2, 3, 4]
+          svg.reviews-tile__star.reviews-tile__star--full
+            use(href= path.icon + "icon__star")
+        svg.reviews-tile__star
+          use(href= path.icon + "icon__star")
+      .reviews-tile__descr!= data.description
+      .reviews-tile__row
+        each tag in data.tags
+          .reviews-tile__tag!= tag

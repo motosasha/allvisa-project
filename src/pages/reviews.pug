@@ -33,3 +33,16 @@ block content
                 svg
                   use(href= path.icon + "icon__2gis")
                 | 2ГИС
+  section.section
+    .container
+      .reviews-block
+        .reviews-block__scroll
+          .reviews-block__tabs
+            button.reviews-block__tab(data-reviews-trigger="all", data-active) Все отзывы
+            button.reviews-block__tab(data-reviews-trigger="center") Визовый центр
+            button.reviews-block__tab(data-reviews-trigger="emigration") Эмиграция
+            button.reviews-block__tab(data-reviews-trigger="tourism") Туризм
+
+        .reviews-block__list(data-reviews-list)
+          each tile in json.reviews
+            +reviews-tile(tile)

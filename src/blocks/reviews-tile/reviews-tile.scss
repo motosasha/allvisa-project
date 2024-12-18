@@ -1,0 +1,102 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.reviews-tile {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+
+  &[hidden] {
+    display: none;
+  }
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    display: grid;
+    grid-template-columns: 160px auto;
+    gap: 20px;
+    align-items: start;
+    padding: 24px 24px 48px;
+  }
+
+  &__head {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 24px;
+    }
+  }
+
+  &__date {
+    color: #8c8c8c;
+    font-size: 14px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 16px;
+    }
+  }
+
+  &__inner {
+    display: grid;
+    gap: 18px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 28px;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__star {
+    width: 20px;
+    height: 20px;
+    color: #dcdcdc;
+
+    &--full {
+      color: #f07b27;
+    }
+  }
+
+  &__descr {
+    font-size: 16px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 24px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  &__tag {
+    padding: 6px 8px 2px;
+    color: var(--front-invert);
+    font-size: 16px;
+    line-height: 1;
+    background-color: #717171;
+    border-radius: 24px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 8px 10px 4px;
+      font-size: 20px;
+    }
+  }
+}

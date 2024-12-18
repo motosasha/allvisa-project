@@ -209,6 +209,7 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    justify-content: center;
     padding: 16px 24px;
     color: var(--front-primary);
     font-weight: 500;
@@ -318,8 +319,12 @@
   &__reviews {
     display: grid;
     gap: 8px;
-    justify-content: center;
+    width: 100%;
     margin-top: 14px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      width: auto;
+    }
 
     @media screen and (min-width: breakpoints.$screen-d) {
       margin-top: 43px;
@@ -335,6 +340,7 @@
   &__reviews-row {
     display: grid;
     gap: 12px;
+    width: 100%;
 
     @media screen and (min-width: breakpoints.$screen-d) {
     	display: flex;

@@ -29,6 +29,11 @@
           "href": "services"
         },
         {
+          "title": "Reviews page",
+          "description": "страница отзывов",
+          "href": "reviews"
+        },
+        {
           "title": "Thanks page",
           "description": "спасибо за заявку",
           "href": "thanks"

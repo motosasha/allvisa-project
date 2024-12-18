@@ -22,6 +22,9 @@ mixin modal(mods)
   #callback.hystmodal.modal(class=allMods, aria-hidden="true")&attributes(attributes)
     .hystmodal__wrap
       .hystmodal__window.modal__window.modal__window--callback(role="dialog", aria-modal="true")
+        .modal__close(data-hystclose)
+          svg.closer__icon
+            use(href= path.icon + "icon__close")
         h2.modal__title Введите свои контактные данные, чтобы отправить заявку
         form#formCallback.form(action="https://jsonplaceholder.typicode.com/posts")
           .form__inner

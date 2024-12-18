@@ -1,0 +1,76 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-button";
+@use "src/scss/mixins/text-styles";
+
+.reviews-block {
+  $block-name: &; // #{$block-name}__element
+
+  max-width: 1166px;
+  margin: 0 auto;
+
+  &__scroll {
+    display: flex;
+    margin: 0 calc(var(--container-padding) * -1);
+    overflow: scroll hidden;
+    scrollbar-width: none;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      margin: 0;
+    }
+
+    &::after,
+    &::before {
+      flex-shrink: 0;
+      width: 16px;
+      content: "";
+
+      @media screen and (min-width: breakpoints.$screen-t) {
+        content: none;
+      }
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    border-bottom: 1px solid #c4c4c4;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      width: 100%;
+    }
+  }
+
+  &__tab {
+    @include reset-button.reset-button;
+
+    padding: 0 24px 12px;
+    font-size: 18px;
+    line-height: 1;
+    white-space: nowrap;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 0 24px 16px;
+      font-size: 24px;
+    }
+
+    &[data-active] {
+      margin-bottom: -1px;
+      padding-bottom: 11px;
+      border-bottom: 2px solid var(--green);
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        padding: 0 24px 15px;
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 24px;
+    margin-top: 24px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-top: 40px;
+    }
+  }
+}
