@@ -1,0 +1,50 @@
+//- Все примеси в этом файле должны начинаться c имени блока (form-section)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin form-section(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +form-section("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " form-section--" + modsList[i].trim();
+      }
+    }
+
+  .form-section(class=allMods)&attributes(attributes)
+    img.form-section__image(src= path.img + "img__bg-form.webp", alt="")
+    block
+    .container
+      .form-section__inner
+        .form-section__card
+          form.form.request-form(action="https://jsonplaceholder.typicode.com/todos/", id="atesForm")
+            .request-form__inner
+              h2.request-form__title Отправьте заявку
+              p.request-form__descr Получите список документов бесплатно
+              .request-form__grid
+                .request-form__row.request-form__row--two
+                  label.form__field
+                    .form__label Введите ваше имя
+                    input.input(type="text", name="name", placeholder="Иванов Иван", required)
+                  label.form__field
+                    .form__label Введите ваш телефон
+                    input.input(type="tel", name="phone", placeholder="+7 (_____) ____-____-____", data-phone-field, required)
+                .request-form__row.request-form__row--two
+                  label.form__field
+                    .form__label Введите ваше e-mail
+                    input.input(type="email", name="email", placeholder="example@mail.ru", required)
+                  label.form__field
+                    .form__label Введите ваш город
+                    input.input(type="text", name="city", placeholder="Москва", required)
+                button.button.button--primary Получить карту АТЭС
+                .request-form__small.
+                  Нажимая кнопку "Получить карту АТЭС", я подтверждаю, что ознакомлен и согласен
+                  с условиями #[a(href="#") политики обработки персональных данных]

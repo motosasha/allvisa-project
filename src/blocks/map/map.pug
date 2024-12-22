@@ -1,0 +1,45 @@
+//- Все примеси в этом файле должны начинаться c имени блока (map)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin map(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +map("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " map--" + modsList[i].trim();
+      }
+    }
+
+  .map(class=allMods)&attributes(attributes)
+    .container
+      .map__inner
+        .map__card
+          .map__info
+            .map__title Карта <br>расположения офиса
+            .map__row
+              .map__subtitle Адрес:
+              address.map__descr г. Москва, ДЦ «Китай-город», Лубянский проезд, 27/1c1, офис 436
+            .map__row
+              .map__subtitle Телефон:
+              .map__phones
+                .map__item
+                  .map__descr Отдел по работе с клиентами:
+                  a.map__phone(href="tel:89257992896") 8 (925) 799-28-96
+                  a.map__email(href="mailto:info@allvisa.center") info@allvisa.center
+                .map__item
+                  .map__descr Отдел по работе с партнерами:
+                  a.map__phone(href="tel:89263280942") 8 (926) 328-09-42
+                  a.map__email(href="mailto:partner@allvisa.center") partner@allvisa.center
+          img.map__ring.map__ring--left(src= path.img + "img__ring.svg", alt="")
+          img.map__ring.map__ring--right(src= path.img + "img__ring.svg", alt="")
+    .map__back
+      #map

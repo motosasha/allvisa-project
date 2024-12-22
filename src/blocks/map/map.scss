@@ -1,0 +1,202 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-link";
+@use "src/scss/mixins/text-styles";
+
+.map {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  background-color: var(--back-secondary);
+
+  &__inner {
+    position: relative;
+    z-index: var(--z-index-default);
+    padding: 360px 0 16px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      padding: 80px 0;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 137px 0;
+    }
+  }
+
+  &__card {
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+    background-color: var(--back-primary);
+    border-radius: 20px;
+    box-shadow: 0 16px 38px 0 rgb(0 0 0 / 14%);
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+    	grid-column: 7 / 13;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      grid-column: 8 / 13;
+      padding: 40px;
+    }
+  }
+
+  &__info {
+    position: relative;
+    z-index: var(--z-index-default);
+  }
+
+  &__title {
+    margin-bottom: 28px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-bottom: 40px;
+      font-size: 56px;
+    }
+
+    br {
+      display: none;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-dxl) {
+      br {
+        display: block;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	display: grid;
+      grid-template-columns: 100px auto;
+      gap: 12px;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 16px;
+    }
+
+    & + & {
+      padding-top: 16px;
+      border-top: 1px solid #d4d4d4;
+    }
+  }
+
+  &__subtitle {
+    @include text-styles.text-s;
+
+    color: #6b6b6b;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      @include text-styles.text-m;
+    }
+  }
+
+  &__descr {
+    max-width: 306px;
+    font-weight: 500;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 20px;
+    }
+  }
+
+  &__phones {
+    display: grid;
+    gap: 16px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+    	display: flex;
+      justify-content: space-between;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: grid;
+      gap: 16px;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-dxl) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__phone {
+    @include reset-link.reset-link;
+
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 24px;
+    }
+  }
+
+  &__email {
+    @include reset-link.reset-link;
+
+    color: var(--front-green);
+    font-size: 18px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 20px;
+    }
+  }
+
+  &__back {
+    position: absolute;
+    inset: 0;
+
+    #map,
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__ring {
+    position: absolute;
+    aspect-ratio: 1;
+
+    &--left {
+      right: -49px;
+      bottom: -123px;
+      width: 182px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        right: auto;
+        bottom: -103px;
+        left: -113px;
+      }
+    }
+
+    &--right {
+      top: -126px;
+      right: -202px;
+      width: 288px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        right: -145px;
+      }
+    }
+  }
+}

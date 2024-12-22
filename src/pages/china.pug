@@ -8,7 +8,7 @@ block variables
     metaKeywords = "keywords"
 
 block content
-  .hero.hero--full-height-mobile
+  section.hero.hero--full-height-mobile
     .hero__back
       img.hero__bg.hero__bg--left-vp(src= path.img + "img__bg-hero--wall.webp", alt="", aria-hidden="true")
       img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
@@ -31,3 +31,98 @@ block content
             .hero__side-item
               .hero__side-title От 3 дней
               .hero__side-descr Срок оформления
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Типы визы и стоимость
+        .section__body
+          .visa-tiles
+            each tile in json.china.types
+              .visa-tiles__item
+                img.visa-tiles__icon(src= path.img + "icon__" + tile.icon + ".svg", alt="")
+                a.visa-tiles__title(href="#")!= tile.title
+                .visa-tiles__label Тип "#{tile.type}"
+                ul.visa-tiles__list
+                  each item in tile.list
+                    li.visa-tiles__li!= item
+                .visa-tiles__row
+                  button.button.button--primary(data-modal="#callback") Оставить заявку
+                  .visa-tiles__price от 9500 ₽
+                img.visa-tiles__ring(src= path.img + "img__ring.svg", alt="")
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title.section__title--alt Документы для оформления визы
+        .section__body
+          .doc-tabs
+            .doc-tabs__scroll
+              .doc-tabs__tabs
+                button.doc-tabs__tab(data-tab-trigger="all", data-active) Для всех типов визы
+                button.doc-tabs__tab(data-tab-trigger="tourism") Туристическая виза
+                button.doc-tabs__tab(data-tab-trigger="guest") Гостевая виза
+                button.doc-tabs__tab(data-tab-trigger="business") Деловая виза
+                button.doc-tabs__tab(data-tab-trigger="invite") По приглашению
+            .doc-tabs__body
+              .doc-tabs__content(data-tab-content="all", data-active)
+                each tile in [1, 2, 3, 4, 5, 6]
+                  +doc-tile
+              .doc-tabs__content(data-tab-content="tourism")
+                each tile in [1, 2, 3, 4, 5]
+                  +doc-tile
+              .doc-tabs__content(data-tab-content="guest")
+                each tile in [1, 2, 3, 4]
+                  +doc-tile
+              .doc-tabs__content(data-tab-content="business")
+                each tile in [1, 2, 3]
+                  +doc-tile
+              .doc-tabs__content(data-tab-content="invite")
+                each tile in [1, 2]
+                  +doc-tile
+  section.section
+    +form-section
+      img.form-section__illustration(src= path.img + "img__form-doc.webp", alt="")
+      img.form-section__ring.form-section__ring--left(src= path.img + "img__ring.svg", alt="")
+      img.form-section__ring.form-section__ring--right(src= path.img + "img__ring.svg", alt="")
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Популярные направления
+        .section__body
+          +direction-slider(json.directionSlider)
+  section.section
+    .container
+      +frame("img__frame--china.webp")
+        h2.frame__title Как получить визу в Китай
+        p.frame__p.
+          Хорошие новости! В марте 2023 года Китай возобновил выдачу виз для россиян
+          и граждан других стран. До этого по причине распространения COVID-19
+          действовали специально предусмотренные ограничения вплоть до полного запрета въезда
+          в страну. Туризм буквально замер. Но ситуация несколько изменилась.
+        p.frame__p.
+          Сейчас оформить визу в Китай можно как самостоятельно, так и с привлечением
+          специалистов визового агентства. Оба варианта характеризуются как плюсами,
+          так и минусами. Перед тем как косвенно рассмотреть их, разберем базовые
+          моменты, касающиеся процедуры оформления китайской визы с целью туризма.
+        p.frame__p.
+          Воспользуйтесь услугами «EasyVisa Agency», чтобы избежать возможных осложнений
+          в процессе получения визового разрешения, а также сэкономить время, которое
+          можно уделить решению других насущных вопросов.
+  section.section
+    .container
+      +certificate
+  section.section
+    .container
+      +shout("alt")
+  section.section
+    .container
+      +payment
+  section.section
+    +map
+
+block append head
+  // заменить apikey на ключ заказчика
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=f927c969-28d5-4486-8125-084a9ab3d470&lang=ru_RU", type="text/javascript")
+  script(type="module"): include ../blocks/map/yandexMaps.js

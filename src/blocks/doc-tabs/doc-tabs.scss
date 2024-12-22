@@ -1,0 +1,94 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/reset-button";
+@use "src/scss/mixins/text-styles";
+
+.doc-tabs {
+  $block-name: &; // #{$block-name}__element
+
+  &__scroll {
+    display: flex;
+    margin: 0 calc(var(--container-padding) * -1);
+    overflow: scroll hidden;
+    scrollbar-width: none;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      margin: 0;
+    }
+
+    &::after,
+    &::before {
+      flex-shrink: 0;
+      width: 16px;
+      content: "";
+
+      @media screen and (min-width: breakpoints.$screen-t) {
+        content: none;
+      }
+    }
+  }
+
+  &__body {
+    margin-top: 28px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-top: 24px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    border-bottom: 1px solid #c4c4c4;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      width: 100%;
+    }
+  }
+
+  &__tab {
+    @include reset-button.reset-button;
+
+    padding: 0 24px 12px;
+    color: var(--front-secondary);
+    font-size: 18px;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 0 24px 16px;
+      font-size: 24px;
+    }
+
+    &[data-active] {
+      margin-bottom: -1px;
+      padding-bottom: 11px;
+      color: var(--front-primary);
+      border-bottom: 2px solid var(--green);
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        padding: 0 24px 15px;
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+    gap: 34px;
+    padding: 20px 12px 20px 20px;
+    background-color: #f8f8f8;
+    border-radius: 20px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+    	grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &[data-active] {
+      display: grid;
+    }
+  }
+}

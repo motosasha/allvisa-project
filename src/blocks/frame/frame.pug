@@ -1,0 +1,27 @@
+//- Все примеси в этом файле должны начинаться c имени блока (frame)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin frame(img, mods)
+
+  //- Принимает:
+  //-   img     {string} - изображение
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +frame("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " frame--" + modsList[i].trim();
+      }
+    }
+
+  .frame(class=allMods)&attributes(attributes)
+    .frame__info
+      block
+    .frame__miniature
+      img.frame__image(src= path.img + img, alt="")

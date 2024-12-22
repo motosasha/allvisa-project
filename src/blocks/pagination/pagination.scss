@@ -23,7 +23,7 @@
 
   &__current {
     color: var(--front-invert);
-    background: var(--back-green);
+    background-color: var(--back-green);
     cursor: default;
   }
 
@@ -32,7 +32,7 @@
     transition: background .25s ease;
 
     &:hover {
-      background: #eee;
+      background-color: #eee;
     }
   }
 }

@@ -8,7 +8,7 @@ block variables
     metaKeywords = "keywords"
 
 block content
-  .hero.hero--intpass.hero--ring-alt
+  section.hero.hero--intpass.hero--ring-alt
     .hero__back
       img.hero__bg(src= path.img + "img__bg-hero--castle.webp", alt="", aria-hidden="true")
       img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
@@ -21,3 +21,98 @@ block content
           p.hero__descr Только для граждан РФ
         .hero__card
           +stepper()(action="https://jsonplaceholder.typicode.com/todos/", id="intPassForm", data-steps="1")
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Тарифы и цены оформления загранпаспота
+        .section__body
+          .tariffs
+            .tariffs__item
+              .tariffs__col
+                h3.tariffs__main Биометричейский (на 10 лет)
+                .tariffs__secondary Взрослый
+              .tariffs__col
+                .tariffs__main От 25 000
+                .tariffs__secondary Рублей
+            .tariffs__item
+              .tariffs__col
+                h3.tariffs__main Биометричейский (на 10 лет)
+                .tariffs__secondary Ребенок (до 14 лет)
+              .tariffs__col
+                .tariffs__main От 31 000
+                .tariffs__secondary Рублей
+            .tariffs__item
+              .tariffs__col
+                h3.tariffs__main Старого образца (на 5 лет)
+                .tariffs__secondary Взрослый
+              .tariffs__col
+                .tariffs__main От 32 000
+                .tariffs__secondary Рублей
+            .tariffs__item
+              .tariffs__col
+                h3.tariffs__main Старого образца (на 5 лет)
+                .tariffs__secondary Ребенок (до 14 лет)
+              .tariffs__col
+                .tariffs__main От 30 000
+                .tariffs__secondary Рублей
+  section.section
+    .container
+      +frame("img__frame--zagran.webp")
+        h2.frame__title Список документов для оформления загранпаспорта
+        p.frame__lead Для оформления загранпаспорта взрослым заявителям потребуется предоставить:
+        .frame__block
+          p.frame__p.
+            Копию внутреннего российского паспорта. Копии делаются со всех страниц, где есть отметки,
+            а также дополнительно страниц 18-20. Их распечатывают на отдельных листах.
+          p.frame__p.
+            Для паспорта старого образца — 4 фотографии размером 3,5 х 4,5 см.
+            Они должны быть цветные, без уголков, распечатаны на матовой бумаге.
+            Для паспорта с биометрией — 2 любых фото. Если обращаетесь самостоятельно
+            в паспортный стол, приносить фотографии не нужно, их сделают на месте.
+          p.frame__p.
+            Копия трудовой книжки либо сведения о местах работы за последние 10 лет.
+        .frame__footer
+          p.frame__small.
+            Если уже есть действующий загранпаспорт, нужно еще предоставить копию его первой страницы.
+          p.frame__small.
+            Второй загранник может быть только биометрическим, сделать второй документ старого образца нельзя.
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title.section__title--alt Почему уже #[span 42 000] клиентов выбрали компанию Allvisa
+        .section__body
+          .tiles
+            .tiles__item
+              .tiles__info.tiles__info--invert
+                .tiles__num 01
+                h3.tiles__title Работаем по договору
+              img.tiles__image(src= path.img + "img__tiles--zag-01.webp", alt="")
+            .tiles__item.tiles__item--bottom
+              .tiles__info
+                .tiles__num 02
+                h3.tiles__title Гарантируем отсутствие скрытых доплат и посредников
+              img.tiles__image(src= path.img + "img__tiles--zag-02.webp", alt="")
+            .tiles__item
+              .tiles__info
+                .tiles__num 03
+                h3.tiles__title Никаких очередей и задержек в оформлении
+              img.tiles__image(src= path.img + "img__tiles--zag-03.webp", alt="")
+            .tiles__item.tiles__item--bottom
+              .tiles__info
+                .tiles__num 04
+                h3.tiles__title Собираем весь пакет документов за вас под ключ
+              img.tiles__image(src= path.img + "img__tiles--zag-04.webp", alt="")
+            .tiles__item.tiles__item--alt
+              .tiles__info.tiles__info--invert
+                .tiles__num 05
+                h3.tiles__title Оформляем загранпаспорт с пропиской во всей России
+              img.tiles__image(src= path.img + "img__tiles--zag-05.webp", alt="")
+  section.section
+    +map
+
+block append head
+  // заменить apikey на ключ заказчика
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=f927c969-28d5-4486-8125-084a9ab3d470&lang=ru_RU", type="text/javascript")
+  script(type="module"): include ../blocks/map/yandexMaps.js

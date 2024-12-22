@@ -1,0 +1,115 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.payment {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 28px;
+  max-width: 1464px;
+  margin: 0 auto;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    gap: 40px;
+  }
+
+  &__header {
+    display: grid;
+    justify-items: center;
+  }
+
+  &__title {
+    margin: 0 0 14px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 56px;
+    }
+  }
+
+  &__descr {
+    @include text-styles.text-m;
+
+    margin: 0 0 24px;
+    text-align: center;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	@include text-styles.title-s;
+
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    width: 270px;
+  }
+
+  &__body {
+    display: grid;
+    gap: 28px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 40px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @media screen and (min-width: breakpoints.$screen-ti) {
+    	grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    overflow: hidden;
+    background-color: #f3f5f9;
+    border-radius: 20px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 18px 0;
+    }
+
+    img {
+      max-width: 271px;
+    }
+  }
+
+  &__cols {
+    column-count: 2;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      column-count: 3;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-ti) {
+      column-count: 4;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      column-count: 6;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      column-count: 7;
+    }
+  }
+
+  &__line {
+    font-size: 20px;
+    line-height: 1;
+
+    & + & {
+      margin-top: 14px;
+    }
+  }
+}

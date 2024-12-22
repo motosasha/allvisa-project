@@ -1,0 +1,27 @@
+//- Все примеси в этом файле должны начинаться c имени блока (shout)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin shout(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +shout("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " shout--" + modsList[i].trim();
+      }
+    }
+
+  .shout(class=allMods)&attributes(attributes)
+    h2.shout__title Выезд специалиста визового центра
+    p.shout__descr.
+      Нет возможности заехать к нам в офис?<br>
+      Оставьте заявку и мы согласуем выезд специалиста по Вашему адресу.
+    button.button.shout__button(data-modal="#callback") Заказать выезд специалиста

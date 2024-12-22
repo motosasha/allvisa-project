@@ -47,6 +47,29 @@
       margin: 0 auto;
       text-align: left;
     }
+
+    &--alt {
+      width: 100%;
+      max-width: 920px;
+      margin: 0;
+      text-align: left;
+
+      span {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 1;
+        background-image: var(--green-gradient-vertical);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @media screen and (min-width: breakpoints.$screen-d) {
+          font-weight: 700;
+          font-size: 96px;
+          line-height: 1;
+        }
+      }
+    }
   }
 
   &__descr {
@@ -67,7 +90,7 @@
       position: relative;
       padding: 4px 10px;
       color: var(--front-invert);
-      background: #f90;
+      background-color: #f90;
       border-radius: 32px;
 
       &::after {
@@ -114,5 +137,9 @@
     @media screen and (min-width: breakpoints.$screen-d) {
       margin-top: 32px;
     }
+  }
+
+  &__button {
+    margin: 0 auto;
   }
 }

@@ -1,0 +1,123 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.form-section {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  overflow: hidden;
+  color: var(--front-invert);
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    object-position: 64% 50%;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	object-position: 50% 0;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: var(--z-index-inner);
+    display: grid;
+    gap: 40px;
+    padding: 144px 0;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      align-items: center;
+      height: 930px;
+      padding: 80px 0;
+    }
+  }
+
+  &__card {
+    max-width: 624px;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--front-primary);
+    background-color: var(--back-primary);
+    border-radius: 24px;
+    box-shadow: 0 16px 38px 0 rgb(0 0 0 / 14%);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      grid-column: 1 / 6;
+      padding: 40px;
+    }
+
+    // stylelint-disable
+    .form {
+      padding: 0;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      .button,
+      .input,
+      .form__label {
+        font-size: 18px;
+      }
+    }
+
+    .request-form__small {
+      margin: 0;
+    }
+
+    .button--secondary {
+      color: var(--front-green);
+    }
+    // stylelint-enable
+  }
+
+  &__illustration {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    z-index: var(--z-index-default);
+    display: none;
+    width: 873px;
+    height: auto;
+    pointer-events: none;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: block;
+    }
+  }
+
+  &__ring {
+    position: absolute;
+    max-width: none;
+    aspect-ratio: 1;
+
+    &--left {
+      top: 40px;
+      left: -64px;
+      width: 210px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        top: 94px;
+        left: 50%;
+        width: 300px;
+        transform: translateX(-350px);
+      }
+    }
+
+    &--right {
+      right: -373px;
+      bottom: -252px;
+      width: 568px;
+
+      @media screen and (min-width: breakpoints.$screen-d) {
+        right: -76px;
+        bottom: -197px;
+        width: 635px;
+      }
+    }
+  }
+}

@@ -120,5 +120,97 @@
       "icon": "romania",
       "title": "Румыния"
     }
+  ],
+  "ates": [
+    {
+      "icon": "australia",
+      "title": "Австралия",
+      "description": "до 90 дней"
+    },
+    {
+      "icon": "hong-kong",
+      "title": "Гонконг",
+      "description": "до 60 дней"
+    },
+    {
+      "icon": "malaysia",
+      "title": "Малайзия",
+      "description": "до 60 дней"
+    },
+    {
+      "icon": "papua-new-guinea",
+      "title": "Папуа Новая Гвинея",
+      "description": "до 60 дней"
+    },
+    {
+      "icon": "taiwan",
+      "title": "Тайвань",
+      "description": "до 90 дней"
+    },
+    {
+      "icon": "chile",
+      "title": "Чили",
+      "description": "до 60 дней"
+    },
+    {
+      "icon": "brunei",
+      "title": "Бруней",
+      "description": "до 90 дней"
+    },
+    {
+      "icon": "indonesia",
+      "title": "Индонезия",
+      "description": "до 60 дней"
+    },
+    {
+      "icon": "mexico",
+      "title": "Мексика",
+      "description": "до 90 дней"
+    },
+    {
+      "icon": "peru",
+      "title": "Перу",
+      "description": "до 90 дней"
+    },
+    {
+      "icon": "thailand",
+      "title": "Таиланд",
+      "description": "до 90 дней"
+    },
+    {
+      "icon": "korea",
+      "title": "Южная Корея",
+      "description": "до 90 дней"
+    },
+    {
+      "icon": "vietnam",
+      "title": "Вьетнам",
+      "description": "до 60 дней"
+    },
+    {
+      "icon": "china",
+      "title": "Китай",
+      "description": "до 60 дней"
+    },
+    {
+      "icon": "new-zealand",
+      "title": "Новая Зеландия",
+      "description": "до 90 дней"
+    },
+    {
+      "icon": "singapore",
+      "title": "Сингапур",
+      "description": "до 60 дней"
+    },
+    {
+      "icon": "philippines",
+      "title": "Филиппины",
+      "description": "до 59 дней"
+    },
+    {
+      "icon": "japan",
+      "title": "Япония",
+      "description": "до 60 дней"
+    }
   ]
 }

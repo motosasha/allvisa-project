@@ -1,0 +1,49 @@
+//- Все примеси в этом файле должны начинаться c имени блока (payment)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin payment(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +payment(object, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " payment--" + modsList[i].trim();
+      }
+    }
+
+  .payment(class=allMods)&attributes(attributes)
+    .payment__header
+      h2.payment__title Для оплаты услуг
+      p.payment__descr перейдите в раздел оплата
+      a.button.button--primary.payment__button(href="#") Оплатить
+    .payment__body
+      .payment__grid
+        .payment__logo
+          img(src= path.img + "img__logo--visa.webp", alt="Visa")
+        .payment__logo
+          img(src= path.img + "img__logo--mir.webp", alt="Mir")
+        .payment__logo
+          img(src= path.img + "img__logo--mc.webp", alt="MasterCard")
+        .payment__logo
+          img(src= path.img + "img__logo--khalva.webp", alt="Халва")
+        .payment__logo
+          img(src= path.img + "img__logo--yad.webp", alt="Yandex Money")
+        .payment__logo
+          img(src= path.img + "img__logo--qiwi.webp", alt="Qiwi")
+        .payment__logo
+          img(src= path.img + "img__logo--sber.webp", alt="Сбер банк")
+        .payment__logo
+          img(src= path.img + "img__logo--pt.webp", alt="Pay.Travel")
+      .payment__cols
+        if data
+          each line in data
+            .payment__line!= line

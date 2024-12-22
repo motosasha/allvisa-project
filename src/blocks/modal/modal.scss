@@ -50,6 +50,7 @@
     width: 48px;
     height: 48px;
     padding: 8px;
+    cursor: pointer;
 
     @media screen and (min-width: breakpoints.$screen-t) {
       width: 60px;

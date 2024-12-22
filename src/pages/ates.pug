@@ -8,7 +8,7 @@ block variables
     metaKeywords = "keywords"
 
 block content
-  .hero.hero--full-height.hero--ring-alt
+  section.hero.hero--full-height.hero--ring-alt
     .hero__back
       img.hero__bg(src= path.img + "img__bg-hero--sidney.webp", alt="", aria-hidden="true")
       img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
@@ -20,3 +20,146 @@ block content
           p.hero__descr.
             Заполните форму и получите карту АТЭС на 5 лет с неограниченным количеством визитов в 18 стран мира
           button.button.button--primary.button--large.hero__main-button(data-modal="#callback") Получить карту АТЭС
+  section.section
+    .container
+      +frame("img__frame--ates.webp")
+        h2.frame__title Карта АТЭС — международный визозаменяющий документ
+        p.frame__p.
+          Карта АТЭС — это уникальный международный документ, который разрешает многократный
+          въезд в 18 стран Тихоокеанского региона (в том числе Мексика, Австралия,
+          Япония и Южная Корея). Карта действует 5 лет, поэтому на всё это время
+          вы можете смело забыть про визы и другую бюрократию для получения права на въезд.
+        p.frame__p.
+          Деловая карта АТЭС — разработана для международных поездок на переговоры
+          и бизнес-встречи с партнёрами, но вместе с этим она не запрещает
+          вам въезд в эти страны с туристическими целями.
+        button.button.button--primary.button--large(data-modal="#callback") Заказать сертификат
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Страны, входящие в АТЭС
+        .section__body
+          +countries(json.countries.ates)
+        .section__footer
+          button.button.button--primary.button--large(data-modal="#callback") Получить карту АТЭС
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Преимущества карты АТЭС
+        .section__body
+          .tiles.tiles--ates
+            .tiles__item
+              .tiles__info.tiles__info--invert
+                .tiles__label Преимущество 01
+                h3.tiles__title Безвизовый въезд
+                p.tiles__descr.
+                  18 стран можно посещать без визы и дополнительных документов,
+                  в том числе Австралию, Гонконг, Китай, Сингапур, Южную Корею, Японию
+              img.tiles__image(src= path.img + "img__tiles--ates-01.webp", alt="")
+            .tiles__item.tiles__item--darken.tiles__item--down
+              .tiles__info.tiles__info--invert
+                .tiles__label Преимущество 02
+                h3.tiles__title Без дополнительных бумаг
+                p.tiles__descr.
+                  Освобождение от ряда формальных процедур и сборов, а также
+                  преимущества перед обычными путешественниками
+              img.tiles__ring(src= path.img + "img__ring.svg", alt="")
+              img.tiles__image(src= path.img + "img__tiles--ates-02.webp", alt="")
+            .tiles__item
+              .tiles__info
+                .tiles__label Преимущество 03
+                h3.tiles__title Без приглашения
+                p.tiles__descr.
+                  Нет необходимости получать приглашения от принимающей стороны
+              img.tiles__image(src= path.img + "img__tiles--ates-03.webp", alt="")
+            .tiles__item.tiles__item--darken.tiles__item--down
+              .tiles__info.tiles__info--invert
+                .tiles__label Преимущество 04
+                h3.tiles__title Приоритет при проходе
+                p.tiles__descr.
+                  Ускоренное прохождения таможенного контроля по прибытии
+                  в большинстве аэропортов стран АТЭС и Приоритетное (ускоренное)
+                  рассмотрение Вашей заявки на деловую визу в США или Канаду
+              img.tiles__ring(src= path.img + "img__ring.svg", alt="")
+              img.tiles__image(src= path.img + "img__tiles--ates-04.webp", alt="")
+            .tiles__item
+              .tiles__info
+                .tiles__label Преимущество 05
+                h3.tiles__title Длительный отдых
+                p.tiles__descr.
+                  Увеличенные сроки разрешённого пребывания в странах,
+                  входящих в список АТЭС
+              img.tiles__image(src= path.img + "img__tiles--ates-05.webp", alt="")
+            .tiles__item.tiles__item--darken.tiles__item--down
+              .tiles__info.tiles__info--invert
+                .tiles__label Преимущество 06
+                h3.tiles__title 100% гарантированный въезд
+                p.tiles__descr.
+                  При приезде в страну у вас никогда не возникнет проблем
+                  с проходом всех процедур
+              img.tiles__ring(src= path.img + "img__ring.svg", alt="")
+              img.tiles__image(src= path.img + "img__tiles--ates-06.webp", alt="")
+            .tiles__item.tiles__item--down
+              .tiles__info
+                .tiles__label Преимущество 07
+                h3.tiles__title Экономия
+                p.tiles__descr.
+                  Существенная экономия времени и денег на оформление очередного
+                  въезда в страну АТЭС
+              img.tiles__ring(src= path.img + "img__ring.svg", alt="")
+              img.tiles__image(src= path.img + "img__tiles--ates-07.webp", alt="")
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Эти карты АТЭС наши клиенты уже получили
+        .section__body
+          .travel-card
+            .swiper.travel-card__carousel(class=allMods)&attributes(attributes)
+              .swiper-wrapper.travel-card__track
+                .swiper-slide.travel-card__slide
+                  img.travel-card__image(src= path.img + "img__travel-card--01.webp", alt="")
+                .swiper-slide.travel-card__slide
+                  img.travel-card__image(src= path.img + "img__travel-card--02.webp", alt="")
+                .swiper-slide.travel-card__slide
+                  img.travel-card__image(src= path.img + "img__travel-card--03.webp", alt="")
+                .swiper-slide.travel-card__slide
+                  img.travel-card__image(src= path.img + "img__travel-card--01.webp", alt="")
+                .swiper-slide.travel-card__slide
+                  img.travel-card__image(src= path.img + "img__travel-card--02.webp", alt="")
+              .travel-card__footer
+                .travel-card__prev
+                  svg: use(href= path.icon + "icon__arrow-round--prev")
+                .travel-card__fraction
+                .travel-card__next
+                  svg: use(href= path.icon + "icon__arrow-round--next")
+  section.section
+    +form-section
+      img.form-section__illustration(src= path.img + "img__form-doc.webp", alt="")
+      img.form-section__ring.form-section__ring--left(src= path.img + "img__ring.svg", alt="")
+      img.form-section__ring.form-section__ring--right(src= path.img + "img__ring.svg", alt="")
+  section.section
+    .container
+      .section__inner
+        .section__header
+          h2.section__title Наши преимущества
+        .section__body
+          +advantages(json.ates.mission, "alt")
+  section.section
+    .container
+      +certificate
+  section.section
+    +map
+  section.section
+    .container
+      +shout("alt")
+  section.section
+    .container
+      +payment
+
+block append head
+  // заменить apikey на ключ заказчика
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=f927c969-28d5-4486-8125-084a9ab3d470&lang=ru_RU", type="text/javascript")
+  script(type="module"): include ../blocks/map/yandexMaps.js

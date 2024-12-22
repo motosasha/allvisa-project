@@ -1,0 +1,82 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.travel-card {
+  $block-name: &; // #{$block-name}__element
+
+  &__carousel {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      overflow: hidden;
+    }
+  }
+
+  &__track {
+    height: auto;
+  }
+
+  &__slide {
+    max-width: 295px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      max-width: none;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    border-radius: 24px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__fraction {
+    display: flex;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+
+    span {
+      width: 32px;
+    }
+
+    .swiper-pagination-current {
+      text-align: right;
+    }
+
+    .swiper-pagination-total {
+      text-align: left;
+    }
+  }
+
+  &__prev,
+  &__next {
+    cursor: pointer;
+
+    &.swiper-button-disabled {
+      cursor: default;
+      opacity: 0.15;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: var(--front-primary);
+    }
+  }
+}

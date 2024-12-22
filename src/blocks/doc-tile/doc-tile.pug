@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (doc-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin doc-tile(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +doc-tile("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " doc-tile--" + modsList[i].trim();
+      }
+    }
+
+  .doc-tile(class=allMods)&attributes(attributes)
+    svg.doc-tile__icon
+      use(href= path.icon + "icon__doc--alt")
+    h3.doc-tile__title Загранпаспорт
+    p.doc-tile__descr.
+      Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+      услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.

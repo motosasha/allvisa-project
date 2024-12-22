@@ -4,8 +4,6 @@ import {
   emailFieldValidationRules,
   onValidationSuccess,
   phoneFieldValidationRules,
-  requiredFieldValidationRules,
-  selectFieldValidationConfig,
   textFieldValidationRules,
   validationFormConfig,
 } from "../../js/common/formVariables.js";

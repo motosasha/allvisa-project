@@ -1,0 +1,32 @@
+//- Все примеси в этом файле должны начинаться c имени блока (sertificate)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin certificate(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +sertificate("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " sertificate--" + modsList[i].trim();
+      }
+    }
+
+  .certificate(class=allMods)&attributes(attributes)
+    .certificate__info
+      h2.certificate__title Подарочные сертификаты Allvisa
+      p.certificate__descr.
+        У нас вы можете приобрести сертификат для друзей и родственников
+        на любую сумму или на определенную услугу
+      button.button.button--primary.certificate__button(data-modal="#callback") Заказать сертификат
+    img.certificate__image(src= path.img + "img__card.webp", alt="")
+    img.certificate__ring.certificate__ring--left(src= path.img + "img__ring.svg", alt="")
+    img.certificate__ring.certificate__ring--right(src= path.img + "img__ring.svg", alt="")
+    img.certificate__ring.certificate__ring--bottom(src= path.img + "img__ring.svg", alt="")

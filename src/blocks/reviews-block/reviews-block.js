@@ -11,7 +11,6 @@ ready(function () {
   reviewsTriggers.forEach((trigger) => {
     trigger.addEventListener("click", function () {
       const tag = trigger.dataset.reviewsTrigger;
-      console.log(tag);
       reviewsTriggers.forEach((button) => {
         button.removeAttribute("data-active");
       });
@@ -21,7 +20,6 @@ ready(function () {
   });
 
   function reviewsFilter(tag) {
-    // console.log(tag);
     if (tag === "all") {
       reviewsTiles.forEach((tile) => {
         tile.removeAttribute("hidden");

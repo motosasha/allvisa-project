@@ -1,0 +1,72 @@
+@use "src/scss/breakpoints";
+@use "src/scss/mixins/text-styles";
+
+.tariffs {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 16px;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    gap: 24px;
+  }
+
+  &__item {
+    display: grid;
+    gap: 25px;
+    padding: 20px;
+    color: #717171;
+    background-color: #f8f8f8;
+    border-radius: 24px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+    	display: flex;
+      justify-content: space-between;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      padding: 34px 32px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--front-invert);
+        background-image: var(--green-gradient-vertical);
+        border-radius: 24px;
+      }
+    }
+  }
+
+  &__col {
+    display: grid;
+    gap: 10px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+    	& + & {
+        justify-items: end;
+      }
+    }
+  }
+
+  &__main {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 28px;
+      letter-spacing: 0.28px;
+    }
+  }
+
+  &__secondary {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      font-size: 24px;
+    }
+  }
+}

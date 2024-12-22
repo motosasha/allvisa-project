@@ -8,7 +8,7 @@ block variables
     metaKeywords = "keywords"
 
 block content
-  .hero.hero--full-height
+  section.hero.hero--full-height
     .hero__back
       img.hero__bg(src= path.img + "img__bg-hero--family.webp", alt="", aria-hidden="true")
       img.hero__ring.hero__ring--left(src= path.img + "img__ring.svg", alt="")
@@ -58,7 +58,7 @@ block content
         .section__body
           +reviews
         .section__footer
-          a.button.button--primary.button--large(href="#") Смотреть все отзывы
+          a.button.button--primary.button--large(href="reviews.html") Смотреть все отзывы
   section.section
     .container
       .about-section
@@ -80,7 +80,7 @@ block content
             ценам. Оставьте заявку, и наши менеджеры очень скоро с вами свяжутся
             для решения вашего вопроса. Официальный визовый центр «Allvisa» — можете
             нам доверять!
-          a.button.button--primary.button--large.about-section__button(href="#") Перейти в раздел
+          a.button.button--primary.button--large.about-section__button(href="about.html") Перейти в раздел
   section.section
     .container
       .section__inner

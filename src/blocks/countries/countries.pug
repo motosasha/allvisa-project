@@ -22,9 +22,12 @@ mixin countries(data, mods)
 
   .countries(class=allMods)&attributes(attributes)
     each item in data
-      .countries__item
+      a.countries__item(href="#")
         .countries__icon
           svg
             use(href= path.icon + "icon__flag--" + item.icon)
         .countries__title!= item.title
-        .countries__descr от 20 000 ₽
+        if item.description
+          .countries__descr!= item.description
+        else
+          .countries__descr от 20 000 ₽

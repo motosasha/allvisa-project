@@ -66,7 +66,7 @@
   &__icon {
     align-self: start;
     padding: 6px;
-    background: rgb(48 87 137 / 15%);
+    background-color: rgb(48 87 137 / 15%);
     border-radius: 8px;
     aspect-ratio: 1 / 1;
 
@@ -132,7 +132,7 @@
       height: 28px;
       padding: 4px 2px 0;
       color: var(--front-accent);
-      background: rgb(48 87 137 / 15%);
+      background-color: rgb(48 87 137 / 15%);
       border-radius: 8px;
       content: counter(list);
     }

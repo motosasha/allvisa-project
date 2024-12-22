@@ -32,6 +32,10 @@
 
   &--intpass {
     margin-bottom: 80px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-bottom: 150px;
+    }
   }
 
   &--mh {
@@ -455,7 +459,7 @@
     width: 100%;
     min-height: 320px;
     padding: 20px;
-    background: var(--back-primary);
+    background-color: var(--back-primary);
     border-radius: 20px;
     box-shadow: 0 12px 24px 0 rgb(0 0 0 / 8%);
 
