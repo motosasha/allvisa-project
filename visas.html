@@ -20,7 +20,45 @@
     <title>Allvisa | Оформление виз</title>
     <meta name="description" content="description">
     <meta name="keywords" content="keywords">
-    <link rel="stylesheet" href="./css/style.css"><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");const navigatorErrorMessage="Could not find `userAgent` or `userAgentData` window.navigator properties to set `os`, `browser` and `version`",removeExcessMozillaAndVersion=/^mozilla\/\d\.\d\W/,browserPattern=/(\w+)\/(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)/g,engineAndVersionPattern=/^(ver|cri|gec)/,brandList=["chrome","opera","safari","edge","firefox"],unknown="Unknown";let userAgentData=window.navigator.userAgentData,userAgent=window.navigator.userAgent;const mobiles={ios:/iphone/,ipados:/ipad|macintosh/,android:/android/},desktops={windows:/win/,osx:/macintosh/,linux:/linux/},detectPlatform=(e,n)=>{if(userAgent="string"==typeof e?e:userAgent,userAgentData="string"==typeof n?n:userAgentData,userAgent){const e=userAgent.toLowerCase().replace(removeExcessMozillaAndVersion,""),n=Object.keys(mobiles).find(n=>mobiles[n].test(e)&&window.navigator.maxTouchPoints>=1),t=Object.keys(desktops).find(n=>desktops[n].test(e)),o=n||t,r=e.match(browserPattern),s=/version\/(\d+(\.\d+)*)/,a=e.match(s),i=Array.isArray(a)?a[1]:null,d=r&&(r.length>2&&!engineAndVersionPattern.test(r[1])?1:0),l=r&&r[r.length-1-(d||0)].split("/");return{os:o,browser:l&&l[0],version:i||l&&l[1]}}if(userAgentData){const e=userAgentData.platform.toLowerCase();let n;for(const e of userAgentData.brands){const t=e.brand.toLowerCase(),o=brandList.find(e=>{if(t.includes(e))return e});if(o){n={browser:o,version:e.version};break}}return{os:e,...n||{browser:unknown,version:unknown}}}return console.error(navigatorErrorMessage),{os:navigator.platform||unknown,browser:unknown,version:unknown}};let platform=detectPlatform();document.documentElement.classList.add(platform.os,platform.browser);let vh=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",vh+"px"),window.addEventListener("resize",()=>{let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",e+"px")});</script>
+    <link rel="stylesheet" href="./css/style.css"><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");const navigatorErrorMessage="Could not find `userAgent` or `userAgentData` window.navigator properties to set `os`, `browser` and `version`",removeExcessMozillaAndVersion=/^mozilla\/\d\.\d\W/,browserPattern=/(\w+)\/(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)/g,engineAndVersionPattern=/^(ver|cri|gec)/,brandList=["chrome","opera","safari","edge","firefox"],unknown="Unknown";let userAgentData=window.navigator.userAgentData,userAgent=window.navigator.userAgent;const mobiles={ios:/iphone/,ipados:/ipad|macintosh/,android:/android/},desktops={windows:/win/,osx:/macintosh/,linux:/linux/},detectPlatform=(e,n)=>{if(userAgent="string"==typeof e?e:userAgent,userAgentData="string"==typeof n?n:userAgentData,userAgent){const e=userAgent.toLowerCase().replace(removeExcessMozillaAndVersion,""),n=Object.keys(mobiles).find(n=>mobiles[n].test(e)&&window.navigator.maxTouchPoints>=1),t=Object.keys(desktops).find(n=>desktops[n].test(e)),o=n||t,r=e.match(browserPattern),s=/version\/(\d+(\.\d+)*)/,a=e.match(s),i=Array.isArray(a)?a[1]:null,d=r&&(r.length>2&&!engineAndVersionPattern.test(r[1])?1:0),l=r&&r[r.length-1-(d||0)].split("/");return{os:o,browser:l&&l[0],version:i||l&&l[1]}}if(userAgentData){const e=userAgentData.platform.toLowerCase();let n;for(const e of userAgentData.brands){const t=e.brand.toLowerCase(),o=brandList.find(e=>{if(t.includes(e))return e});if(o){n={browser:o,version:e.version};break}}return{os:e,...n||{browser:unknown,version:unknown}}}return console.error(navigatorErrorMessage),{os:navigator.platform||unknown,browser:unknown,version:unknown}};let platform=detectPlatform();document.documentElement.classList.add(platform.os,platform.browser);let vh=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",vh+"px"),window.addEventListener("resize",()=>{let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",e+"px")});</script><!-- заменить apikey на ключ заказчика--><script src="https://api-maps.yandex.ru/2.1/?apikey=f927c969-28d5-4486-8125-084a9ab3d470&amp;lang=ru_RU" type="text/javascript"></script><script type="module">const markAllVisa = [55.754172, 37.635143];
+const mapCenterMobile = [55.75256, 37.635172];
+const mapCenterTablet = [55.753257, 37.635075];
+const mapCenterDesktop = [55.754194, 37.637446];
+
+ymaps.ready(init);
+
+function changeMapCenter(map) {
+  if (window.innerWidth >= 992) {
+    map.setCenter(mapCenterDesktop);
+  } else if (window.innerWidth >= 600 && window.innerWidth < 991) {
+    map.setCenter(mapCenterTablet);
+  } else map.setCenter(mapCenterMobile);
+}
+
+function init() {
+  const yandexMap = new ymaps.Map("map", {
+    center: mapCenterDesktop,
+    zoom: 17,
+    controls: ["geolocationControl"],
+  });
+
+  const markContent = {
+    balloonContent: "Allvisa",
+    hintContent: "Allvisa",
+  };
+  const markPreset = {
+    preset: "islands#darkGreenDotIcon",
+  };
+
+  yandexMap.geoObjects.add(new ymaps.Placemark(markAllVisa, markContent, markPreset));
+
+  changeMapCenter(yandexMap);
+
+  window.addEventListener("resize", () => {
+    changeMapCenter(yandexMap);
+  });
+}
+</script>
   </head>
   <body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
     <div class="project-nav"><!-- delete this block if production-->
@@ -280,6 +318,38 @@
                 <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="china.html">
+              <div class="project-nav__title">China visa page</div>
+              <div class="project-nav__descr">страница виз в Китай</div>
+            </a><a class="project-nav__link" href="china.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="ates.html">
+              <div class="project-nav__title">ATES page</div>
+              <div class="project-nav__descr">страница АТЭС</div>
+            </a><a class="project-nav__link" href="ates.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="zagran.html">
+              <div class="project-nav__title">International passport page</div>
+              <div class="project-nav__descr">страница загран паспорт</div>
+            </a><a class="project-nav__link" href="zagran.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="visas.html">
+              <div class="project-nav__title">Visas page</div>
+              <div class="project-nav__descr">страница оформление виз</div>
+            </a><a class="project-nav__link" href="visas.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
           <li class="project-nav__list-item"><a class="project-nav__link" href="thanks.html">
               <div class="project-nav__title">Thanks page</div>
               <div class="project-nav__descr">спасибо за заявку</div>
@@ -392,24 +462,24 @@ document.body.addEventListener("click", (e) => {
                     </ul>
                   </nav>
                   <form class="header__search" id="mainSearch" action="https://jsonplaceholder.typicode.com/posts"><input class="header__search-input" type="search" placeholder="Я ищу..." /><button class="header__search-button"><svg class="header__search-icon">
-                        <use href="./img/svgSprite.svg?v=1734549271777#icon__search"></use>
+                        <use href="./img/svgSprite.svg?v=1734882332003#icon__search"></use>
                       </svg></button></form>
                 </div>
                 <div class="header__actions"><button class="header__button header__button--search" data-search="data-search"><svg class="header__icon">
-                      <use href="./img/svgSprite.svg?v=1734549271777#icon__search"></use>
+                      <use href="./img/svgSprite.svg?v=1734882332003#icon__search"></use>
                     </svg><span class="header__button-title">Поиск</span></button><a class="header__button header__button--payment" href="#"><svg class="header__icon">
-                      <use href="./img/svgSprite.svg?v=1734549271777#icon__wallet"></use>
+                      <use href="./img/svgSprite.svg?v=1734882332003#icon__wallet"></use>
                     </svg><span class="header__button-title">Оплата услуг</span></a><a class="header__button" href="#"><svg class="header__icon">
-                      <use href="./img/svgSprite.svg?v=1734549271777#icon__user--alt"></use>
+                      <use href="./img/svgSprite.svg?v=1734882332003#icon__user--alt"></use>
                     </svg><span class="header__button-title">Личный кабинет</span></a></div><button class="button-burger header__burger" data-burger="data-burger"><span class="button-burger__line-tl"></span><span class="button-burger__line-tr"></span><span class="button-burger__line-cl"></span><span class="button-burger__line-cr"></span><span class="button-burger__line-bl"></span><span class="button-burger__line-br"></span></button>
               </div>
               <div class="header__bottom">
                 <div class="header__socials"><a class="header__social" href="https://t.me/allvisa_client?roistat_visit=489845&amp;start=roistat_489845" target="_blank"><svg class="header__social-icon">
-                      <use href="./img/svgSprite.svg?v=1734549271777#icon__social--tg"></use>
+                      <use href="./img/svgSprite.svg?v=1734882332003#icon__social--tg"></use>
                     </svg></a><a class="header__social" href="https://vk.com/allvisacentre?roistat_visit=489845" target="_blank"><svg class="header__social-icon">
-                      <use href="./img/svgSprite.svg?v=1734549271777#icon__social--vk"></use>
+                      <use href="./img/svgSprite.svg?v=1734882332003#icon__social--vk"></use>
                     </svg></a><a class="header__social" href="https://api.whatsapp.com/send?phone=79296761959&amp;text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%20489845" target="_blank"><svg class="header__social-icon">
-                      <use href="./img/svgSprite.svg?v=1734549271777#icon__social--wa"></use>
+                      <use href="./img/svgSprite.svg?v=1734882332003#icon__social--wa"></use>
                     </svg></a></div>
                 <ul class="header__links">
                   <li class="header__links-item"><a class="header__link" href="#">Оформление виз</a></li>
@@ -427,7 +497,7 @@ document.body.addEventListener("click", (e) => {
       <div class="layout__nav">
         <div class="side-nav">
           <div class="side-nav__close" data-burger="data-burger"><svg class="side-nav__icon">
-              <use href="./img/svgSprite.svg?v=1734549271777#icon__close"></use>
+              <use href="./img/svgSprite.svg?v=1734882332003#icon__close"></use>
             </svg></div>
           <div class="side-nav__inner">
             <div class="side-nav__links">
@@ -450,17 +520,17 @@ document.body.addEventListener("click", (e) => {
             </div>
             <div class="side-nav__call"><a class="side-nav__phone" href="tel:88004444140">8 (800) 444-41-40</a><button class="side-nav__callback" data-modal="#callback">обратный звонок</button></div>
             <div class="side-nav__socials"><a class="side-nav__social" href="https://t.me/allvisa_client?roistat_visit=489845&amp;start=roistat_489845" target="_blank"><svg class="side-nav__icon">
-                  <use href="./img/svgSprite.svg?v=1734549271777#icon__social--tg"></use>
+                  <use href="./img/svgSprite.svg?v=1734882332003#icon__social--tg"></use>
                 </svg></a><a class="side-nav__social" href="https://vk.com/allvisacentre?roistat_visit=489845" target="_blank"><svg class="side-nav__icon">
-                  <use href="./img/svgSprite.svg?v=1734549271777#icon__social--vk"></use>
+                  <use href="./img/svgSprite.svg?v=1734882332003#icon__social--vk"></use>
                 </svg></a><a class="side-nav__social" href="https://api.whatsapp.com/send?phone=79296761959&amp;text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%20489845" target="_blank"><svg class="side-nav__icon">
-                  <use href="./img/svgSprite.svg?v=1734549271777#icon__social--wa"></use>
+                  <use href="./img/svgSprite.svg?v=1734882332003#icon__social--wa"></use>
                 </svg></a></div>
           </div>
         </div>
       </div>
       <div class="layout__main">
-        <div class="hero hero--visas hero--ring-alt">
+        <section class="hero hero--visas hero--ring-alt">
           <div class="hero__back"><img class="hero__bg" src="./img/img__bg-hero--airport.webp" alt="" aria-hidden="true"><img class="hero__ring hero__ring--left" src="./img/img__ring.svg" alt=""><img class="hero__ring hero__ring--right" src="./img/img__ring.svg" alt=""></div><img class="hero__couple" src="./img/img__couple.webp" alt="" aria-hidden="true">
           <div class="container">
             <div class="hero__inner hero__inner--grid">
@@ -536,7 +606,439 @@ document.body.addEventListener("click", (e) => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="section__inner">
+              <div class="section__header">
+                <h2 class="section__title">Популярные направления</h2>
+              </div>
+              <div class="section__body">
+                <div class="direction-slider">
+                  <div class="swiper direction-slider__carousel">
+                    <div class="swiper-wrapper direction-slider__track">
+                      <div class="swiper-slide direction-slider__slide"><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Гонконг</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Китай</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--china.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Нью-Йорк</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в США</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--usa.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Париж</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Францию</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--france.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Барселона</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Испанию</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--spain.webp" alt="" />
+                        </a></div>
+                      <div class="swiper-slide direction-slider__slide"><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Гонконг</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Китай</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--china.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Нью-Йорк</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в США</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--usa.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Париж</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Францию</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--france.webp" alt="" />
+                        </a></div>
+                    </div>
+                    <div class="direction-slider__footer">
+                      <div class="direction-slider__prev"><svg>
+                          <use href="./img/svgSprite.svg?v=1734882332004#icon__arrow-round--prev"></use>
+                        </svg></div>
+                      <div class="direction-slider__fraction"></div>
+                      <div class="direction-slider__next"><svg>
+                          <use href="./img/svgSprite.svg?v=1734882332004#icon__arrow-round--next"></use>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="section__inner">
+              <div class="section__header">
+                <h2 class="section__title">Наши преимущества</h2>
+              </div>
+              <div class="section__body">
+                <div class="advantages  advantages--alt">
+                  <div class="advantages__item"><img class="advantages__icon" src="./img/icon__user-card.svg" alt="" />
+                    <div class="advantages__title">Одно окно</div>
+                    <div class="advantages__descr">Услуги страхования, бронирование билетов, фото/биометрии</div>
+                  </div>
+                  <div class="advantages__item"><img class="advantages__icon" src="./img/icon__shield.svg" alt="" />
+                    <div class="advantages__title">Надежность</div>
+                    <div class="advantages__descr">Оформим визу или вернем деньги</div>
+                  </div>
+                  <div class="advantages__item"><img class="advantages__icon" src="./img/icon__edit.svg" alt="" />
+                    <div class="advantages__title">Безотказно</div>
+                    <div class="advantages__descr">Более 450 решений для тех, кто ранее получил отказ</div>
+                  </div>
+                  <div class="advantages__item"><img class="advantages__icon" src="./img/icon__phone.svg" alt="" />
+                    <div class="advantages__title">Без присутствия</div>
+                    <div class="advantages__descr">Не нужно посещать несколько инстанций и стоять в очередях</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="section__inner">
+              <div class="section__header">
+                <h2 class="section__title">Выберите страну</h2>
+                <p class="section__descr">Для оформления визы</p>
+              </div>
+              <div class="section__body">
+                <div class="continents"><a class="continents__item" href="#">
+                    <div class="continents__title">Европа</div><img class="continents__image" src="./img/img__continents--europe.webp" alt="">
+                  </a><a class="continents__item" href="#">
+                    <div class="continents__title">Азия</div><img class="continents__image" src="./img/img__continents--asia.webp" alt="">
+                  </a><a class="continents__item" href="#">
+                    <div class="continents__title">Северная Америка</div><img class="continents__image" src="./img/img__continents--america.webp" alt="">
+                  </a><a class="continents__item" href="#">
+                    <div class="continents__title">Океания</div><img class="continents__image" src="./img/img__continents--oceania.webp" alt="">
+                  </a></div>
+                <div class="countries"><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--argentina"></use>
+                      </svg></div>
+                    <div class="countries__title">Аргентина</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--cyprus"></use>
+                      </svg></div>
+                    <div class="countries__title">Кипр</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--hungary"></use>
+                      </svg></div>
+                    <div class="countries__title">Венгрия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--iceland"></use>
+                      </svg></div>
+                    <div class="countries__title">Исландия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--lithuania"></use>
+                      </svg></div>
+                    <div class="countries__title">Литва</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--new-zealand"></use>
+                      </svg></div>
+                    <div class="countries__title">Новая Зеландия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--spain"></use>
+                      </svg></div>
+                    <div class="countries__title">Испания</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--australia"></use>
+                      </svg></div>
+                    <div class="countries__title">Австралия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--germany"></use>
+                      </svg></div>
+                    <div class="countries__title">Германия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--canada"></use>
+                      </svg></div>
+                    <div class="countries__title">Канада</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--luxembourg"></use>
+                      </svg></div>
+                    <div class="countries__title">Люксембург</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--norway"></use>
+                      </svg></div>
+                    <div class="countries__title">Норвегия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--greece"></use>
+                      </svg></div>
+                    <div class="countries__title">Греция</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--austria"></use>
+                      </svg></div>
+                    <div class="countries__title">Австрия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--denmark"></use>
+                      </svg></div>
+                    <div class="countries__title">Дания</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--china"></use>
+                      </svg></div>
+                    <div class="countries__title">Китай</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--malta"></use>
+                      </svg></div>
+                    <div class="countries__title">Мальта</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--uae"></use>
+                      </svg></div>
+                    <div class="countries__title">ОАЭ</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--croatia"></use>
+                      </svg></div>
+                    <div class="countries__title">Хорватия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--belgium"></use>
+                      </svg></div>
+                    <div class="countries__title">Бельгия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--india"></use>
+                      </svg></div>
+                    <div class="countries__title">Индия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--korea"></use>
+                      </svg></div>
+                    <div class="countries__title">Корея</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--mexico"></use>
+                      </svg></div>
+                    <div class="countries__title">Мексика</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--portugal"></use>
+                      </svg></div>
+                    <div class="countries__title">Португалия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--bulgaria"></use>
+                      </svg></div>
+                    <div class="countries__title">Болгария</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--united-kingdom"></use>
+                      </svg></div>
+                    <div class="countries__title">Великобритания</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--ireland"></use>
+                      </svg></div>
+                    <div class="countries__title">Ирландия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--latvia"></use>
+                      </svg></div>
+                    <div class="countries__title">Латвия</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--netherlands"></use>
+                      </svg></div>
+                    <div class="countries__title">Нидерланды</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a><a class="countries__item" href="#">
+                    <div class="countries__icon"><svg>
+                        <use href="./img/svgSprite.svg?v=1734882332004#icon__flag--romania"></use>
+                      </svg></div>
+                    <div class="countries__title">Румыния</div>
+                    <div class="countries__descr">от 20 000 ₽</div>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="certificate">
+              <div class="certificate__info">
+                <h2 class="certificate__title">Подарочные сертификаты Allvisa</h2>
+                <p class="certificate__descr">У нас вы можете приобрести сертификат для друзей и родственников
+                  на любую сумму или на определенную услугу</p><button class="button button--primary certificate__button" data-modal="#callback">Заказать сертификат</button>
+              </div><img class="certificate__image" src="./img/img__card.webp" alt="" /><img class="certificate__ring certificate__ring--left" src="./img/img__ring.svg" alt="" /><img class="certificate__ring certificate__ring--right" src="./img/img__ring.svg" alt="" /><img class="certificate__ring certificate__ring--bottom" src="./img/img__ring.svg" alt="" />
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="map">
+            <div class="container">
+              <div class="map__inner">
+                <div class="map__card">
+                  <div class="map__info">
+                    <div class="map__title">Карта <br>расположения офиса</div>
+                    <div class="map__row">
+                      <div class="map__subtitle">Адрес:</div>
+                      <address class="map__descr">г. Москва, ДЦ «Китай-город», Лубянский проезд, 27/1c1, офис 436</address>
+                    </div>
+                    <div class="map__row">
+                      <div class="map__subtitle">Телефон:</div>
+                      <div class="map__phones">
+                        <div class="map__item">
+                          <div class="map__descr">Отдел по работе с клиентами:</div><a class="map__phone" href="tel:89257992896">8 (925) 799-28-96</a><a class="map__email" href="mailto:info@allvisa.center">info@allvisa.center</a>
+                        </div>
+                        <div class="map__item">
+                          <div class="map__descr">Отдел по работе с партнерами:</div><a class="map__phone" href="tel:89263280942">8 (926) 328-09-42</a><a class="map__email" href="mailto:partner@allvisa.center">partner@allvisa.center</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div><img class="map__ring map__ring--left" src="./img/img__ring.svg" alt="" /><img class="map__ring map__ring--right" src="./img/img__ring.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="map__back">
+              <div id="map"></div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="shout  shout--alt">
+              <h2 class="shout__title">Выезд специалиста визового центра</h2>
+              <p class="shout__descr">Нет возможности заехать к нам в офис?<br>
+Оставьте заявку и мы согласуем выезд специалиста по Вашему адресу.</p><button class="button shout__button" data-modal="#callback">Заказать выезд специалиста</button>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="payment">
+              <div class="payment__header">
+                <h2 class="payment__title">Для оплаты услуг</h2>
+                <p class="payment__descr">перейдите в раздел оплата</p><a class="button button--primary payment__button" href="#">Оплатить</a>
+              </div>
+              <div class="payment__body">
+                <div class="payment__grid">
+                  <div class="payment__logo"><img src="./img/img__logo--visa.webp" alt="Visa" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--mir.webp" alt="Mir" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--mc.webp" alt="MasterCard" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--khalva.webp" alt="Халва" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--yad.webp" alt="Yandex Money" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--qiwi.webp" alt="Qiwi" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--sber.webp" alt="Сбер банк" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--pt.webp" alt="Pay.Travel" /></div>
+                </div>
+                <div class="payment__cols">
+                  <div class="payment__line">Аргентина</div>
+                  <div class="payment__line">Австрия</div>
+                  <div class="payment__line">Бельгия</div>
+                  <div class="payment__line">Болгария</div>
+                  <div class="payment__line">Великобритания</div>
+                  <div class="payment__line">Новая Зеландия</div>
+                  <div class="payment__line">Венгрия</div>
+                  <div class="payment__line">Германия</div>
+                  <div class="payment__line">Греция</div>
+                  <div class="payment__line">Дания</div>
+                  <div class="payment__line">Индия</div>
+                  <div class="payment__line">Индонезия</div>
+                  <div class="payment__line">Ирландия</div>
+                  <div class="payment__line">Исландия</div>
+                  <div class="payment__line">Испания</div>
+                  <div class="payment__line">Италия</div>
+                  <div class="payment__line">Канада</div>
+                  <div class="payment__line">Кипр</div>
+                  <div class="payment__line">Китай</div>
+                  <div class="payment__line">Латвия</div>
+                  <div class="payment__line">Литва</div>
+                  <div class="payment__line">Мальта</div>
+                  <div class="payment__line">Нидерланды</div>
+                  <div class="payment__line">Норвегия</div>
+                  <div class="payment__line">Польша</div>
+                  <div class="payment__line">Португалия</div>
+                  <div class="payment__line">Румыния</div>
+                  <div class="payment__line">Сингапур</div>
+                  <div class="payment__line">Словакия</div>
+                  <div class="payment__line">Словения</div>
+                  <div class="payment__line">США</div>
+                  <div class="payment__line">Франция</div>
+                  <div class="payment__line">Финляндия</div>
+                  <div class="payment__line">Хорватия</div>
+                  <div class="payment__line">Чехия</div>
+                  <div class="payment__line">Швейцария</div>
+                  <div class="payment__line">Швеция</div>
+                  <div class="payment__line">Мексика</div>
+                  <div class="payment__line">Вьетнам</div>
+                  <div class="payment__line">Тайланд</div>
+                  <div class="payment__line">Шри-Ланка</div>
+                  <div class="payment__line">Япония</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
       <div class="layout__footer">
         <div class="footer">
@@ -545,15 +1047,15 @@ document.body.addEventListener("click", (e) => {
               <div class="footer__top"><a class="footer__logo" href="/"><img class="footer__img" src="./img/logo__allvisa--white.svg" alt="AllVisa" /></a>
                 <div class="socials  socials--footer__socials"><a class="socials__item" href="https://t.me/allvisa_client?roistat_visit=489845&amp;start=roistat_489845" target="_blank">
                     <div class="socials__inner"><svg class="socials__icon">
-                        <use href="./img/svgSprite.svg?v=1734549271778#icon__social--tg-2"></use>
+                        <use href="./img/svgSprite.svg?v=1734882332005#icon__social--tg-2"></use>
                       </svg></div>
                   </a><a class="socials__item" href="https://www.youtube.com/channel/UCEIm8VR6kYk_goO7NSZUzLw?roistat_visit=489845" target="_blank">
                     <div class="socials__inner"><svg class="socials__icon">
-                        <use href="./img/svgSprite.svg?v=1734549271778#icon__social--yt"></use>
+                        <use href="./img/svgSprite.svg?v=1734882332005#icon__social--yt"></use>
                       </svg></div>
                   </a><a class="socials__item" href="https://vk.com/allvisacentre?roistat_visit=489845" target="_blank">
                     <div class="socials__inner"><svg class="socials__icon">
-                        <use href="./img/svgSprite.svg?v=1734549271778#icon__social--vk-2"></use>
+                        <use href="./img/svgSprite.svg?v=1734882332005#icon__social--vk-2"></use>
                       </svg></div>
                   </a></div>
               </div>
@@ -563,15 +1065,15 @@ document.body.addEventListener("click", (e) => {
                       <div class="rating__num"><span>4,9</span></div>
                       <div class="rating__inner">
                         <div class="rating__stars"><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549271778#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882332005#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549271778#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882332005#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549271778#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882332005#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549271778#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882332005#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549271778#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882332005#icon__star"></use>
                           </svg></div>
                         <div class="rating__descr">286 отзывов, 327 оценки</div>
                       </div>
@@ -621,7 +1123,7 @@ document.body.addEventListener("click", (e) => {
       <div class="hystmodal__wrap">
         <div class="hystmodal__window modal__window modal__window--callback" role="dialog" aria-modal="true">
           <div class="modal__close" data-hystclose="data-hystclose"><svg class="closer__icon">
-              <use href="./img/svgSprite.svg?v=1734549271778#icon__close"></use>
+              <use href="./img/svgSprite.svg?v=1734882332005#icon__close"></use>
             </svg></div>
           <h2 class="modal__title">Введите свои контактные данные, чтобы отправить заявку</h2>
           <form class="form" id="formCallback" action="https://jsonplaceholder.typicode.com/posts">

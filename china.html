@@ -20,7 +20,45 @@
     <title>Allvisa | Виза в Китай</title>
     <meta name="description" content="description">
     <meta name="keywords" content="keywords">
-    <link rel="stylesheet" href="./css/style.css"><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");const navigatorErrorMessage="Could not find `userAgent` or `userAgentData` window.navigator properties to set `os`, `browser` and `version`",removeExcessMozillaAndVersion=/^mozilla\/\d\.\d\W/,browserPattern=/(\w+)\/(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)/g,engineAndVersionPattern=/^(ver|cri|gec)/,brandList=["chrome","opera","safari","edge","firefox"],unknown="Unknown";let userAgentData=window.navigator.userAgentData,userAgent=window.navigator.userAgent;const mobiles={ios:/iphone/,ipados:/ipad|macintosh/,android:/android/},desktops={windows:/win/,osx:/macintosh/,linux:/linux/},detectPlatform=(e,n)=>{if(userAgent="string"==typeof e?e:userAgent,userAgentData="string"==typeof n?n:userAgentData,userAgent){const e=userAgent.toLowerCase().replace(removeExcessMozillaAndVersion,""),n=Object.keys(mobiles).find(n=>mobiles[n].test(e)&&window.navigator.maxTouchPoints>=1),t=Object.keys(desktops).find(n=>desktops[n].test(e)),o=n||t,r=e.match(browserPattern),s=/version\/(\d+(\.\d+)*)/,a=e.match(s),i=Array.isArray(a)?a[1]:null,d=r&&(r.length>2&&!engineAndVersionPattern.test(r[1])?1:0),l=r&&r[r.length-1-(d||0)].split("/");return{os:o,browser:l&&l[0],version:i||l&&l[1]}}if(userAgentData){const e=userAgentData.platform.toLowerCase();let n;for(const e of userAgentData.brands){const t=e.brand.toLowerCase(),o=brandList.find(e=>{if(t.includes(e))return e});if(o){n={browser:o,version:e.version};break}}return{os:e,...n||{browser:unknown,version:unknown}}}return console.error(navigatorErrorMessage),{os:navigator.platform||unknown,browser:unknown,version:unknown}};let platform=detectPlatform();document.documentElement.classList.add(platform.os,platform.browser);let vh=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",vh+"px"),window.addEventListener("resize",()=>{let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",e+"px")});</script>
+    <link rel="stylesheet" href="./css/style.css"><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");const navigatorErrorMessage="Could not find `userAgent` or `userAgentData` window.navigator properties to set `os`, `browser` and `version`",removeExcessMozillaAndVersion=/^mozilla\/\d\.\d\W/,browserPattern=/(\w+)\/(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)/g,engineAndVersionPattern=/^(ver|cri|gec)/,brandList=["chrome","opera","safari","edge","firefox"],unknown="Unknown";let userAgentData=window.navigator.userAgentData,userAgent=window.navigator.userAgent;const mobiles={ios:/iphone/,ipados:/ipad|macintosh/,android:/android/},desktops={windows:/win/,osx:/macintosh/,linux:/linux/},detectPlatform=(e,n)=>{if(userAgent="string"==typeof e?e:userAgent,userAgentData="string"==typeof n?n:userAgentData,userAgent){const e=userAgent.toLowerCase().replace(removeExcessMozillaAndVersion,""),n=Object.keys(mobiles).find(n=>mobiles[n].test(e)&&window.navigator.maxTouchPoints>=1),t=Object.keys(desktops).find(n=>desktops[n].test(e)),o=n||t,r=e.match(browserPattern),s=/version\/(\d+(\.\d+)*)/,a=e.match(s),i=Array.isArray(a)?a[1]:null,d=r&&(r.length>2&&!engineAndVersionPattern.test(r[1])?1:0),l=r&&r[r.length-1-(d||0)].split("/");return{os:o,browser:l&&l[0],version:i||l&&l[1]}}if(userAgentData){const e=userAgentData.platform.toLowerCase();let n;for(const e of userAgentData.brands){const t=e.brand.toLowerCase(),o=brandList.find(e=>{if(t.includes(e))return e});if(o){n={browser:o,version:e.version};break}}return{os:e,...n||{browser:unknown,version:unknown}}}return console.error(navigatorErrorMessage),{os:navigator.platform||unknown,browser:unknown,version:unknown}};let platform=detectPlatform();document.documentElement.classList.add(platform.os,platform.browser);let vh=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",vh+"px"),window.addEventListener("resize",()=>{let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",e+"px")});</script><!-- заменить apikey на ключ заказчика--><script src="https://api-maps.yandex.ru/2.1/?apikey=f927c969-28d5-4486-8125-084a9ab3d470&amp;lang=ru_RU" type="text/javascript"></script><script type="module">const markAllVisa = [55.754172, 37.635143];
+const mapCenterMobile = [55.75256, 37.635172];
+const mapCenterTablet = [55.753257, 37.635075];
+const mapCenterDesktop = [55.754194, 37.637446];
+
+ymaps.ready(init);
+
+function changeMapCenter(map) {
+  if (window.innerWidth >= 992) {
+    map.setCenter(mapCenterDesktop);
+  } else if (window.innerWidth >= 600 && window.innerWidth < 991) {
+    map.setCenter(mapCenterTablet);
+  } else map.setCenter(mapCenterMobile);
+}
+
+function init() {
+  const yandexMap = new ymaps.Map("map", {
+    center: mapCenterDesktop,
+    zoom: 17,
+    controls: ["geolocationControl"],
+  });
+
+  const markContent = {
+    balloonContent: "Allvisa",
+    hintContent: "Allvisa",
+  };
+  const markPreset = {
+    preset: "islands#darkGreenDotIcon",
+  };
+
+  yandexMap.geoObjects.add(new ymaps.Placemark(markAllVisa, markContent, markPreset));
+
+  changeMapCenter(yandexMap);
+
+  window.addEventListener("resize", () => {
+    changeMapCenter(yandexMap);
+  });
+}
+</script>
   </head>
   <body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
     <div class="project-nav"><!-- delete this block if production-->
@@ -280,6 +318,38 @@
                 <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="china.html">
+              <div class="project-nav__title">China visa page</div>
+              <div class="project-nav__descr">страница виз в Китай</div>
+            </a><a class="project-nav__link" href="china.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="ates.html">
+              <div class="project-nav__title">ATES page</div>
+              <div class="project-nav__descr">страница АТЭС</div>
+            </a><a class="project-nav__link" href="ates.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="zagran.html">
+              <div class="project-nav__title">International passport page</div>
+              <div class="project-nav__descr">страница загран паспорт</div>
+            </a><a class="project-nav__link" href="zagran.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
+          <li class="project-nav__list-item"><a class="project-nav__link" href="visas.html">
+              <div class="project-nav__title">Visas page</div>
+              <div class="project-nav__descr">страница оформление виз</div>
+            </a><a class="project-nav__link" href="visas.html" target="_blank" title="Open in new tab"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6667 6.00001V3.33334H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M8.66666 7.33334L12.6667 3.33334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M13.3333 8.66666V9.99999C13.3333 11.8409 11.8409 13.3333 9.99999 13.3333H5.99999C4.15904 13.3333 2.66666 11.8409 2.66666 9.99999V5.99999C2.66666 4.15904 4.15904 2.66666 5.99999 2.66666H7.33332" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></a></li>
           <li class="project-nav__list-item"><a class="project-nav__link" href="thanks.html">
               <div class="project-nav__title">Thanks page</div>
               <div class="project-nav__descr">спасибо за заявку</div>
@@ -392,24 +462,24 @@ document.body.addEventListener("click", (e) => {
                     </ul>
                   </nav>
                   <form class="header__search" id="mainSearch" action="https://jsonplaceholder.typicode.com/posts"><input class="header__search-input" type="search" placeholder="Я ищу..." /><button class="header__search-button"><svg class="header__search-icon">
-                        <use href="./img/svgSprite.svg?v=1734549270079#icon__search"></use>
+                        <use href="./img/svgSprite.svg?v=1734882329820#icon__search"></use>
                       </svg></button></form>
                 </div>
                 <div class="header__actions"><button class="header__button header__button--search" data-search="data-search"><svg class="header__icon">
-                      <use href="./img/svgSprite.svg?v=1734549270079#icon__search"></use>
+                      <use href="./img/svgSprite.svg?v=1734882329820#icon__search"></use>
                     </svg><span class="header__button-title">Поиск</span></button><a class="header__button header__button--payment" href="#"><svg class="header__icon">
-                      <use href="./img/svgSprite.svg?v=1734549270079#icon__wallet"></use>
+                      <use href="./img/svgSprite.svg?v=1734882329820#icon__wallet"></use>
                     </svg><span class="header__button-title">Оплата услуг</span></a><a class="header__button" href="#"><svg class="header__icon">
-                      <use href="./img/svgSprite.svg?v=1734549270079#icon__user--alt"></use>
+                      <use href="./img/svgSprite.svg?v=1734882329820#icon__user--alt"></use>
                     </svg><span class="header__button-title">Личный кабинет</span></a></div><button class="button-burger header__burger" data-burger="data-burger"><span class="button-burger__line-tl"></span><span class="button-burger__line-tr"></span><span class="button-burger__line-cl"></span><span class="button-burger__line-cr"></span><span class="button-burger__line-bl"></span><span class="button-burger__line-br"></span></button>
               </div>
               <div class="header__bottom">
                 <div class="header__socials"><a class="header__social" href="https://t.me/allvisa_client?roistat_visit=489845&amp;start=roistat_489845" target="_blank"><svg class="header__social-icon">
-                      <use href="./img/svgSprite.svg?v=1734549270079#icon__social--tg"></use>
+                      <use href="./img/svgSprite.svg?v=1734882329820#icon__social--tg"></use>
                     </svg></a><a class="header__social" href="https://vk.com/allvisacentre?roistat_visit=489845" target="_blank"><svg class="header__social-icon">
-                      <use href="./img/svgSprite.svg?v=1734549270079#icon__social--vk"></use>
+                      <use href="./img/svgSprite.svg?v=1734882329820#icon__social--vk"></use>
                     </svg></a><a class="header__social" href="https://api.whatsapp.com/send?phone=79296761959&amp;text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%20489845" target="_blank"><svg class="header__social-icon">
-                      <use href="./img/svgSprite.svg?v=1734549270079#icon__social--wa"></use>
+                      <use href="./img/svgSprite.svg?v=1734882329820#icon__social--wa"></use>
                     </svg></a></div>
                 <ul class="header__links">
                   <li class="header__links-item"><a class="header__link" href="#">Оформление виз</a></li>
@@ -427,7 +497,7 @@ document.body.addEventListener("click", (e) => {
       <div class="layout__nav">
         <div class="side-nav">
           <div class="side-nav__close" data-burger="data-burger"><svg class="side-nav__icon">
-              <use href="./img/svgSprite.svg?v=1734549270079#icon__close"></use>
+              <use href="./img/svgSprite.svg?v=1734882329820#icon__close"></use>
             </svg></div>
           <div class="side-nav__inner">
             <div class="side-nav__links">
@@ -450,17 +520,17 @@ document.body.addEventListener("click", (e) => {
             </div>
             <div class="side-nav__call"><a class="side-nav__phone" href="tel:88004444140">8 (800) 444-41-40</a><button class="side-nav__callback" data-modal="#callback">обратный звонок</button></div>
             <div class="side-nav__socials"><a class="side-nav__social" href="https://t.me/allvisa_client?roistat_visit=489845&amp;start=roistat_489845" target="_blank"><svg class="side-nav__icon">
-                  <use href="./img/svgSprite.svg?v=1734549270079#icon__social--tg"></use>
+                  <use href="./img/svgSprite.svg?v=1734882329820#icon__social--tg"></use>
                 </svg></a><a class="side-nav__social" href="https://vk.com/allvisacentre?roistat_visit=489845" target="_blank"><svg class="side-nav__icon">
-                  <use href="./img/svgSprite.svg?v=1734549270079#icon__social--vk"></use>
+                  <use href="./img/svgSprite.svg?v=1734882329820#icon__social--vk"></use>
                 </svg></a><a class="side-nav__social" href="https://api.whatsapp.com/send?phone=79296761959&amp;text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%20489845" target="_blank"><svg class="side-nav__icon">
-                  <use href="./img/svgSprite.svg?v=1734549270079#icon__social--wa"></use>
+                  <use href="./img/svgSprite.svg?v=1734882329820#icon__social--wa"></use>
                 </svg></a></div>
           </div>
         </div>
       </div>
       <div class="layout__main">
-        <div class="hero hero--full-height-mobile">
+        <section class="hero hero--full-height-mobile">
           <div class="hero__back"><img class="hero__bg hero__bg--left-vp" src="./img/img__bg-hero--wall.webp" alt="" aria-hidden="true"><img class="hero__ring hero__ring--left" src="./img/img__ring.svg" alt=""><img class="hero__ring hero__ring--right" src="./img/img__ring.svg" alt=""></div>
           <div class="container">
             <div class="hero__inner hero__inner--china">
@@ -550,7 +620,477 @@ document.body.addEventListener("click", (e) => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="section__inner">
+              <div class="section__header">
+                <h2 class="section__title">Типы визы и стоимость</h2>
+              </div>
+              <div class="section__body">
+                <div class="visa-tiles">
+                  <div class="visa-tiles__item"><img class="visa-tiles__icon" src="./img/icon__money.svg" alt=""><a class="visa-tiles__title" href="#">Деловая (оформление 3 дня)</a>
+                    <div class="visa-tiles__label">Тип "M"</div>
+                    <ul class="visa-tiles__list">
+                      <li class="visa-tiles__li">консультации на протяжении действия договора</li>
+                      <li class="visa-tiles__li">помощь в сборе документов для оформления</li>
+                      <li class="visa-tiles__li">заполнение анкет и формуляров</li>
+                      <li class="visa-tiles__li">технические брони отеля</li>
+                      <li class="visa-tiles__li">технические брони авиабилета</li>
+                      <li class="visa-tiles__li">запись на подачу документов</li>
+                      <li class="visa-tiles__li">подача и получение документов</li>
+                      <li class="visa-tiles__li">оплата сборов</li>
+                    </ul>
+                    <div class="visa-tiles__row"><button class="button button--primary" data-modal="#callback">Оставить заявку</button>
+                      <div class="visa-tiles__price">от 9500 ₽</div>
+                    </div><img class="visa-tiles__ring" src="./img/img__ring.svg" alt="">
+                  </div>
+                  <div class="visa-tiles__item"><img class="visa-tiles__icon" src="./img/icon__student.svg" alt=""><a class="visa-tiles__title" href="#">Студенческая (оформление 3 дня)</a>
+                    <div class="visa-tiles__label">Тип "X"</div>
+                    <ul class="visa-tiles__list">
+                      <li class="visa-tiles__li">консультации на протяжении действия договора</li>
+                      <li class="visa-tiles__li">помощь в сборе документов для оформления</li>
+                      <li class="visa-tiles__li">заполнение анкет и формуляров</li>
+                      <li class="visa-tiles__li">технические брони отеля</li>
+                      <li class="visa-tiles__li">технические брони авиабилета</li>
+                      <li class="visa-tiles__li">запись на подачу документов</li>
+                      <li class="visa-tiles__li">подача и получение документов</li>
+                      <li class="visa-tiles__li">оплата сборов</li>
+                    </ul>
+                    <div class="visa-tiles__row"><button class="button button--primary" data-modal="#callback">Оставить заявку</button>
+                      <div class="visa-tiles__price">от 9500 ₽</div>
+                    </div><img class="visa-tiles__ring" src="./img/img__ring.svg" alt="">
+                  </div>
+                  <div class="visa-tiles__item"><img class="visa-tiles__icon" src="./img/icon__plane.svg" alt=""><a class="visa-tiles__title" href="#">Туристическая (оформление 3 дня)</a>
+                    <div class="visa-tiles__label">Тип "L"</div>
+                    <ul class="visa-tiles__list">
+                      <li class="visa-tiles__li">консультации на протяжении действия договора</li>
+                      <li class="visa-tiles__li">помощь в сборе документов для оформления</li>
+                      <li class="visa-tiles__li">заполнение анкет и формуляров</li>
+                      <li class="visa-tiles__li">технические брони отеля</li>
+                      <li class="visa-tiles__li">технические брони авиабилета</li>
+                      <li class="visa-tiles__li">запись на подачу документов</li>
+                      <li class="visa-tiles__li">подача и получение документов</li>
+                      <li class="visa-tiles__li">оплата сборов</li>
+                    </ul>
+                    <div class="visa-tiles__row"><button class="button button--primary" data-modal="#callback">Оставить заявку</button>
+                      <div class="visa-tiles__price">от 9500 ₽</div>
+                    </div><img class="visa-tiles__ring" src="./img/img__ring.svg" alt="">
+                  </div>
+                  <div class="visa-tiles__item"><img class="visa-tiles__icon" src="./img/icon__case.svg" alt=""><a class="visa-tiles__title" href="#">Рабочая (оформление 3 дня)</a>
+                    <div class="visa-tiles__label">Тип "Z"</div>
+                    <ul class="visa-tiles__list">
+                      <li class="visa-tiles__li">консультации на протяжении действия договора</li>
+                      <li class="visa-tiles__li">помощь в сборе документов для оформления</li>
+                      <li class="visa-tiles__li">заполнение анкет и формуляров</li>
+                      <li class="visa-tiles__li">технические брони отеля</li>
+                      <li class="visa-tiles__li">технические брони авиабилета</li>
+                      <li class="visa-tiles__li">запись на подачу документов</li>
+                      <li class="visa-tiles__li">подача и получение документов</li>
+                      <li class="visa-tiles__li">оплата сборов</li>
+                    </ul>
+                    <div class="visa-tiles__row"><button class="button button--primary" data-modal="#callback">Оставить заявку</button>
+                      <div class="visa-tiles__price">от 9500 ₽</div>
+                    </div><img class="visa-tiles__ring" src="./img/img__ring.svg" alt="">
+                  </div>
+                  <div class="visa-tiles__item"><img class="visa-tiles__icon" src="./img/icon__family.svg" alt=""><a class="visa-tiles__title" href="#">Семейная (оформление 3 дня)</a>
+                    <div class="visa-tiles__label">Тип "S"</div>
+                    <ul class="visa-tiles__list">
+                      <li class="visa-tiles__li">консультации на протяжении действия договора</li>
+                      <li class="visa-tiles__li">помощь в сборе документов для оформления</li>
+                      <li class="visa-tiles__li">заполнение анкет и формуляров</li>
+                      <li class="visa-tiles__li">технические брони отеля</li>
+                      <li class="visa-tiles__li">технические брони авиабилета</li>
+                      <li class="visa-tiles__li">запись на подачу документов</li>
+                      <li class="visa-tiles__li">подача и получение документов</li>
+                      <li class="visa-tiles__li">оплата сборов</li>
+                    </ul>
+                    <div class="visa-tiles__row"><button class="button button--primary" data-modal="#callback">Оставить заявку</button>
+                      <div class="visa-tiles__price">от 9500 ₽</div>
+                    </div><img class="visa-tiles__ring" src="./img/img__ring.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="section__inner">
+              <div class="section__header">
+                <h2 class="section__title section__title--alt">Документы для оформления визы</h2>
+              </div>
+              <div class="section__body">
+                <div class="doc-tabs">
+                  <div class="doc-tabs__scroll">
+                    <div class="doc-tabs__tabs"><button class="doc-tabs__tab" data-tab-trigger="all" data-active>Для всех типов визы</button><button class="doc-tabs__tab" data-tab-trigger="tourism">Туристическая виза</button><button class="doc-tabs__tab" data-tab-trigger="guest">Гостевая виза</button><button class="doc-tabs__tab" data-tab-trigger="business">Деловая виза</button><button class="doc-tabs__tab" data-tab-trigger="invite">По приглашению</button></div>
+                  </div>
+                  <div class="doc-tabs__body">
+                    <div class="doc-tabs__content" data-tab-content="all" data-active>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                    </div>
+                    <div class="doc-tabs__content" data-tab-content="tourism">
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                    </div>
+                    <div class="doc-tabs__content" data-tab-content="guest">
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                    </div>
+                    <div class="doc-tabs__content" data-tab-content="business">
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                    </div>
+                    <div class="doc-tabs__content" data-tab-content="invite">
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                      <div class="doc-tile"><svg class="doc-tile__icon">
+                          <use href="./img/svgSprite.svg?v=1734882329820#icon__doc--alt"></use>
+                        </svg>
+                        <h3 class="doc-tile__title">Загранпаспорт</h3>
+                        <p class="doc-tile__descr">Не смотря на моё предвзятое негативное отношение ко всяким фирмам оказывающим
+                          услуги, здесь мне реально помогли, при том что я пришел к самому закрытию.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="form-section"><img class="form-section__image" src="./img/img__bg-form.webp" alt="" /><img class="form-section__illustration" src="./img/img__form-doc.webp" alt=""><img class="form-section__ring form-section__ring--left" src="./img/img__ring.svg" alt=""><img class="form-section__ring form-section__ring--right" src="./img/img__ring.svg" alt="">
+            <div class="container">
+              <div class="form-section__inner">
+                <div class="form-section__card">
+                  <form class="form request-form" action="https://jsonplaceholder.typicode.com/todos/" id="atesForm">
+                    <div class="request-form__inner">
+                      <h2 class="request-form__title">Отправьте заявку</h2>
+                      <p class="request-form__descr">Получите список документов бесплатно</p>
+                      <div class="request-form__grid">
+                        <div class="request-form__row request-form__row--two"><label class="form__field">
+                            <div class="form__label">Введите ваше имя</div><input class="input" type="text" name="name" placeholder="Иванов Иван" required="required" />
+                          </label><label class="form__field">
+                            <div class="form__label">Введите ваш телефон</div><input class="input" type="tel" name="phone" placeholder="+7 (_____) ____-____-____" data-phone-field="data-phone-field" required="required" />
+                          </label></div>
+                        <div class="request-form__row request-form__row--two"><label class="form__field">
+                            <div class="form__label">Введите ваше e-mail</div><input class="input" type="email" name="email" placeholder="example@mail.ru" required="required" />
+                          </label><label class="form__field">
+                            <div class="form__label">Введите ваш город</div><input class="input" type="text" name="city" placeholder="Москва" required="required" />
+                          </label></div><button class="button button--primary">Получить карту АТЭС</button>
+                        <div class="request-form__small">Нажимая кнопку "Получить карту АТЭС", я подтверждаю, что ознакомлен и согласен
+                          с условиями <a href="#">политики обработки персональных данных</a></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="section__inner">
+              <div class="section__header">
+                <h2 class="section__title">Популярные направления</h2>
+              </div>
+              <div class="section__body">
+                <div class="direction-slider">
+                  <div class="swiper direction-slider__carousel">
+                    <div class="swiper-wrapper direction-slider__track">
+                      <div class="swiper-slide direction-slider__slide"><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Гонконг</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Китай</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--china.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Нью-Йорк</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в США</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--usa.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Париж</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Францию</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--france.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Барселона</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Испанию</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--spain.webp" alt="" />
+                        </a></div>
+                      <div class="swiper-slide direction-slider__slide"><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Гонконг</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Китай</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--china.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Нью-Йорк</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в США</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--usa.webp" alt="" />
+                        </a><a class="direction-slider__tile" href="#">
+                          <div class="direction-slider__tile-inner">
+                            <div class="direction-slider__city">Париж</div>
+                            <div class="direction-slider__row">
+                              <h3 class="direction-slider__title">Виза в Францию</h3>
+                              <div class="direction-slider__price">от 7000 ₽</div>
+                            </div>
+                          </div><img class="direction-slider__image" src="./img/img__slider--france.webp" alt="" />
+                        </a></div>
+                    </div>
+                    <div class="direction-slider__footer">
+                      <div class="direction-slider__prev"><svg>
+                          <use href="./img/svgSprite.svg?v=1734882329821#icon__arrow-round--prev"></use>
+                        </svg></div>
+                      <div class="direction-slider__fraction"></div>
+                      <div class="direction-slider__next"><svg>
+                          <use href="./img/svgSprite.svg?v=1734882329821#icon__arrow-round--next"></use>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="frame">
+              <div class="frame__info">
+                <h2 class="frame__title">Как получить визу в Китай</h2>
+                <p class="frame__p">Хорошие новости! В марте 2023 года Китай возобновил выдачу виз для россиян
+                  и граждан других стран. До этого по причине распространения COVID-19
+                  действовали специально предусмотренные ограничения вплоть до полного запрета въезда
+                  в страну. Туризм буквально замер. Но ситуация несколько изменилась.</p>
+                <p class="frame__p">Сейчас оформить визу в Китай можно как самостоятельно, так и с привлечением
+                  специалистов визового агентства. Оба варианта характеризуются как плюсами,
+                  так и минусами. Перед тем как косвенно рассмотреть их, разберем базовые
+                  моменты, касающиеся процедуры оформления китайской визы с целью туризма.</p>
+                <p class="frame__p">Воспользуйтесь услугами «EasyVisa Agency», чтобы избежать возможных осложнений
+                  в процессе получения визового разрешения, а также сэкономить время, которое
+                  можно уделить решению других насущных вопросов.</p>
+              </div>
+              <div class="frame__miniature"><img class="frame__image" src="./img/img__frame--china.webp" alt="" /></div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="certificate">
+              <div class="certificate__info">
+                <h2 class="certificate__title">Подарочные сертификаты Allvisa</h2>
+                <p class="certificate__descr">У нас вы можете приобрести сертификат для друзей и родственников
+                  на любую сумму или на определенную услугу</p><button class="button button--primary certificate__button" data-modal="#callback">Заказать сертификат</button>
+              </div><img class="certificate__image" src="./img/img__card.webp" alt="" /><img class="certificate__ring certificate__ring--left" src="./img/img__ring.svg" alt="" /><img class="certificate__ring certificate__ring--right" src="./img/img__ring.svg" alt="" /><img class="certificate__ring certificate__ring--bottom" src="./img/img__ring.svg" alt="" />
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="shout  shout--alt">
+              <h2 class="shout__title">Выезд специалиста визового центра</h2>
+              <p class="shout__descr">Нет возможности заехать к нам в офис?<br>
+Оставьте заявку и мы согласуем выезд специалиста по Вашему адресу.</p><button class="button shout__button" data-modal="#callback">Заказать выезд специалиста</button>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container">
+            <div class="payment">
+              <div class="payment__header">
+                <h2 class="payment__title">Для оплаты услуг</h2>
+                <p class="payment__descr">перейдите в раздел оплата</p><a class="button button--primary payment__button" href="#">Оплатить</a>
+              </div>
+              <div class="payment__body">
+                <div class="payment__grid">
+                  <div class="payment__logo"><img src="./img/img__logo--visa.webp" alt="Visa" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--mir.webp" alt="Mir" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--mc.webp" alt="MasterCard" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--khalva.webp" alt="Халва" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--yad.webp" alt="Yandex Money" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--qiwi.webp" alt="Qiwi" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--sber.webp" alt="Сбер банк" /></div>
+                  <div class="payment__logo"><img src="./img/img__logo--pt.webp" alt="Pay.Travel" /></div>
+                </div>
+                <div class="payment__cols"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="map">
+            <div class="container">
+              <div class="map__inner">
+                <div class="map__card">
+                  <div class="map__info">
+                    <div class="map__title">Карта <br>расположения офиса</div>
+                    <div class="map__row">
+                      <div class="map__subtitle">Адрес:</div>
+                      <address class="map__descr">г. Москва, ДЦ «Китай-город», Лубянский проезд, 27/1c1, офис 436</address>
+                    </div>
+                    <div class="map__row">
+                      <div class="map__subtitle">Телефон:</div>
+                      <div class="map__phones">
+                        <div class="map__item">
+                          <div class="map__descr">Отдел по работе с клиентами:</div><a class="map__phone" href="tel:89257992896">8 (925) 799-28-96</a><a class="map__email" href="mailto:info@allvisa.center">info@allvisa.center</a>
+                        </div>
+                        <div class="map__item">
+                          <div class="map__descr">Отдел по работе с партнерами:</div><a class="map__phone" href="tel:89263280942">8 (926) 328-09-42</a><a class="map__email" href="mailto:partner@allvisa.center">partner@allvisa.center</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div><img class="map__ring map__ring--left" src="./img/img__ring.svg" alt="" /><img class="map__ring map__ring--right" src="./img/img__ring.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="map__back">
+              <div id="map"></div>
+            </div>
+          </div>
+        </section>
       </div>
       <div class="layout__footer">
         <div class="footer">
@@ -559,15 +1099,15 @@ document.body.addEventListener("click", (e) => {
               <div class="footer__top"><a class="footer__logo" href="/"><img class="footer__img" src="./img/logo__allvisa--white.svg" alt="AllVisa" /></a>
                 <div class="socials  socials--footer__socials"><a class="socials__item" href="https://t.me/allvisa_client?roistat_visit=489845&amp;start=roistat_489845" target="_blank">
                     <div class="socials__inner"><svg class="socials__icon">
-                        <use href="./img/svgSprite.svg?v=1734549270080#icon__social--tg-2"></use>
+                        <use href="./img/svgSprite.svg?v=1734882329821#icon__social--tg-2"></use>
                       </svg></div>
                   </a><a class="socials__item" href="https://www.youtube.com/channel/UCEIm8VR6kYk_goO7NSZUzLw?roistat_visit=489845" target="_blank">
                     <div class="socials__inner"><svg class="socials__icon">
-                        <use href="./img/svgSprite.svg?v=1734549270080#icon__social--yt"></use>
+                        <use href="./img/svgSprite.svg?v=1734882329821#icon__social--yt"></use>
                       </svg></div>
                   </a><a class="socials__item" href="https://vk.com/allvisacentre?roistat_visit=489845" target="_blank">
                     <div class="socials__inner"><svg class="socials__icon">
-                        <use href="./img/svgSprite.svg?v=1734549270080#icon__social--vk-2"></use>
+                        <use href="./img/svgSprite.svg?v=1734882329821#icon__social--vk-2"></use>
                       </svg></div>
                   </a></div>
               </div>
@@ -577,15 +1117,15 @@ document.body.addEventListener("click", (e) => {
                       <div class="rating__num"><span>4,9</span></div>
                       <div class="rating__inner">
                         <div class="rating__stars"><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549270080#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882329821#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549270080#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882329821#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549270080#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882329821#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549270080#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882329821#icon__star"></use>
                           </svg><svg class="rating__star">
-                            <use href="./img/svgSprite.svg?v=1734549270080#icon__star"></use>
+                            <use href="./img/svgSprite.svg?v=1734882329821#icon__star"></use>
                           </svg></div>
                         <div class="rating__descr">286 отзывов, 327 оценки</div>
                       </div>
@@ -635,7 +1175,7 @@ document.body.addEventListener("click", (e) => {
       <div class="hystmodal__wrap">
         <div class="hystmodal__window modal__window modal__window--callback" role="dialog" aria-modal="true">
           <div class="modal__close" data-hystclose="data-hystclose"><svg class="closer__icon">
-              <use href="./img/svgSprite.svg?v=1734549270080#icon__close"></use>
+              <use href="./img/svgSprite.svg?v=1734882329821#icon__close"></use>
             </svg></div>
           <h2 class="modal__title">Введите свои контактные данные, чтобы отправить заявку</h2>
           <form class="form" id="formCallback" action="https://jsonplaceholder.typicode.com/posts">
